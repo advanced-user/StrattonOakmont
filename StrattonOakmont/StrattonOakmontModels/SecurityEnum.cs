@@ -4,7 +4,10 @@ using System.Text;
 
 namespace StrattonOakmontModels
 {
-    class Security
+    public enum SecurityEnum
     {
+        Stock,
+        Abligation,
+        Bill
     }
 }

@@ -10,5 +10,6 @@ namespace StrattonOakmontModels
         public string Name { get; set; }
         public string Desc { get; set; }
         public decimal Сapitalization { get; set; }
+        public string IMG { get; set; }
     }
 }
