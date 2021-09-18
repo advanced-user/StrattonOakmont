@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StrattonOakmontModels
 {
-    class Security
+    public class Security
     {
         public int Id { get; set; }
         public int Price { get; set; }
