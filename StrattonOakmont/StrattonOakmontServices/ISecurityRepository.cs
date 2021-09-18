@@ -8,5 +8,6 @@ namespace StrattonOakmontServices
     public interface ISecurityRepository
     {
         IEnumerable<Security> GetAllSecurities();
+        IEnumerable<Security> AllSecurities { get; }
     }
 }
