@@ -5,7 +5,7 @@ using System.Text;
 
 namespace StrattonOakmontServices
 {
-    class ICompanyRepository
+    public interface ICompanyRepository
     {
         IEnumerable<Company> GetAllCompanies { get; }
     }
