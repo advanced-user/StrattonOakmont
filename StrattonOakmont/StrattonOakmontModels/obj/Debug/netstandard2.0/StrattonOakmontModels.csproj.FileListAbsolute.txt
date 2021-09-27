@@ -1,0 +1,10 @@
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.deps.json
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.dll
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.pdb
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.csproj.AssemblyReference.cache
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.AssemblyInfoInputs.cache
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.AssemblyInfo.cs
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.csproj.CoreCompileInputs.cache
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.dll
+D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.pdb

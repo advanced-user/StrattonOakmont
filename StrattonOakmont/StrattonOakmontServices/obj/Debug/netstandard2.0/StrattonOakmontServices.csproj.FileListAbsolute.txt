@@ -1,0 +1,13 @@
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontServices.deps.json
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontServices.dll
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontServices.pdb
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontModels.dll
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontModels.pdb
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.AssemblyReference.cache
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.AssemblyInfoInputs.cache
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.AssemblyInfo.cs
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CoreCompileInputs.cache
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CopyComplete
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.dll
+D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.pdb

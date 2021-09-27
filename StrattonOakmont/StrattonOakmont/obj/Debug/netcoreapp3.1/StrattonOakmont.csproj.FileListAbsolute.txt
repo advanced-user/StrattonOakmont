@@ -793,3 +793,7 @@ D:\Programming\SO\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Stratt
 D:\Programming\SO\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\StrattonOakmont.dll
 D:\Programming\SO\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\StrattonOakmont.pdb
 D:\Programming\SO\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\StrattonOakmont.genruntimeconfig.cache
+D:\Programming\SO\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmontModels.dll
+D:\Programming\SO\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmontServices.dll
+D:\Programming\SO\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmontModels.pdb
+D:\Programming\SO\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmontServices.pdb

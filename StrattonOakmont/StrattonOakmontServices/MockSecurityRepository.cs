@@ -41,21 +41,7 @@ namespace StrattonOakmontServices
             }
         }
 
-        //public MockSecurityRepository()
-        //{
-        //    _securitiesList = new List<Security>()
-        //    {
-        //        new Security
-        //        {
-        //            Id = 1,
-        //            Price = 1000,
-        //            PerSent = 0,
-        //            //CompanySec = "Google",
-        //            CategorySec = _categorySec.GetAllCategories
-
-        //        }        
-        //    };
-        //}
+        
         public IEnumerable<Security> GetAllSecurities()
         {
             return AllSecurities;
