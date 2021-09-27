@@ -27,6 +27,14 @@ namespace StrattonOakmontServices
                         PerSent = 0,
                         CompanySec = _companySec.GetAllCompanies.First(),
                         CategorySec = _categorySec.GetAllCategories.First()
+                    },
+                    new Security
+                    {
+                        Id = 2,
+                        Price = 3000,
+                        PerSent = 0,
+                        CompanySec = _companySec.GetAllCompanies.Last(),
+                        CategorySec = _categorySec.GetAllCategories.First()
                     }
 
                 };
@@ -50,7 +58,7 @@ namespace StrattonOakmontServices
         //}
         public IEnumerable<Security> GetAllSecurities()
         {
-            throw new NotImplementedException();
+            return AllSecurities;
         }
     }
 }

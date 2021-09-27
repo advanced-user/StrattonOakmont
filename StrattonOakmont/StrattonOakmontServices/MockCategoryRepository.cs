@@ -14,7 +14,7 @@ namespace StrattonOakmontServices
                 return new List<Category>
                 {
                     new Category{CategoryName = "Stock", Id = 1},
-                    
+                    new Category{CategoryName = "Abligation", Id = 2}
                 };
             }
         }

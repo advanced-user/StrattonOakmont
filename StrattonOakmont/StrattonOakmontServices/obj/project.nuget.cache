@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "C3sB7PXp70Y34gm7W2gyShSXGHGB9TUv3cm1V8Kf4EoWTUQyGowiHl9nEyKemWCjCnc6eY8C7cXxnTlnrTuCyg==",
+  "dgSpecHash": "7bOiI6MEjUUFIdViseTLVC2vPZyAAZXxRtU4RWGv/xtA48OQAqymsnhCHflp6xc3NNdkDMZHLf9eyVGfy+TW4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\SO\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
+  "projectFilePath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
