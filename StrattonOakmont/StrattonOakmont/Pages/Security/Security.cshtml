@@ -6,4 +6,33 @@
 
 <h1>Security</h1>
 <h3>Количество @Model.Securities.Count()</h3>
+<div class="row">
+    @foreach (var item in Model.Securities)
+    {
+        var photoPath = $"/IMG/{item.CompanyIMG}";
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card-deck">
+                <div class="card m-3">
+                    <div class="card-header text-center">
+                        <h3>@item.CompanySec.Name</h3>
+                    </div>
+                    <div>
+                        <img class="card-img-top" src="@photoPath" asp-append-version="true" />
+                    </div>
+                    <div class="text-center">
+                        <h4>@item.CategorySec.CategoryName</h4>
+                    </div>
+                    <div class="text-center">
+                        <h4>@item.Price</h4>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#" class="btn btn-success m-1">Buy</a>
+                        <a href="#" class="btn btn-primary m-1">Edit</a>
+                        <a href="#" class="btn btn-danger m-1">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
 

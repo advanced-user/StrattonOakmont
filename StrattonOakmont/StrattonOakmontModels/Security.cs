@@ -11,6 +11,7 @@ namespace StrattonOakmontModels
         public int PerSent { get; set; }
         public Category CategorySec { get; set; }
         public Company CompanySec { get; set; }
+        public string CompanyIMG { get; set; }
 
     }
 }

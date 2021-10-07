@@ -26,7 +26,8 @@ namespace StrattonOakmontServices
                         Price = 1000,
                         PerSent = 0,
                         CompanySec = _companySec.GetAllCompanies.First(),
-                        CategorySec = _categorySec.GetAllCategories.First()
+                        CategorySec = _categorySec.GetAllCategories.First(),                       
+                        CompanyIMG = _companySec.GetAllCompanies.First().IMG
                     },
                     new Security
                     {
@@ -34,7 +35,8 @@ namespace StrattonOakmontServices
                         Price = 3000,
                         PerSent = 0,
                         CompanySec = _companySec.GetAllCompanies.Last(),
-                        CategorySec = _categorySec.GetAllCategories.First()
+                        CategorySec = _categorySec.GetAllCategories.First(),
+                        CompanyIMG = _companySec.GetAllCompanies.Last().IMG
                     }
 
                 };

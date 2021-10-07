@@ -13,8 +13,8 @@ namespace StrattonOakmontServices
             {
                 return new List<Company>
                 {
-                    new Company{Name = "Google", Id = 1, IMG ="", Desc = "", Сapitalization = 10000000},
-                    new Company{Name = "Amazon", Id = 2, IMG ="", Desc = "", Сapitalization = 10000000}
+                    new Company{Name = "Google", Id = 1, IMG ="", Desc = "Google.jpg", Сapitalization = 10000000},
+                    new Company{Name = "Amazon", Id = 2, IMG ="", Desc = "Amazon.jpg", Сapitalization = 10000000}
                 };
             }
         }
