@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +27,12 @@ namespace StrattonOakmont
         {
             services.AddRazorPages();
             services.AddSingleton<ISecurityRepository, MockSecurityRepository>();
+            services.Configure<RouteOptions>(options =>
+            {
+                options.LowercaseUrls = true;
+
+            }
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
