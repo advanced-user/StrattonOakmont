@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrattonOakmont", "Stratton
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrattonOakmontModels", "StrattonOakmontModels\StrattonOakmontModels.csproj", "{BDCEA36E-4307-4931-A1DA-2D1793686C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrattonOakmontServices", "StrattonOakmontServices\StrattonOakmontServices.csproj", "{3A9260DF-9BC9-4F0B-8A3E-1A5F0E79D5C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrattonOakmontServices", "StrattonOakmontServices\StrattonOakmontServices.csproj", "{3A9260DF-9BC9-4F0B-8A3E-1A5F0E79D5C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
