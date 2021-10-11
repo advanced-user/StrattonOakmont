@@ -1,6 +1,7 @@
 ﻿using StrattonOakmontModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace StrattonOakmontServices
@@ -17,6 +18,10 @@ namespace StrattonOakmontServices
                     new Company{Name = "Amazon", Id = 2, IMG ="Amazon.jpg", Desc = "Amazon.jpg", Сapitalization = 10000000}
                 };
             }
+        }
+        public Company GetCompany(int Id)
+        {
+            return GetAllCompanies.FirstOrDefault(x => x.Id == Id);
         }
     }
 }

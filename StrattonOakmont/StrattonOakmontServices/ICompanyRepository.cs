@@ -8,5 +8,6 @@ namespace StrattonOakmontServices
     public interface ICompanyRepository
     {
         IEnumerable<Company> GetAllCompanies { get; }
+        Company GetCompany(int Id);
     }
 }

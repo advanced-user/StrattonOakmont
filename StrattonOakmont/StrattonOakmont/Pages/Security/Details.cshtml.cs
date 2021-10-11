@@ -19,9 +19,16 @@ namespace StrattonOakmont.Pages.Security
 
         public StrattonOakmontModels.Security Security { get; private set; }
 
-        public void OnGet(int Id)
+        public IActionResult OnGet(int Id)
         {
             Security = _securityRepository.GetSecurity(Id);
+
+            if (Security == null)
+            {
+                return RedirectToPage("/NotFound");
+            }
+
+            return Page();
         }
     }
 }

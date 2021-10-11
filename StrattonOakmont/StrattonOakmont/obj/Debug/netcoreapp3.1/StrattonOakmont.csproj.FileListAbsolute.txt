@@ -798,3 +798,5 @@ D:\Programming\SO\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\Stratt
 D:\Programming\SO\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmontModels.pdb
 D:\Programming\SO\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmontServices.pdb
 D:\Programming\SO\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Details.cshtml.g.cs
+D:\Programming\SO\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\NotFound.cshtml.g.cs
+D:\Programming\SO\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Edit.cshtml.g.cs
