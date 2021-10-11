@@ -30,7 +30,8 @@ namespace StrattonOakmont
             services.Configure<RouteOptions>(options =>
             {
                 options.LowercaseUrls = true;
-
+                options.LowercaseQueryStrings = true;
+                options.AppendTrailingSlash = true;
             }
             );
         }
@@ -42,7 +43,7 @@ namespace StrattonOakmont
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+            
             {
                 app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
@@ -51,11 +52,8 @@ namespace StrattonOakmont
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
