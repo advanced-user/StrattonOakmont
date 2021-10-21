@@ -10,13 +10,7 @@ namespace StrattonOakmont.Pages.Security
 {
     public class EditModel : PageModel
     {
-        private readonly ICompanyRepository _companyRepository;
-
-        public EditModel(ICompanyRepository companyRepository)
-        {
-            _companyRepository = companyRepository;
-        }
-        public StrattonOakmontModels.Company Company { get; set; }
+       
 
 
 
@@ -30,7 +24,7 @@ namespace StrattonOakmont.Pages.Security
         public IActionResult OnGet(int id)
         {
             Security = _securityRepository.GetSecurity(id);
-            Company = _companyRepository.GetCompany(id);
+            
             if (Security == null)
             {
                 return RedirectToPage("/NotFound");
@@ -38,7 +32,11 @@ namespace StrattonOakmont.Pages.Security
             return Page();
         }
 
-
+        public IActionResult OnPost(StrattonOakmontModels.Security security)
+        {
+            Security = _securityRepository.Update(security);
+            return RedirectToPage("Security");
+        }
 
     }
 }

@@ -19,8 +19,22 @@ using StrattonOakmont;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\Programming\SO\StrattonOakmont\StrattonOakmont\Pages\_ViewImports.cshtml"
+using StrattonOakmontModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\Programming\SO\StrattonOakmont\StrattonOakmont\Pages\_ViewImports.cshtml"
+using StrattonOakmontServices;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"56d7efa81c12a325d2dee3653cdc966a73437490", @"/Pages/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dfe16b6e3d54060838d378735a50e1d300ebf8aa", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"974d72ad2b61c32e2ee344bcf61b2f971ac01939", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Index : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         #pragma warning disable 1998

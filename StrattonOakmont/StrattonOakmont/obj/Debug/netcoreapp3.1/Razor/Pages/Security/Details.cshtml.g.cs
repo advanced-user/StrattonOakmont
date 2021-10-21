@@ -19,9 +19,23 @@ using StrattonOakmont;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\Programming\SO\StrattonOakmont\StrattonOakmont\Pages\_ViewImports.cshtml"
+using StrattonOakmontModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\Programming\SO\StrattonOakmont\StrattonOakmont\Pages\_ViewImports.cshtml"
+using StrattonOakmontServices;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemMetadataAttribute("RouteTemplate", "{id}")]
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"335e2451afc4d981905977e3ea307bb18640637a", @"/Pages/Security/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"dfe16b6e3d54060838d378735a50e1d300ebf8aa", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"974d72ad2b61c32e2ee344bcf61b2f971ac01939", @"/Pages/_ViewImports.cshtml")]
     public class Pages_Security_Details : global::Microsoft.AspNetCore.Mvc.RazorPages.Page
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("card-img-top border-primary"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -71,7 +85,7 @@ using StrattonOakmont;
 #line hidden
 #nullable disable
             WriteLiteral("</h1>\r\n            </div>\r\n            <div class=\"card-body text-center\">\r\n                <div class=\"row\">\r\n                    \r\n                    <div class=\"col col-lg-9 text-center\">\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "335e2451afc4d981905977e3ea307bb18640637a5481", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "335e2451afc4d981905977e3ea307bb18640637a5855", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ImageTagHelper>();
@@ -136,7 +150,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ImageTagHelper.AppendVersion = true;
                         <div class=""card-footer text-center"" style=""background-color: rgba(0,0,0,0.25);"">
                             <a href =""#"" class=""btn-success"">Buy</a>
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "335e2451afc4d981905977e3ea307bb18640637a9134", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "335e2451afc4d981905977e3ea307bb18640637a9508", async() => {
                 WriteLiteral("Back");
             }
             );

@@ -15,7 +15,7 @@
         <div class="col col-lg-8">
             <div class="card cardBoxShadow">
                 <div class="card-header cardHeaderStyle text-center">
-                    <!--Добавляем поле редактирования имени-->
+                   
                     <div class="form-group row">
                         <label asp-for="Security.Price" class="col col-lg-4 col-form-label text-right">Edit Price:</label>
                         <div class="col col-lg-6">
@@ -29,9 +29,9 @@
                 <div class="card-body cardBodyStyle text-center">
                     <div class="row">
                         <div class="col col-lg-9">
-                            <h4 class="cardTextLeftFloating">Employee ID: @Model.Security.Id</h4><hr />
+                            <h4 class="cardTextLeftFloating">Security ID: @Model.Security.Id</h4><hr />
 
-                            <!--Добавляем поле редактирования e-mail-->
+                           
                             <div class="form-group row">
                                 <label asp-for="Security.PerSent" class="col col-lg-4 col-form-label text-right">Edit PerSent:</label>
                                 <div class="col-12 col-lg-6">
@@ -44,18 +44,18 @@
 
 
                             <!--Добавляем поле редактирования департамента-->
-                            <div class="form-group row">
+                            <!--<div class="form-group row">
                                 <label asp-for="Security.CompanySec" class="col col-lg-4 col-form-label text-right">Edit Company:</label>
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-lg-6">-->
                                     <!--Создаём выпадающий список с департаментами-->
                                     <!--Необходимо подключить класс локально или глобально-->
-                                    <select asp-for="Security.CompanySec" class="custom-select mr-2" asp-items="Html.GetEnumSelectList<Company>()">
+                                    <!--<select asp-for="Security.CompanySec" class="custom-select mr-2" asp-items="Html.GetEnumSelectList<Company>()">-->
                                         <!--Добавляем начальный элемент выпадающего списка-->
-                                        <option value="">Please Select</option>
+                                        <!--<option value="">Please Select</option>
                                     </select>
                                     <span asp-validation-for="Security.CompanySec" class="text-danger"></span>
                                 </div>
-                            </div>
+                            </div>-->
 
 
                             <hr />

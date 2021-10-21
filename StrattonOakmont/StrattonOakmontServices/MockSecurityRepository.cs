@@ -53,5 +53,16 @@ namespace StrattonOakmontServices
         {
             return AllSecurities.FirstOrDefault(x => x.Id == Id);
         }
+
+        public Security Update(Security UpdatedSecurity)
+        {
+            Security security = AllSecurities.FirstOrDefault(x => x.Id == UpdatedSecurity.Id);
+            if (security != null)
+            {
+                security.Price = UpdatedSecurity.Price;
+                security.PerSent = UpdatedSecurity.PerSent;
+            }
+            return security;
+        }
     }
 }
