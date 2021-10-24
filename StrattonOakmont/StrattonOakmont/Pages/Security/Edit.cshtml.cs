@@ -20,7 +20,9 @@ namespace StrattonOakmont.Pages.Security
         {
             _securityRepository = securityRepository;
         }
+        [BindProperty]
         public StrattonOakmontModels.Security Security { get; set; }
+        //public IFormFile MyProperty { get; set; }
         public IActionResult OnGet(int id)
         {
             Security = _securityRepository.GetSecurity(id);

@@ -6,7 +6,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<form method="post" class="mt-3">
+<form method="post" class="mt-3" enctype="multipart/form-data">
    
     <input type="hidden" asp-for="Security.Id" />
 
@@ -43,20 +43,7 @@
                             <hr />
 
 
-                            <!--Добавляем поле редактирования департамента-->
-                            <!--<div class="form-group row">
-                                <label asp-for="Security.CompanySec" class="col col-lg-4 col-form-label text-right">Edit Company:</label>
-                                <div class="col-12 col-lg-6">-->
-                                    <!--Создаём выпадающий список с департаментами-->
-                                    <!--Необходимо подключить класс локально или глобально-->
-                                    <!--<select asp-for="Security.CompanySec" class="custom-select mr-2" asp-items="Html.GetEnumSelectList<Company>()">-->
-                                        <!--Добавляем начальный элемент выпадающего списка-->
-                                        <!--<option value="">Please Select</option>
-                                    </select>
-                                    <span asp-validation-for="Security.CompanySec" class="text-danger"></span>
-                                </div>
-                            </div>-->
-
+                            
 
                             <hr />
                         </div>
