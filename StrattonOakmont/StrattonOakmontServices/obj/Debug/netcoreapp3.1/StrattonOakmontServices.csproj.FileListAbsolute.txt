@@ -1,0 +1,12 @@
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netcoreapp3.1\StrattonOakmontServices.deps.json
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netcoreapp3.1\StrattonOakmontServices.dll
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netcoreapp3.1\StrattonOakmontServices.pdb
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netcoreapp3.1\StrattonOakmontModels.dll
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netcoreapp3.1\StrattonOakmontModels.pdb
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.csprojAssemblyReference.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.AssemblyInfoInputs.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.AssemblyInfo.cs
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.csproj.CoreCompileInputs.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.csproj.CopyComplete
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.dll
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.pdb

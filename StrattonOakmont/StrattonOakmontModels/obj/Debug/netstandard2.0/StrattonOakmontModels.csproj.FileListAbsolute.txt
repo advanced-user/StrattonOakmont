@@ -8,3 +8,12 @@ D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0
 D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.csproj.CoreCompileInputs.cache
 D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.dll
 D:\Programming\SO\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.pdb
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.deps.json
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.dll
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.pdb
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.csprojAssemblyReference.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.AssemblyInfoInputs.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.AssemblyInfo.cs
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.csproj.CoreCompileInputs.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.dll
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.pdb

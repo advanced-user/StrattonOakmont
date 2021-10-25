@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj": {}
+    "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
+    "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
+        "projectUniqueName": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
         "projectName": "StrattonOakmontModels",
-        "projectPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontModels\\obj\\",
+        "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
+        "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,28 +57,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj": {
+    "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
+        "projectUniqueName": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
         "projectName": "StrattonOakmontServices",
-        "projectPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontServices\\obj\\",
+        "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
+        "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
+        "crossTargeting": true,
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
+          "netcoreapp3.1",
           "netstandard2.0"
         ],
         "sources": {
@@ -90,11 +84,19 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
+                "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
+              }
+            }
+          },
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
-                "projectPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
+              "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
+                "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
               }
             }
           }
@@ -106,6 +108,31 @@
         }
       },
       "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        },
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
@@ -126,25 +153,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj": {
+    "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
+        "projectUniqueName": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
         "projectName": "StrattonOakmont",
-        "projectPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmont\\obj\\",
+        "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
+        "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -158,11 +181,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
-                "projectPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
+              "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
+                "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
               },
-              "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj": {
-                "projectPath": "D:\\Programming\\SO\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj"
+              "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj": {
+                "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj"
               }
             }
           }
@@ -196,6 +219,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.15, 3.1.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -204,7 +233,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

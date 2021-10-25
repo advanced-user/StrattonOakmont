@@ -10,3 +10,15 @@ D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2
 D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CoreCompileInputs.cache
 D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.dll
 D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.pdb
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontServices.deps.json
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontServices.dll
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontServices.pdb
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontModels.dll
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\bin\Debug\netstandard2.0\StrattonOakmontModels.pdb
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csprojAssemblyReference.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.AssemblyInfoInputs.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.AssemblyInfo.cs
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CoreCompileInputs.cache
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CopyComplete
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.dll
+C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.pdb
