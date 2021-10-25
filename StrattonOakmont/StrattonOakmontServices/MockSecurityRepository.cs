@@ -64,5 +64,13 @@ namespace StrattonOakmontServices
             }
             return security;
         }
+
+        public Security Add(Security NewSecurity)
+        {
+            NewSecurity.Id = AllSecurities.Max(x => x.Id) + 1;
+            
+
+            return NewSecurity;
+        }
     }
 }

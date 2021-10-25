@@ -8,6 +8,5 @@ D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2
 D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.AssemblyInfoInputs.cache
 D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.AssemblyInfo.cs
 D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CoreCompileInputs.cache
-D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CopyComplete
 D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.dll
 D:\Programming\SO\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.pdb

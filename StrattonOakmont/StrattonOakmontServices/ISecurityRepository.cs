@@ -11,5 +11,6 @@ namespace StrattonOakmontServices
         IEnumerable<Security> AllSecurities { get; }
         Security GetSecurity(int Id);
         Security Update(Security UpdatedSecurity);
+        Security Add(Security NewSecurity);
     }
 }
