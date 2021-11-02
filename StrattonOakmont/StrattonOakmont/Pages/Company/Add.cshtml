@@ -1,0 +1,35 @@
+﻿@page
+@model StrattonOakmont.Pages.Company.AddModel
+@{
+    ViewData["Title"] = "AddCompany";
+}
+<div class="row p-5">
+    <form asp-page="Add" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label asp-for="@Model.Company.Name"></label>
+            <div class="col-12">
+                <input asp-for="@Model.Company.Name" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Company.Desc"></label>
+            <div class="col-12">
+                <input asp-for="@Model.Company.Desc" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Company.Сapitalization"></label>
+            <div class="col-12">
+                <input asp-for="@Model.Company.Сapitalization" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Company.IMG"></label>
+            <div class="col-12">
+                <input asp-for="@Model.Company.IMG" class="form-control" />
+            </div>
+        </div>
+
+        <input class="btn btn-success" type="submit" value="Add company" />
+    </form>
+</div>

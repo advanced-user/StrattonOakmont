@@ -14,13 +14,15 @@ namespace StrattonOakmont.Pages.Security
         public SecurityModel(ISecurityRepository db)
         {
             _db = db;
+
+            
         }
 
         public IEnumerable<StrattonOakmontModels.Security> Securities { get; set; }
 
         public void OnGet()
         {
-            Securities = _db.AllSecurities;
+            Securities = _db.GetAllSecurities();
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {}
+    "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
+    "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
+        "projectUniqueName": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
         "projectName": "StrattonOakmontModels",
-        "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
+        "projectPath": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\obj\\",
+        "outputPath": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",

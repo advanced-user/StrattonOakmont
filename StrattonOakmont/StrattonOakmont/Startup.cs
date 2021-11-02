@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StrattonOakmontServices;
+using StrattonOakmontServices.Sql;
 
 namespace StrattonOakmont
 {
@@ -25,8 +27,13 @@ namespace StrattonOakmont
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+			services.AddDbContextPool<AppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SecurityDBConnection")));
+			
             services.AddRazorPages();
-            services.AddSingleton<ISecurityRepository, MockSecurityRepository>();
+            services.AddScoped<ICategoryRepository, SqlCategoryRepository>();
+            services.AddScoped<ICompanyRepository, SqlCompanyRepository>();
+            services.AddScoped<ISecurityRepository, SqlSecurityRepository>();
+
             services.Configure<RouteOptions>(options =>
             {
                 options.LowercaseUrls = true;

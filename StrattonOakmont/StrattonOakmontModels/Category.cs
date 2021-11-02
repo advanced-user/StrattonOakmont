@@ -9,7 +9,5 @@ namespace StrattonOakmontModels
         public int Id { get; set; }
         public string CategoryName { get; set; }
         public List<Security> Securities { get; set; }
-
-
     }
 }

@@ -1,0 +1,16 @@
+﻿@page
+@model StrattonOakmont.Pages.Security.AddModel
+@{
+}
+<h3>Add new category securities</h3>
+<div class="row p-5">
+    <form asp-page="Add" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label asp-for="@Model.Category.CategoryName"></label>
+            <div class="col-12">
+                <input asp-for="@Model.Category.CategoryName" class="form-control" />
+            </div>
+            <input class="btn btn-success" type="submit" value="Add company" />
+        </div>
+    </form>
+</div>

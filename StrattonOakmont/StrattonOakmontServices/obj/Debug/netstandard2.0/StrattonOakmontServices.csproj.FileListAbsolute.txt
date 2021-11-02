@@ -22,3 +22,9 @@ C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\ob
 C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CopyComplete
 C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.dll
 C:\Users\Home\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.pdb
+C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csprojAssemblyReference.cache
+C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.AssemblyInfoInputs.cache
+C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.AssemblyInfo.cs
+C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.csproj.CoreCompileInputs.cache
+C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.dll
+C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmontServices\obj\Debug\netstandard2.0\StrattonOakmontServices.pdb
