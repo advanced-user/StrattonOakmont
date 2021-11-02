@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/KmqeOe+Nq+MRWa3M7KfzwAEgzyKvuePoO2v6Ln8X8AuGintGRMfK57DCr/0FDtWvtLGOP7P+vSF8N/ERK7dRg==",
+  "dgSpecHash": "wSvz0W8Bd17ZVNTPagnY4D/CeFeNpHIah/rtM9YK5kyxkYh+gQo9GWquIpzXCg/H5Hat22WJLHCusW8EGu6ILQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
+  "projectFilePath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Home\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

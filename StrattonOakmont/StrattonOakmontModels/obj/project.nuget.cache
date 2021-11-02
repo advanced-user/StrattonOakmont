@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sIm9nr8Vg9hXylRH8bqhDIgguFZGMhO9frjYXHRgUYbndX7IaOGEX2F8rkhHKtgcwJCRdHvWLlec/K9oSsDcFQ==",
+  "dgSpecHash": "OLmg4G/FFJppCG0BHPBcwruQwL4KksT5Xc7EWShd8KF7Yf9GOwhtKkLoIeGMBSYRz01EWHHHeB7ck6y/VBgt4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
+  "projectFilePath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Home\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

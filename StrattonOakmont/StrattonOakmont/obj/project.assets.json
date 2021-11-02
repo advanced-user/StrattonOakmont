@@ -8670,11 +8670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
+      "projectUniqueName": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
       "projectName": "StrattonOakmont",
-      "projectPath": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
+      "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
       "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\obj\\",
+      "outputPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8691,11 +8691,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
-              "projectPath": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
+            "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
+              "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
             },
-            "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj": {
-              "projectPath": "C:\\Users\\Home\\Downloads\\Telegram Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj"
+            "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj": {
+              "projectPath": "C:\\Users\\Home\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj"
             }
           }
         }
