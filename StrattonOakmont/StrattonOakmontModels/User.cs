@@ -14,7 +14,7 @@ namespace StrattonOakmontModels
         public int Pasword { get; set; }
         public decimal Account { get; set; }
         public List<Security> Securities { get; set; }
-
+        //
 
     }
 }
