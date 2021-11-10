@@ -45,3 +45,13 @@ C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmont\Stratto
 C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.csproj.CoreCompileInputs.cache
 C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.dll
 C:\Users\Home\Downloads\Telegram Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.pdb
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.deps.json
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.dll
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.0\StrattonOakmontModels.pdb
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.csproj.AssemblyReference.cache
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.AssemblyInfoInputs.cache
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.AssemblyInfo.cs
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.dll
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.0\StrattonOakmontModels.pdb
