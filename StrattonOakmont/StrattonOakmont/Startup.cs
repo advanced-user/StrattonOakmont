@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StrattonOakmontServices;
 using StrattonOakmontServices.Sql;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace StrattonOakmont
 {
@@ -29,6 +31,9 @@ namespace StrattonOakmont
         {
 			services.AddDbContextPool<AppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SecurityDBConnection")));
 			
+            services.AddIdentity<StrattonOakmontModels.User, IdentityRole>()
+                .AddEntityFrameworkStores<AppDBContext>();
+            
             services.AddRazorPages();
             services.AddScoped<ICategoryRepository, SqlCategoryRepository>();
             services.AddScoped<ICompanyRepository, SqlCompanyRepository>();
@@ -60,7 +65,10 @@ namespace StrattonOakmont
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+            
+            app.UseAuthentication();
             app.UseAuthorization();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();

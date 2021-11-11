@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3a9260df-9bc9-4f0b-8a3e-1a5f0e79d5c4": {
+      "ProjectGuid": "3a9260df-9bc9-4f0b-8a3e-1a5f0e79d5c4",
+      "DisplayName": "StrattonOakmontServices",
+      "ColorIndex": 0
+    },
+    "4bb99695-e2d2-4e9e-af54-bfbae9289fd7": {
+      "ProjectGuid": "4bb99695-e2d2-4e9e-af54-bfbae9289fd7",
+      "DisplayName": "StrattonOakmont",
+      "ColorIndex": 1
+    },
+    "bdcea36e-4307-4931-a1da-2d1793686c21": {
+      "ProjectGuid": "bdcea36e-4307-4931-a1da-2d1793686c21",
+      "DisplayName": "StrattonOakmontModels",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

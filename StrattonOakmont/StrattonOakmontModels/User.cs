@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace StrattonOakmontModels
 {
-    class User
+    public class User : IdentityUser
     {
-        public int Id { get; set; }
-        public string FName { get; set; }
-        public string LName { get; set; }
-        public string IMG { get; set; }
-        public string Email { get; set; }
-        public int Pasword { get; set; }
-        public decimal Account { get; set; }
+        public int Year { get; set; }
         public List<Security> Securities { get; set; }
-        //
-
     }
 }

@@ -3,10 +3,11 @@ using StrattonOakmontModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace StrattonOakmontServices
 {
-    public class AppDBContext : DbContext
+    public class AppDBContext : IdentityDbContext<User>
     {
         public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
         {

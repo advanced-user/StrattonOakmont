@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g46Z8n39nGc9NPvK4RiOTqXI/XyfOQN2ZN4hYIYDwrzkmU9WgVrGOIp3AyYdRWWanacJJ1XnAsPxbiiJB26zLw==",
+  "dgSpecHash": "6WuxPjEHOokfrud22Zp9dCcmGTcPyvTU6YxUquAFbgm1IrFgjVZ3r4CQYlSXKNKrWu7CA/MEAtPQ75UgDACBJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Downloads\\StrattonOakmont-main\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.1\\microsoft.aspnetcore.cryptography.internal.5.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.1\\microsoft.aspnetcore.cryptography.keyderivation.5.0.1.nupkg.sha512",

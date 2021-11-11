@@ -5,6 +5,8 @@
     ViewData["Title"] = "Companies";
 }
 
+@if(User.Identity.IsAuthenticated)
+{
 <a asp-page="Add" class="btn btn-danger m-1">Add new company</a>
 <div class="row">
    @foreach (var item in Model.Companies)
@@ -29,4 +31,12 @@
        </div>
    }
 </div>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Вход</a>
+    <a asp-controller="Account" asp-action="Register">Регистрация</a>
+}
+
+
 
