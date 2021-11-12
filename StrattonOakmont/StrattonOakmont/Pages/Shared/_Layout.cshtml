@@ -46,9 +46,8 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <p>@User.Identity.Name</p>
-
-                            <form method="post">
-                                <input type="submit" value="Выход" />
+                            <form method="get">
+                                <input asp-page="/Account/Logout" type="submit" value="Выход" />
                             </form>
                         }
                         else
@@ -60,11 +59,6 @@
                                 <a class="nav-link text-dark" asp-area="" asp-route-returnUrl="@Url.Page("/", new { area = "" })" asp-page="/Account/Register">Register</a>
                             </li>
                         }
-
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
                     </ul>
                 </div>
             </div>

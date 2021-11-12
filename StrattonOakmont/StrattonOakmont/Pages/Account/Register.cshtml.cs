@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StrattonOakmontModels;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 
@@ -61,11 +62,15 @@ namespace StrattonOakmont.Pages.Account
             if (ModelState.IsValid)
             {
                 User user = new User { Email = Input.Email, UserName = Input.Name, Year = Input.Age };
+
                 // добавляем пользователя
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
                     // установка куки
+                    List<string> role = new List<string> { "user" };
+                    await _userManager.AddToRolesAsync(user, role);
+
                     await _signInManager.SignInAsync(user, false);
                     return LocalRedirect(returnUrl);
                 }
