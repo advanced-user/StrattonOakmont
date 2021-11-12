@@ -1,16 +1,16 @@
 ﻿@page
-@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+@model StrattonOakmont.Pages.Account.Roles.IndexModel
 @{
 }
  
 <h2>Список ролей</h2>
 <table class="table">
-    @foreach (var role in Model)
+    @foreach (var role in @Model.Roles)
     {
         <tr>
             <td>@role.Name</td>
             <td>
-                <form asp-action="Delete" asp-route-id="@role.Id" method="post">
+                <form asp-route-id="@role.Id" method="post">
                     <button type="submit" class="btn btn-sm btn-danger">
                         Удалить
                     </button>
@@ -19,5 +19,5 @@
         </tr>
     }
 </table>
-<a asp-action="Create">Добавить роль</a>
-<a asp-action="UserList">Список пользователей</a>
+<a asp-page="Add">Добавить роль</a>
+<a asp-page="User">Список пользователей</a>

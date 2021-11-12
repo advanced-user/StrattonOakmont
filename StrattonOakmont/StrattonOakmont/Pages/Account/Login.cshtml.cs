@@ -52,7 +52,6 @@ namespace StrattonOakmont.Pages.Account
                     await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    // проверяем, принадлежит ли URL приложению
                     if (!string.IsNullOrEmpty(Input.ReturnUrl) && Url.IsLocalUrl(Input.ReturnUrl))
                     {
                         return LocalRedirect(returnUrl);
@@ -64,7 +63,7 @@ namespace StrattonOakmont.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
+                    ModelState.AddModelError("", "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ (пїЅпїЅпїЅ) пїЅпїЅпїЅпїЅпїЅпїЅ");
                 }
             }
             return Page();
@@ -72,7 +71,6 @@ namespace StrattonOakmont.Pages.Account
 
         public async Task<IActionResult> Logout()
         {
-            // удаляем аутентификационные куки
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
