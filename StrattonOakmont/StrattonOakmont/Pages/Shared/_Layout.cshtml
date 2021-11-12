@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+<style>
+    #LoginLink {
+        margin-right: 0px;
+    }
+</style>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -38,12 +43,25 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Account/Roles/Index">Roles</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-route-returnUrl="@Url.Page("/", new { area = "" })" asp-page="/Account/Login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-route-returnUrl="@Url.Page("/", new { area = "" })" asp-page="/Account/Register">Register</a>
-                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <p>@User.Identity.Name</p>
+
+                            <form method="post" asp-controller="Account" asp-action="Logout">
+                                <input type="submit" value="Выход" />
+                            </form>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-route-returnUrl="@Url.Page("/", new { area = "" })" asp-page="/Account/Login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-route-returnUrl="@Url.Page("/", new { area = "" })" asp-page="/Account/Register">Register</a>
+                            </li>
+                        }
+
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>

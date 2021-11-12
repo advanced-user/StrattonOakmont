@@ -3,7 +3,12 @@
 @{
     ViewData["Title"] = "Privacy Policy";
 }
+<p>@User.Identity.Name</p>
+
+<form method="post" asp-controller="Account" asp-action="Logout">
+    <input type="submit" value="Выход" />
+</form>
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
-<img src="https://www.plerdy.com/wp-content/uploads/2018/06/9-1.png" width="1100"/>
+<img src="https://www.plerdy.com/wp-content/uploads/2018/06/9-1.png" width="1100" />

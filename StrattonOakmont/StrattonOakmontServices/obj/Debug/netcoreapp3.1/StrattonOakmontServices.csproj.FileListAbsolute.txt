@@ -68,7 +68,6 @@ C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.AssemblyInfoInputs.cache
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.AssemblyInfo.cs
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.csproj.CopyComplete
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.dll
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.pdb
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.genruntimeconfig.cache
