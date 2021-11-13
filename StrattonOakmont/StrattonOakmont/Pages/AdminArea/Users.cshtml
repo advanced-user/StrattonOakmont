@@ -1,0 +1,65 @@
+﻿@page
+@model StrattonOakmont.Pages.AdminArea.UsersModel
+@{
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <!-- column -->
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Users</h4>
+                        <h6 class="card-subtitle"><code></code></h6>
+                        <div class="table-responsive">
+                            <table class="table user-table">
+                                <thead>
+                                    <tr>
+                                        <th class="border-top-0">Username</th>
+                                        <th class="border-top-0">Email</th>
+                                        <th class="border-top-0"></th>
+                                        <th class="border-top-0"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var user in @Model.Users)
+                                    {                                        
+                                    <tr>
+                                        <td>@user.UserName</td>
+                                        <td>@user.Email</td>
+                                        <td>
+                                            <a class="btn btn-sm btn-primary" asp-page="ChangeUserRole" asp-route-userid="@user.Id">Права доступа</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-sm btn-primary" asp-page="ChangeUserRole" asp-route-userid="@user.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                    }
+                                     
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+</body>
+</html>

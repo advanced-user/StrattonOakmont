@@ -103,3 +103,4 @@ C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\o
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.dll
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.pdb
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.genruntimeconfig.cache
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontServices\obj\Debug\netcoreapp3.1\StrattonOakmontServices.csproj.CopyComplete
