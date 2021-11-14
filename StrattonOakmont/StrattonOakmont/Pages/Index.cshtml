@@ -1,8 +1,9 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
-} 
+    Layout = "_Layout";
+    ViewData["Title"] = "Магазин одежды";
+}
 
 @if (User.IsInRole("admin"))
 {
@@ -12,13 +13,539 @@
 }
 else
 {
-    <div class="text-center" >
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<section id="hero" class="d-flex align-items-centert justify-content-center">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-8">
+                <h1>Велопрокат</h1>
+                <h2>Лучшие велосипеды Харькова</h2>
+            </div>
+        </div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-xl-2 col-md-4 col-6">
+                <div class="icon-box">
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-archive-fill" fill="#ffc451"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+                    </svg>
+                    <h3><a asp-controller="Shop" asp-action="Index">Перейти в магазин</a></h3>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-md-4 col-6">
+                <div class="icon-box">
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-archive-fill" fill="#ffc451"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+                    </svg>
+                    <h3><a asp-controller="Rent" asp-action="Index">Арендовать</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4 col-6">
+                <div class="icon-box">
+                    <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-archive-fill" fill="#ffc451"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+                    </svg>
+                    <h3><a asp-controller="Chat" asp-action="Index">Перейти к обсуждению </a></h3>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <img src="https://thecryptotown.com/wp-content/uploads/2021/06/Stratton-Oakmont-Finance.jpg" width="100%"/>
+</section>
+<section class="about my-5" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2">
+                <img class="img-fluid" src="~/img/2.jpg" alt="">
+            </div>
+            <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 content">
+                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, cupiditate?</h3>
+                <p class="font-italic">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laudantium ipsum deleniti
+                    reprehenderit libero expedita officiis sapiente provident?
+                </p>
+                <ul>
+                    <li>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check" fill="#ffc451"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
+                        </svg> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quas. Lorem ipsum
+                        dolor sit amet consectetur adipisicing elit. Harum molestiae ab odit. Lorem, ipsum.
+                    </li>
+                    <li>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check" fill="#ffc451"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
+                        </svg> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quas.
+                    </li>
+                    <li>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check" fill="#ffc451"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
+                        </svg> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quas. Lorem ipsum
+                        dolor, sit amet consectetur adipisicing elit. Eum dolorum impedit illo!
+
+                    </li>
+                    <li>
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check" fill="#ffc451"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
+                        </svg> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quas. Lorem ipsum
+                        dolor sit.
+                    </li>
+                </ul>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere obcaecati ducimus quo impedit
+                    exercitationem soluta asperiores ea corporis. Deserunt ad praesentium aliquid unde! Corporis
+                    maxime laudantium, quae harum a perspiciatis.
+                </p>
+            </div>
+        </div>
     </div>
+</section>
+<section class="cta mb-5">
+    <div class="container text-center">
+        <h3>Call to action</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolores facilis eveniet hic nam
+            perspiciatis quidem sit libero aliquid nemo.
+        </p>
+        <a asp-controller="Rent" asp-action="Index" class="cta-btn">Арендовать</a>
+    </div>
+</section>
+<section id="team" class="team">
+    <div class="container text-center mt-5">
+        <div class="section-title">
+            <h2>Our team</h2>
+            <p>Check our team</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img class="img-fluid"
+                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+                             alt="">
+                        <div class="social">
+                            <a href="" class="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-fill"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                                    <path fill-rule="evenodd"
+                                          d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                                </svg>
+                            </a>
+                            <a href="" class="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-fill"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                                    <path fill-rule="evenodd"
+                                          d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="member-info">
+                        <h4>
+                            Andrzej Person
+                        </h4>
+                        <span>Polish senator</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img class="img-fluid"
+                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+                             alt="">
+                        <div class="social">
+                            <a href="" class="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-fill"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                                    <path fill-rule="evenodd"
+                                          d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                                </svg>
+                            </a>
+                            <a href="" class="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-fill"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                                    <path fill-rule="evenodd"
+                                          d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="member-info">
+                        <h4>
+                            Andrzej Person
+                        </h4>
+                        <span>Polish senator</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img class="img-fluid"
+                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+                             alt="">
+                        <div class="social">
+                            <a href="" class="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-fill"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                                    <path fill-rule="evenodd"
+                                          d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                                </svg>
+                            </a>
+                            <a href="" class="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-fill"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                                    <path fill-rule="evenodd"
+                                          d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="member-info">
+                        <h4>
+                            Andrzej Person
+                        </h4>
+                        <span>Polish senator</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="member">
+                    <div class="member-img">
+                        <img class="img-fluid"
+                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+                             alt="">
+                        <div class="social">
+                            <a href="" class="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-fill"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                                    <path fill-rule="evenodd"
+                                          d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                                </svg>
+                            </a>
+                            <a href="" class="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap-fill"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z" />
+                                </svg>
+                            </a>
+                            <a href="">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                                    <path fill-rule="evenodd"
+                                          d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="member-info">
+                        <h4>
+                            Andrzej Person
+                        </h4>
+                        <span>Polish senator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Services</h2>
+            <p>Check our services</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex align-items-strech mb-3">
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                            <path fill-rule="evenodd"
+                                  d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                        </svg>
+                    </div>
+                    <h4>Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laboriosam eveniet atque
+                        suscipit,
+                        natus numquam.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-strech mb-3">
+                <div class="icon-box">
+                    <div class="icon mt-5">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                            <path fill-rule="evenodd"
+                                  d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                        </svg>
+                    </div>
+                    <h4>Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laboriosam eveniet atque
+                        suscipit,
+                        natus numquam.
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-strech mb-3">
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                            <path fill-rule="evenodd"
+                                  d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                        </svg>
+                    </div>
+                    <h4>Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laboriosam eveniet atque
+                        suscipit,
+                        natus numquam.
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-strech mb-3">
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                            <path fill-rule="evenodd"
+                                  d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                        </svg>
+                    </div>
+                    <h4>Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laboriosam eveniet atque
+                        suscipit,
+                        natus numquam.
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-strech mb-3">
+                <div class="icon-box">
+                    <div class="icon">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                            <path fill-rule="evenodd"
+                                  d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                        </svg>
+                    </div>
+                    <h4>Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laboriosam eveniet atque
+                        suscipit,
+                        natus numquam.
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-strech mb-3">
+                <div class="icon-box">
+                    <div class="icon ">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bootstrap"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M12 1H4a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zM4 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4z" />
+                            <path fill-rule="evenodd"
+                                  d="M8.537 12H5.062V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396zM6.375 4.658v2.467h1.558c1.16 0 1.764-.428 1.764-1.23 0-.78-.569-1.237-1.541-1.237H6.375zm1.898 6.229H6.375V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377z" />
+                        </svg>
+                    </div>
+                    <h4>Lorem, ipsum dolor.</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laboriosam eveniet atque
+                        suscipit,
+                        natus numquam.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact">
+    <div class="container">
+        <h2>Contacts</h2>
+        <p>Contacts us</p>
+        <div style="width: 100%">
+            <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0"
+                    marginwidth="0"
+                    src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Nauky%20Ave,%2014,%20Kharkiv,%20Kharkiv%20Oblast,%2061000+(%D0%92%D0%B5%D0%BB%D0%BE%D0%BF%D1%80%D0%BE%D0%BA%D0%B0%D1%82)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="info">
+                    <div class="adress">
+                        <div class="info-icon">
+                            <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-check-circle-fill"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                        </div>
+
+                        <h4>Location</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, aliquid.</p>
+                    </div>
+                    <div class="email">
+                        <div class="info-icon">
+                            <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-check-circle-fill"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                        </div>
+                        <h4>Email</h4>
+                        <p>Lorem#gmail.com</p>
+                    </div>
+                    <div class="phone">
+                        <div class="info-icon">
+                            <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-check-circle-fill"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                        </div>
+                        <h4>Call:</h4>
+                        <p>4556525489</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="Name" class="form-control mt-3">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="Surname" class="form-control mt-3">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" class="form-control mt-3">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <input type="number" placeholder="Tel" class="form-control mt-3">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <textarea placeholder="Text" class="form-control mt-3" id="" cols="30" rows="10"></textarea>
+                            <button class="btn btn-primary mt-3">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 }
 
 

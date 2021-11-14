@@ -3381,7 +3381,6 @@ C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\ob
 C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\Index.cshtml.g.cs
 C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\Add.cshtml.g.cs
 C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\ChangeUserRole.cshtml.g.cs
-C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\Delete.cshtml.g.cs
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -3844,3 +3843,8 @@ C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debu
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Company.cshtml.g.cs
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Users.cshtml.g.cs
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Profile.cshtml.g.cs
+C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Logout.cshtml.g.cs
+C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\User.cshtml.g.cs
+C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Company.cshtml.g.cs
+C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Profile.cshtml.g.cs
+C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Users.cshtml.g.cs

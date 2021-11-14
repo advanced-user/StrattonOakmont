@@ -3,35 +3,39 @@
 @{
 }
 
-<h2>Регистрация нового пользователя</h2>
- <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-    <h4>Create a new account.</h4>
-    <hr />
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="Input.Email"></label>
-        <input asp-for="Input.Email" class="form-control" />
-        <span asp-validation-for="Input.Email" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.Name"></label>
-        <input asp-for="Input.Name" class="form-control" />
-        <span asp-validation-for="Input.Name" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.Age"></label>
-        <input asp-for="Input.Age" class="form-control" />
-        <span asp-validation-for="Input.Age" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.Password"></label>
-        <input asp-for="Input.Password" class="form-control" />
-        <span asp-validation-for="Input.Password" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Input.ConfirmPassword"></label>
-        <input asp-for="Input.ConfirmPassword" class="form-control" />
-        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
+<bodys>
+    <form class="form" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <h3 class="form__title">
+            Регистрация
+        </h3>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="email" class="form__input" data-input="input-1" asp-for="Input.Email">
+            <p class="form__input-text" data-input="input-1">Email</p>
+            <span asp-validation-for="Input.Email"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="text" class="form__input" data-input="input-1" asp-for="Input.Name">
+            <p class="form__input-text" data-input="input-1">Name</p>
+            <span asp-validation-for="Input.Name"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="text" class="form__input" data-input="input-1" asp-for="Input.Age">
+            <p class="form__input-text" data-input="input-1">Age</p>
+            <span asp-validation-for="Input.Age"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="password" class="form__input" data-input="input-1" asp-for="Input.Password">
+            <p class="form__input-text" data-input="input-1">Password</p>
+            <span asp-validation-for="Input.Password"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="password" class="form__input" data-input="input-1" asp-for="Input.ConfirmPassword">
+            <p class="form__input-text" data-input="input-1">PasswordConfirm</p>
+            <span asp-validation-for="Input.ConfirmPassword"></span>
+        </div>
+        <button class="form__btn">Login</button>
+        <p class="form__help">Don't have an account? <a asp-page="Login">Sign In</a></p>
+    </form>
+</bodys>

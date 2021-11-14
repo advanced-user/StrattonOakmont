@@ -70,12 +70,10 @@
                 <div class="collapse navbar-collapse" id="navContent">
                     <ul class="navbar-nav mr-auto mb-3 mb-lg-0">
                         <li class="nav-item">
-                            <a asp-page="Index" class="nav-link">Home</a>
+                            <a asp-page="/Index" class="nav-link">Home</a>
                         </li>
-                    </ul>
-                    <ul class="navbar-nav mr-auto mb-3 mb-lg-0">
                         <li class="nav-item">
-                            <a asp-page="Company/Index" class="nav-link">Companies</a>
+                            <a asp-page="/Company/Index" class="nav-link">Companies</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav nav-flex-icons">
@@ -86,23 +84,23 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a asp-controller="Profile" asp-action="Index" class="nav-link waves-effect">@User.Identity.Name</a>
+                                <a asp-page="/Profile" class="nav-link waves-effect">@User.Identity.Name</a>
                             </li>
 
-                            <form method="post">
+                            <form method="post" style="margin:0">
                                 <li class="nav-item">
-                                    <a asp-page="Accout/Logout" class="nav-link waves-effect">Выход</a>
+                                    <a class="nav-link waves-effect" asp-page="/Account/Logout">Выход</a>
                                 </li>
                             </form>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a asp-page="Account/Login" class="nav-link waves-effect">Войти</a>
+                                <a asp-page="/Account/Login" class="nav-link waves-effect">Войти</a>
                             </li>
 
                             <li class="nav-item">
-                                <a asp-page="Account/Register" class="nav-link waves-effect">Регистрация</a>
+                                <a asp-page="/Account/Register" class="nav-link waves-effect">Регистрация</a>
                             </li>
                         }
                     </ul>
@@ -263,7 +261,7 @@
     <script type="text/javascript" src="~/Layout/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="~/Layout/js/mdb.min.js"></script>
-    <script src="~/js/Register.js"></script>
+    <script src="~/Layout/js/Register.js"></script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
@@ -432,8 +430,11 @@ else
                     </div>
                     <div class="col-4 link-wrap">
                         <!-- item-->
-                        <a href="" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i
+                        <form method="post" style="margin:0">
+                                <a asp-page="/Account/Logout" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i
                                 class="mdi mdi-power"></i></a>
+                        </form>
+
                     </div>
                 </div>
             </div>
