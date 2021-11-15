@@ -25,22 +25,24 @@
                             </thead>
                             <tbody>
                                 @foreach (var user in @Model.Users)
-                                {                                        
-                                <tr>
-                                    <td>@user.UserName</td>
-                                    <td>@user.Email</td>
-                                    <td style="display: flex; justify-content: flex-end">
-                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Account/Roles/ChangeUserRole" asp-route-userid="@user.Id">Права доступа</a>
+                                {
+                                    @if (User.Identity.Name != user.UserName)
+                                    {
+                                        <tr>
+                                            <td>@user.UserName</td>
+                                            <td>@user.Email</td>
+                                            <td style="display: flex; justify-content: flex-end">
+                                                <a class="btn btn-primary" style="margin:5px" asp-page="/Account/Roles/ChangeUserRole" asp-route-userid="@user.Id">Права доступа</a>
 
-                                        <form asp-route-id="@user.Id" method="post" style="margin:5px">
-                                            <button type="submit" class="btn btn-danger">
-                                                Delete
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                                <form asp-route-id="@user.Id" method="post" style="margin:5px">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
                                 }
-                                     
                                 </tbody>
                         </table>
                     </div>

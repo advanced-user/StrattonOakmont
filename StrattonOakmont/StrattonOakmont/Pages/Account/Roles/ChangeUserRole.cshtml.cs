@@ -72,7 +72,7 @@ namespace StrattonOakmont.Pages.Account.Roles
 
                 await _userManager.RemoveFromRolesAsync(user, removedRoles);
 
-                return RedirectToPage("User");
+                return RedirectToPage("/AdminArea/Users");
             }
 
             return NotFound();

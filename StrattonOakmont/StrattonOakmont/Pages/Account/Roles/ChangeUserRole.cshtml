@@ -4,16 +4,25 @@
 @{
 }
 
-<h2>Изменение ролей для пользователя @Model.Input.UserEmail</h2>
- 
-<form method="post">
-    <input type="hidden" name="userId" value="@Model.Input.UserId" />
-    <div class="form-group">
-        @foreach (IdentityRole role in Model.Input.AllRoles)
-        {
-            <input type="checkbox" name="roles" value="@role.Name"
-                   @(Model.Input.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
-        }
+<div class="card">
+    <h2 style="text-align:center; margin:10px">Изменение ролей для пользователя @Model.Input.UserEmail</h2><br />
+
+    <div class="card-body">
+        <form class="form-horizontal form-material mx-2" method="post">
+            @foreach (IdentityRole role in Model.Input.AllRoles)
+            {
+                <div class="col-md-12">
+                    <input type="checkbox" name="roles" value="@role.Name"
+                            @(Model.Input.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />@role.Name <br />
+                </div>
+            }
+            <div class="form-group">
+                <div class="col-sm-12 d-flex">
+                    <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary">Сохранить</button>
-</form>
+</div>
