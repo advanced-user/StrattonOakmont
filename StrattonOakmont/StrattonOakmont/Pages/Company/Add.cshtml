@@ -3,33 +3,43 @@
 @{
     ViewData["Title"] = "AddCompany";
 }
-<div class="row p-5">
-    <form asp-page="Add" method="post" class="form-horizontal">
-        <div class="form-group">
-            <label asp-for="@Model.Company.Name"></label>
-            <div class="col-12">
-                <input asp-for="@Model.Company.Name" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="@Model.Company.Desc"></label>
-            <div class="col-12">
-                <input asp-for="@Model.Company.Desc" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="@Model.Company.Сapitalization"></label>
-            <div class="col-12">
-                <input asp-for="@Model.Company.Сapitalization" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="@Model.Company.IMG"></label>
-            <div class="col-12">
-                <input asp-for="@Model.Company.IMG" class="form-control" />
-            </div>
-        </div>
 
-        <input class="btn btn-success" type="submit" value="Add company" />
-    </form>
+<div class="card">
+    <h2 style="text-align:center; margin:10px">Add new company</h2><br />
+
+    <div class="card-body">
+        <form class="form-horizontal form-material mx-2" method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Company.Name" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Company.Name" type="text" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Company.Desc" for="example-email" class="col-md-12"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Company.Desc" class="form-control ps-0 form-control-line" name="example-email" id="example-email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Company.Сapitalization" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Company.Сapitalization" type="text" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Company.IMG" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Company.IMG" type="text" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12 d-flex">
+                    <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

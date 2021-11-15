@@ -4,39 +4,208 @@
 @{
     ViewData["Title"] = "Companies";
 }
+<div id="carousel-ex" class="carousel slideInDown carousel-fade pt-4" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <div class="view" style="background-image: url('https://images.pexels.com/photos/3100835/pexels-photo-3100835.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+         background-repeat: no-repeat; background-size: cover;">
+                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+                    <div class="text-center white-text mx-5 wow fadeIn">
+                        <h1 class="mb-4">
+                            <strong>Shop</strong>
+                        </h1>
 
-@if(User.Identity.IsAuthenticated)
-{
-<a asp-page="Add" class="btn btn-danger m-1">Add new company</a>
-<div class="row">
-   @foreach (var item in Model.Companies)
-   {
-       var photoPath = $"/IMG/{item.IMG}";
-       <div class="col-12 col-sm-6 col-lg-4">
-           <div class="card-deck">
-               <div class="card m-3">
-                   <div class="card-header text-center">
-                       <h3>@item.Name</h3>
-                   </div>
-                   <div>
-                       <img class="card-img-top" src="@photoPath" asp-append-version="true" />
-                   </div>
-                   <div class="card-footer text-center">
-                       <a asp-page="/Company/View" asp-route-Id="@item.Id" class="btn btn-success m-1">View</a>
-                       <a asp-page="/Company/Edit" asp-route-Id="@item.Id" class="btn btn-primary m-1">Edit</a>
-                       <a asp-page="/Company/Delete" asp-route-Id="@item.Id" class="btn btn-danger m-1">Delete</a>
-                   </div>
-               </div>
-           </div>
-       </div>
-   }
+                        <p>
+                            <strong>
+                                Lorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem
+                            </strong>
+                        </p>
+
+                        <p class="mb-4 d-none d-md-block">
+                            <strong>Lorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem</strong>
+                        </p>
+                        <a href="#" class="btn btn-outline-white btn-lg">
+                            LoremLoremLOrem
+                            <i class="fa fa-graduation-cap ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="view" style="background-image: url('https://images.pexels.com/photos/3937174/pexels-photo-3937174.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+         background-repeat: no-repeat; background-size: cover;">
+                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+                    <div class="text-center white-text mx-5 wow fadeIn">
+                        <h1 class="mb-4">
+                            <strong>Shop</strong>
+                        </h1>
+
+                        <p>
+                            <strong>
+                                Lorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem
+                            </strong>
+                        </p>
+
+                        <p class="mb-4 d-none d-md-block">
+                            <strong>Lorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem</strong>
+                        </p>
+                        <a href="#" class="btn btn-outline-white btn-lg">
+                            LoremLoremLOrem
+                            <i class="fa fa-graduation-cap ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item ">
+            <div class="view" style="background-image: url('https://images.pexels.com/photos/2437299/pexels-photo-2437299.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+         background-repeat: no-repeat; background-size: cover;">
+                <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+                    <div class="text-center white-text mx-5 wow fadeIn">
+                        <h1 class="mb-4">
+                            <strong>Shop</strong>
+                        </h1>
+
+                        <p>
+                            <strong>
+                                Lorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem
+                            </strong>
+                        </p>
+
+                        <p class="mb-4 d-none d-md-block">
+                            <strong>Lorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem LoremLorem Lorem Lorem Lorem Lorem</strong>
+                        </p>
+                        <a href="#" class="btn btn-outline-white btn-lg">
+                            LoremLoremLOrem
+                            <i class="fa fa-graduation-cap ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#carousel-ex" class="carousel-control-prev" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a href="#carousel-ex" class="carousel-control-next" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
 </div>
-}
-else
-{
-    <a>Вход</a>
-    <a>Регистрация</a>
-}
 
+<main>
+    <div class="container">
 
+        <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
+            <span class="navbar-brand">Categories:</span>
 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nextNav"
+                    aria-controls="nextNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse navbar-collapse" id="nextNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Shop" asp-action="Index">Все</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Shop" asp-action="Index" asp-route-category="Спортивные велосипеды">Спортивные велосипеды</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Shop" asp-action="Index" asp-route-category="Горные велосипеды">Горные велосипеды</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Shop" asp-action="Index" asp-route-category="Городские велосипеды">Городские велосипеды</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline">
+                    <div class="md-form my-0">
+                        <input type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" />
+                    </div>
+                </form>
+            </div>
+
+        </nav>
+
+        <section class="text-center mb-4">
+            <div class="row wow fadeIn">
+                @{
+                    foreach (var item in Model.Companies)
+                    {
+                        <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="view overlay">
+                                <img class="card-img-top" src="/IMG/@item.IMG" alt="Js" />
+                                <a asp-page="View" asp-route-id="@item.Id">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <a class="grey-text">
+                                    <h5>@item.Name</h5>
+                                </a>
+                                <h5>
+                                    <strong>
+                                        <a class="dark-grey-text">@item.Name <span class="badge-pill danger-color">NEW</span></a>
+                                    </strong>
+                                </h5>
+                                <h4 class="font-weight-bold blue-text">
+                                    <strong>1400$</strong>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                }
+            </div>
+        </section>
+
+        <nav class="d-flex justify-content-center wow fadeIn">
+            <ul class="pagination pg-blue">
+                <li class="page-item">
+                    <a href="" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a href="" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">1</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a href="" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">2</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a href="" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">3</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a href="" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">4</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a href="" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">5</span>
+                    </a>
+                </li>
+                <li class="page-item ">
+                    <a href="" class="page-link" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</main>

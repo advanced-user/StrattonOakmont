@@ -3393,7 +3393,6 @@ C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debu
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\Index.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmont.StaticWebAssets.xml
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmont.exe
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmont.deps.json
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\StrattonOakmont.runtimeconfig.json
@@ -3848,3 +3847,6 @@ C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\ob
 C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Company.cshtml.g.cs
 C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Profile.cshtml.g.cs
 C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Users.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Company.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Profile.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Users.cshtml.g.cs

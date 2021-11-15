@@ -24,7 +24,7 @@ namespace StrattonOakmont.Pages.Account
         public class InputModel
         {
             [Required]
-            public string Email { get; set; }
+            public string UserName { get; set; }
 
             [Required]
             [DataType(DataType.Password)]
@@ -49,7 +49,7 @@ namespace StrattonOakmont.Pages.Account
             if (ModelState.IsValid)
             {
                 var result =
-                    await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, false);
+                    await _signInManager.PasswordSignInAsync(Input.UserName, Input.Password, Input.RememberMe, false);
                 if (result.Succeeded)
                 {
                     if (!string.IsNullOrEmpty(Input.ReturnUrl) && Url.IsLocalUrl(Input.ReturnUrl))
@@ -63,7 +63,7 @@ namespace StrattonOakmont.Pages.Account
                 }
                 else
                 {
-                    ModelState.AddModelError("", "������������ ����� � (���) ������");
+                    ModelState.AddModelError("", "Неправильный логин и (или) пароль");
                 }
             }
             return Page();

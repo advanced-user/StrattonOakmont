@@ -61,7 +61,7 @@ namespace StrattonOakmont.Pages.Account
 
             if (ModelState.IsValid)
             {
-                User user = new User { Email = Input.Email, UserName = Input.Email, Year = Input.Age };
+                User user = new User { Email = Input.Email, UserName = Input.Name, Year = Input.Age };
 
                 // добавляем пользователя
                 var result = await _userManager.CreateAsync(user, Input.Password);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GCJx8ZHj1ZE647TgNT9B/Y9hQUQIFefc/jHLbpHqcTYdfHZp5lBXlMnfddAFXpZ936xV1gx0APRSJtP8k84HUQ==",
+  "dgSpecHash": "ZXQcRf8QaTYxOL0KRMqEACYFyiKzYVO9m5oSrYF7dR+dvOhgL/91nvZBuVaIFnnQdTeynrCSAlcEgn+r+riE1A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Downloads\\StrattonOakmont-main\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.1\\microsoft.aspnetcore.cryptography.internal.5.0.1.nupkg.sha512",
