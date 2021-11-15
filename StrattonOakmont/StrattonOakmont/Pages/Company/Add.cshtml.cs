@@ -28,14 +28,14 @@ namespace StrattonOakmont.Pages.Company
         {
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             if(Company != null)
 			{
-                _dbCompany.AddCompany(Company);
+                await _dbCompany.AddCompanyAsync(Company);
 			}
 
-            return RedirectToPage("Index");
+            return RedirectToPage("/AdminArea/Company");
         }
     }
 }

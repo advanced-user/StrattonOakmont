@@ -1,15 +1,15 @@
 ﻿using StrattonOakmontModels;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace StrattonOakmontServices
 {
     public interface ICompanyRepository
     {
         IEnumerable<Company> GetAllCompanies { get; }
-        Company GetCompany(int id);
-        void AddCompany(Company company);
+        Task<Company> FindCompanyAsync(int id);
+        Task<Company> AddCompanyAsync(Company company);
+        Task<Company> DeleteCompanyAsync(int id);
         Company FindCompany(int id);
     }
 }

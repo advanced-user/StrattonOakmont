@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace StrattonOakmontServices.Sql
 {
@@ -23,10 +24,38 @@ namespace StrattonOakmontServices.Sql
 			}
 		}
 
-		public void AddCompany(Company company)
+		public async Task<Company> AddCompanyAsync(Company company)
 		{
-			_context.Companies.Add(company);
-			_context.SaveChanges();
+			await _context.Companies.AddAsync(company);
+			await _context.SaveChangesAsync();
+
+			return company;
+		}
+
+        public async Task<Company> DeleteCompanyAsync(int id)
+        {
+            var company = await FindCompanyAsync(id);
+
+			if (company == null)
+            {
+				return company;
+            }
+
+			if (company.Securities != null)
+            {
+				foreach (var security in company.Securities)
+				{
+					if (security != null)
+					{
+						_context.Securities.Remove(security);
+					}
+				}
+			}
+
+			_context.Companies.Remove(company);
+			await _context.SaveChangesAsync();
+
+			return company;
 		}
 
 		public Company FindCompany(int id)
@@ -34,16 +63,9 @@ namespace StrattonOakmontServices.Sql
 			return _context.Companies.Find(id);
 		}
 
-		public Company GetCompany(int id)
+		public async Task<Company> FindCompanyAsync(int id)
 		{
-			var company = _context.Companies.Find(id);
-			if(company != null)
-			{
-				_context.Companies.Add(company);
-				_context.SaveChanges();
-			}
-
-			return company;
+			return await _context.Companies.FindAsync(id);
 		}
 	}
 }

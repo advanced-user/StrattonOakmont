@@ -7,7 +7,6 @@
 
 <div class="row">
     @{
-        var photoPath = $"/IMG/{Model.Company.IMG}";
         <div class="col-12 col-sm-6 col-lg-4">
             <div class="card-deck">
                 <div class="card m-3">
@@ -15,7 +14,7 @@
                         <h3>@Model.Company.Name</h3>
                     </div>
                     <div>
-                        <img class="card-img-top" src="@photoPath" asp-append-version="true"/>
+                        <img class="card-img-top" src="@Model.Company.IMG" asp-append-version="true"/>
                     </div>
                     <div class="card-footer text-center">
                         <a asp-page="/Company/Edit" asp-route-Id="@Model.Company.Id" class="btn btn-primary m-1">Edit</a>

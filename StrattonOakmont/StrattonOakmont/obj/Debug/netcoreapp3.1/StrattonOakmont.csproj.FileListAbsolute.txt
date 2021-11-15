@@ -3811,7 +3811,6 @@ C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\Add.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\ChangeUserRole.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Account\Roles\Index.cshtml.g.cs
-C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\AdminArea.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Company\Add.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Company\Index.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Company\View.cshtml.g.cs
