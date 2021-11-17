@@ -2,7 +2,7 @@
 @model IndexModel
 @{
     Layout = "_Layout";
-    ViewData["Title"] = "Магазин одежды";
+    ViewData["Title"] = "Stratton Oakmont";
 }
 
 @if (User.IsInRole("admin"))
@@ -17,8 +17,8 @@ else
     <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-8">
-                <h1>Велопрокат</h1>
-                <h2>Лучшие велосипеды Харькова</h2>
+                <h1>Stratton Oakmont</h1>
+                <h2>Лучшая онлайн биржа</h2>
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
@@ -29,7 +29,7 @@ else
                         <path fill-rule="evenodd"
                               d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
                     </svg>
-                    <h3><a asp-controller="Shop" asp-action="Index">Перейти в магазин</a></h3>
+                    <h3><a asp-controller="Shop" asp-action="Index">Приобрести акцию</a></h3>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@ else
                         <path fill-rule="evenodd"
                               d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
                     </svg>
-                    <h3><a asp-controller="Rent" asp-action="Index">Арендовать</a></h3>
+                    <h3><a asp-controller="Rent" asp-action="Index">Выставить на продажу</a></h3>
                 </div>
             </div>
             <div class="col-xl-2 col-md-4 col-6">
@@ -63,10 +63,9 @@ else
                 <img class="img-fluid" src="~/img/2.jpg" alt="">
             </div>
             <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 content">
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio, cupiditate?</h3>
+                <h3>А хочешь ли ты стать инвестиционной машиной?</h3>
                 <p class="font-italic">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia laudantium ipsum deleniti
-                    reprehenderit libero expedita officiis sapiente provident?
+                    Благодаря передовым технологиям мы вам предлагаем абсолютно новый способ для приобретения ценных бумаг
                 </p>
                 <ul>
                     <li>
@@ -74,23 +73,21 @@ else
                              xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
-                        </svg> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quas. Lorem ipsum
-                        dolor sit amet consectetur adipisicing elit. Harum molestiae ab odit. Lorem, ipsum.
+                        </svg> Абсолютно любой человек, который хотя бы умеет считать сможет начать покупать у нас акции и получать реальную маржу!
                     </li>
                     <li>
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check" fill="#ffc451"
                              xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
-                        </svg> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quas.
+                        </svg> У нас тебе не нужно связываться с грязными брокерами, которые так и видят, что бы кинуть тебя!
                     </li>
                     <li>
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check" fill="#ffc451"
                              xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
-                        </svg> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quas. Lorem ipsum
-                        dolor, sit amet consectetur adipisicing elit. Eum dolorum impedit illo!
+                        </svg> Тебе ничего не нужно, чтобы сразу начать покупать желаемые акции, за исключением маленькой регистрации;)
 
                     </li>
                     <li>
@@ -98,14 +95,11 @@ else
                              xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z" />
-                        </svg> Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quas. Lorem ipsum
-                        dolor sit.
+                        </svg> Ты представитель компании и хочешь не покупать а продавать - не беда, у нас можно все! 
                     </li>
                 </ul>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere obcaecati ducimus quo impedit
-                    exercitationem soluta asperiores ea corporis. Deserunt ad praesentium aliquid unde! Corporis
-                    maxime laudantium, quae harum a perspiciatis.
+                    Обьединив под своим крылом лучших специалистов, мы надеемся создать невероятно комфортные условия для каждого! Только попробуй
                 </p>
             </div>
         </div>
@@ -115,24 +109,23 @@ else
     <div class="container text-center">
         <h3>Call to action</h3>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolores facilis eveniet hic nam
-            perspiciatis quidem sit libero aliquid nemo.
+            Если у вас возникли проблемы, то вы можете позвонить в нашу службу техподдержки
         </p>
-        <a asp-controller="Rent" asp-action="Index" class="cta-btn">Арендовать</a>
+        <a asp-controller="Rent" asp-action="Index" class="cta-btn">Позвонить</a>
     </div>
 </section>
 <section id="team" class="team">
     <div class="container text-center mt-5">
         <div class="section-title">
-            <h2>Our team</h2>
-            <p>Check our team</p>
+            <h2>Наша команда</h2>
+            <p>Вот же они, слева направо</p>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div class="member">
                     <div class="member-img">
                         <img class="img-fluid"
-                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+                             src="https://img5tv.cdnvideo.ru/webp/shared/files/202105/1_1322225.jpg"
                              alt="">
                         <div class="social">
                             <a href="" class="">
@@ -172,9 +165,9 @@ else
 
                     <div class="member-info">
                         <h4>
-                            Andrzej Person
+                            Евгений
                         </h4>
-                        <span>Polish senator</span>
+                        <span>Историк, актер, здравый смысл</span>
                     </div>
 
                 </div>
@@ -183,7 +176,7 @@ else
                 <div class="member">
                     <div class="member-img">
                         <img class="img-fluid"
-                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+                             src="https://i.pinimg.com/236x/f8/75/3d/f8753d8810d9d8ee6ea8eb569588cf90.jpg"
                              alt="">
                         <div class="social">
                             <a href="" class="">
@@ -223,9 +216,9 @@ else
 
                     <div class="member-info">
                         <h4>
-                            Andrzej Person
+                            Чимин
                         </h4>
-                        <span>Polish senator</span>
+                        <span>К-поп айдол</span>
                     </div>
 
                 </div>
@@ -234,7 +227,7 @@ else
                 <div class="member">
                     <div class="member-img">
                         <img class="img-fluid"
-                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+                             src="https://pikuco.ru/upload/test_stable/aac/aacc5645b509e220a0490e661e564141.jpg"
                              alt="">
                         <div class="social">
                             <a href="" class="">
@@ -274,9 +267,9 @@ else
 
                     <div class="member-info">
                         <h4>
-                            Andrzej Person
+                            Чумин
                         </h4>
-                        <span>Polish senator</span>
+                        <span>Флеш-моб айдол</span>
                     </div>
 
                 </div>
@@ -285,7 +278,7 @@ else
                 <div class="member">
                     <div class="member-img">
                         <img class="img-fluid"
-                             src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg"
+                             src="https://i.pinimg.com/originals/97/3d/c2/973dc2b6c07460252e385ba03ec5f989.png"
                              alt="">
                         <div class="social">
                             <a href="" class="">
@@ -325,9 +318,9 @@ else
 
                     <div class="member-info">
                         <h4>
-                            Andrzej Person
+                            Шуга
                         </h4>
-                        <span>Polish senator</span>
+                        <span>Репер</span>
                     </div>
                 </div>
             </div>

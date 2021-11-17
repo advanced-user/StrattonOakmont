@@ -1,0 +1,46 @@
+﻿@page
+@model StrattonOakmont.Pages.ProfileModel
+@{
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Profile</title>
+</head>
+<body style="margin-top:100px;">
+    <div style="margin-left:130px;">
+        <h1>Your profile</h1>
+
+
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            @foreach (var user in @Model.Users)
+            {
+                @if (User.Identity.Name == user.UserName)
+                {
+                    <h6>Ваше имя :  @user.UserName</h6>
+                    <h6>Ваша почта : @user.Email</h6>
+                }
+            }
+
+        }
+        else
+        {
+            <h6>Вы не вошли в систему</h6>
+        }
+        <form asp-route-id="@User.Identity.Name" method="post" style="margin:5px">
+            <button type="submit" class="btn btn-blue">
+                Edit
+            </button>
+        </form>
+        <form asp-route-id="@User.Identity.Name" method="post" style="margin:5px">
+            <button type="submit" class="btn btn-danger">
+                Delete
+            </button>
+        </form>
+
+    </div>
+
+</body>
+</html>
