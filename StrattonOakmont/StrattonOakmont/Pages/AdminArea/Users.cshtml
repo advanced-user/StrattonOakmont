@@ -1,0 +1,54 @@
+﻿@page
+@model StrattonOakmont.Pages.AdminArea.UsersModel
+@{
+}
+
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Users</h4>
+                    <h6 class="card-subtitle"><code></code></h6>
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Username</th>
+                                    <th class="border-top-0">Email</th>
+                                    <th class="border-top-0"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var user in @Model.Users)
+                                {
+                                    @if (User.Identity.Name != user.UserName)
+                                    {
+                                        <tr>
+                                            <td>@user.UserName</td>
+                                            <td>@user.Email</td>
+                                            <td style="display: flex; justify-content: flex-end">
+                                                <a class="btn btn-primary" style="margin:5px" asp-page="/AdminArea/Profile" asp-route-userid="@user.Id">Edit</a>
+
+                                                <form asp-route-id="@user.Id" method="post" style="margin:5px">
+                                                    <button type="submit" class="btn btn-danger">
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

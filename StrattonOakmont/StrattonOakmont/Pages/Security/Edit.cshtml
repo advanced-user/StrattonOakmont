@@ -1,0 +1,58 @@
+﻿@page "{id}"
+@model StrattonOakmont.Pages.Security.EditModel
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> 
+           
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal form-material mx-2" method="post">
+                        <input asp-for="@Model.Security.Id" value="@Model.Security.Id" style="display:none;" />
+                        <div class="form-group">
+                            <label class="col-md-12 mb-0">Price</label>
+                            <div class="col-md-12">
+                                <input asp-for="@Model.Security.Price" type="text" value="@Model.Security.Price"
+                                        class="form-control ps-0 form-control-line">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12">Percent</label>
+                            <div class="col-md-12">
+                                <input asp-for="@Model.Security.Percent" type="text" value="@Model.Security.Percent"
+                                        class="form-control ps-0 form-control-line" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12 mb-0">Volume</label>
+                            <div class="col-md-12">
+                                <input asp-for="@Model.Security.Volume" type="text" value="@Model.Security.Volume"
+                                        class="form-control ps-0 form-control-line">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12 mb-0">Img</label>
+                            <div class="col-md-12">
+                                @Html.DropDownList("Id", new SelectList(Model.Categories, "Id", "CategoryName"), "Select category")
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12 d-flex">
+                                <button class="btn btn-success mx-auto mx-md-0 text-white">
+                                    Update
+                                    Security
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

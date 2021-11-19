@@ -1,0 +1,46 @@
+﻿@page
+@model StrattonOakmont.Pages.AdminArea.CompanyModel
+@{
+}
+
+<div class="container-fluid">
+    <a asp-page="/Company/Add" class="btn btn-success" style="margin-bottom: 10px">Add company</a><br />
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">All companies</h4>
+                    <h6 class="card-subtitle"> <code></code></h6>
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Name</th>
+                                    <th class="border-top-0"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model.Companies)
+                                {
+                                <tr>
+                                    <td>@item.Name</td>
+
+                                    <td style="display: flex; justify-content: flex-end">
+                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Company/Edit" asp-route-id="@item.Id">Edit</a>  
+                                        <form asp-route-id="@item.Id" method="post" style="margin:0">
+                                            <button class="btn btn-danger" style="margin:5px" type="submit">Delete</button> 
+                                        </form>
+                                    </td>
+                                </tr>
+                                }
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

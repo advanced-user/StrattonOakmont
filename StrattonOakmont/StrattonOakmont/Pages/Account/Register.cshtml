@@ -1,0 +1,46 @@
+﻿@page
+@model StrattonOakmont.Pages.Account.RegisterModel
+@{
+}
+
+<bodys>
+    <form class="form" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <h3 class="form__title">
+            Регистрация
+        </h3>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="email" class="form__input" data-input="input-1" asp-for="Input.Email">
+            <p class="form__input-text" data-input="input-1">Email</p>
+            <span asp-validation-for="Input.Email"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="text" class="form__input" data-input="input-1" asp-for="Input.Name">
+            <p class="form__input-text" data-input="input-1">Name</p>
+            <span asp-validation-for="Input.Name"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="text" class="form__input" data-input="input-1" asp-for="Input.Age">
+            <p class="form__input-text" data-input="input-1">Age</p>
+            <span asp-validation-for="Input.Age"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="number" class="form__input" data-input="input-1" asp-for="Input.PhoneNumber">
+            <p class="form__input-text" data-input="input-1">Phone number</p>
+            <span asp-validation-for="Input.PhoneNumber"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="password" class="form__input" data-input="input-1" asp-for="Input.Password">
+            <p class="form__input-text" data-input="input-1">Password</p>
+            <span asp-validation-for="Input.Password"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="password" class="form__input" data-input="input-1" asp-for="Input.ConfirmPassword">
+            <p class="form__input-text" data-input="input-1">PasswordConfirm</p>
+            <span asp-validation-for="Input.ConfirmPassword"></span>
+        </div>
+        <button class="form__btn">Login</button>
+        <p class="form__help">Don't have an account? <a asp-page="Login">Sign In</a></p>
+    </form>
+</bodys>

@@ -1,0 +1,116 @@
+﻿@page
+@model StrattonOakmont.Pages.Company.EditModel
+@{
+}
+
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> 
+           
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <!-- Column -->
+            <div class="col-lg-4 col-xlg-3 col-md-5">
+                <div class="card">
+                    <div class="card-body profile-card">
+                        <center class="mt-4">
+                            <img src="@Model.Company.IMG"
+                                    class="rounded-circle" width="150" />
+                            <h4 class="card-title mt-2">@Model.Company.Name</h4>
+                            <h6 class="card-subtitle">@Model.Company.Desc</h6>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <form class="form-horizontal form-material mx-2" method="post">
+                            <div class="form-group">
+                                <label class="col-md-12 mb-0">Name</label>
+                                <div class="col-md-12">
+                                    <input asp-for="@Model.Company.Name" type="text" value="@Model.Company.Name"
+                                            class="form-control ps-0 form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Description</label>
+                                <div class="col-md-12">
+                                    <input asp-for="@Model.Company.Desc" type="text" value="@Model.Company.Desc"
+                                            class="form-control ps-0 form-control-line" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12 mb-0">Сapitalization</label>
+                                <div class="col-md-12">
+                                    <input asp-for="@Model.Company.Сapitalization" type="text" value="@Model.Company.Сapitalization"
+                                            class="form-control ps-0 form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12 mb-0">Img</label>
+                                <div class="col-md-12">
+                                    <input asp-for="@Model.Company.IMG" type="text" value="@Model.Company.IMG"
+                                            class="form-control ps-0 form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 d-flex">
+                                    <button class="btn btn-success mx-auto mx-md-0 text-white">
+                                        Update
+                                        Company
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-xlg-9 col-md-7">
+                <a asp-page="/Security/AddSecurity" asp-route-id="@Model.Company.Id" class="btn btn-success mx-auto mx-md-0 text-white " style="margin-bottom: 10px">Add security</a><br />
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Securities</h4>
+                        <h6 class="card-subtitle"> <code></code></h6>
+                        <div class="table-responsive">
+                            <table class="table user-table">
+                                <thead>
+                                    <tr>
+                                        <th class="border-top-0">Category</th>
+                                        <th class="border-top-0">Volume</th>
+                                        <th class="border-top-0">Percent</th>
+                                        <th class="border-top-0">Price</th>
+                                        <th class="border-top-0"></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @{
+                                        @if (Model.Company.Securities != null)
+                                        {
+                                            @foreach (var item in Model.Securities)
+                                            {
+                                                <tr>
+                                                    <td>@item.CategorySec.CategoryName</td>
+                                                    <td>@item.Volume</td>
+                                                    <td>@item.Percent</td>
+                                                    <td>@item.Price</td>
+
+                                                    <td style="display: flex; justify-content: flex-end">
+                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Edit" asp-route-id="@item.Id">Edit</a>  
+                                                        <form asp-route-id="@item.Id" method="post" style="margin:0">
+                                                            <a asp-page="/Security/Security" class="btn btn-danger" style="margin:5px">Delete</a> 
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

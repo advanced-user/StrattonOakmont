@@ -1,0 +1,31 @@
+﻿@page
+@model StrattonOakmont.Pages.Account.LoginModel
+@{
+}
+<bodys>
+    <form method="post" class="form" asp-route-returnUrl="@Model.ReturnUrl">
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <h3 class="form__title">Login</h3>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="text" class="form__input" data-input="input-1" asp-for="Input.UserName">
+            <p class="form__input-text" data-input="input-1">UserName</p>
+            <span asp-validation-for="Input.UserName"></span>
+        </div>
+        <div class="form__input-wrapper" data-input="input-1">
+            <input type="password" class="form__input" data-input="input-1" asp-for="Input.Password">
+            <p class="form__input-text" data-input="input-1">Password</p>
+            <span asp-validation-for="Input.Password"></span>
+        </div>
+         <div class="form-group">
+            <div class="checkbox">
+                <label asp-for="Input.RememberMe">
+                    <input asp-for="Input.RememberMe" />
+                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                </label>
+            </div>
+        </div>
+        <button class="form__btn">Login</button>
+        <p class="form__help">Don't have an account? <a asp-page="Register">Sign Up</a></p>
+    </form>
+</bodys>

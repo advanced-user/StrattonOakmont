@@ -1,0 +1,17 @@
+﻿@page
+@model StrattonOakmont.Pages.Account.Roles.UserModel
+@{
+}
+
+<h2>Список пользователей</h2>
+<table class="table">
+    @foreach (var user in @Model.Users)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>
+                <a class="btn btn-sm btn-primary" asp-page="ChangeUserRole" asp-route-userid="@user.Id">Права доступа</a>
+            </td>
+        </tr>
+    }
+</table>
