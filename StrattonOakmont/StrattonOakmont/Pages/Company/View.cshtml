@@ -2,7 +2,7 @@
 @model StrattonOakmont.Pages.Company.View
 
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "View company";
 }
 
 <div class="row">
@@ -16,11 +16,8 @@
                     <div>
                         <img class="card-img-top" src="@Model.Company.IMG" asp-append-version="true"/>
                     </div>
-                    <div class="card-footer text-center">
-                        <a asp-page="/Company/Edit" asp-route-Id="@Model.Company.Id" class="btn btn-primary m-1">Edit</a>
-                        <a asp-page="/Company/Delete" asp-route-Id="@Model.Company.Id" class="btn btn-danger m-1">Delete</a>
-                    </div>
                     <br>
+                    <h2>Securities</h2>
                     <table class="table">
                         <thead>
                             <tr>
@@ -37,25 +34,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @{/*
-                        @foreach (var item in Model.Company.Securities)
-                        {
-                            <tr>
-                                <td>
-                                    @item.CategorySec.CategoryName
-                                </td>
-                                <td>
-                                    @item.PerSent
-                                </td>
-                                <td>
-                                    @item.Price
-                                </td>
-                                <td>
-                                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                                </td>
-                            </tr>
-                        }*/}
+                        @{
+                            @if (Model.Company.Securities != null)
+                            {
+                                @foreach (var item in Model.Company.Securities)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.CategorySec.CategoryName
+                                        </td>
+                                        <td>
+                                            @item.Percent
+                                        </td>
+                                        <td>
+                                            @item.Price
+                                        </td>
+                                        <td>
+                                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                                        </td>
+                                    </tr>
+                                } 
+                            }
+                        }
                         </tbody>
                     </table>
 

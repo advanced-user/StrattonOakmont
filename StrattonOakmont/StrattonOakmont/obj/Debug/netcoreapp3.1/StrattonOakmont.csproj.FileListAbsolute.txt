@@ -3849,3 +3849,5 @@ C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Profile.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Users.cshtml.g.cs
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Company\Edit.cshtml.g.cs

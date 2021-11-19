@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace StrattonOakmontServices
 {
     public interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories { get; }
-        Category AddCategory(Category addCategory);
+        Task<Category> AddCategoryAsync(Category addCategory);
+        Task<Category> FindCategoryAsync(int id);
     }
 }

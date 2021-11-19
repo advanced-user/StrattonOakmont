@@ -24,9 +24,9 @@ namespace StrattonOakmont.Pages.Security
         [BindProperty]
         public StrattonOakmontModels.Category Category { get; set; }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
-            _dbCategory.AddCategory(Category);
+            await _dbCategory.AddCategoryAsync(Category);
             
             return RedirectToPage("Security");
         }

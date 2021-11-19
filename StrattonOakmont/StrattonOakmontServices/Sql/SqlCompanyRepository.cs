@@ -32,7 +32,16 @@ namespace StrattonOakmontServices.Sql
 			return company;
 		}
 
-        public async Task<Company> DeleteCompanyAsync(int id)
+		public async Task<Company> UpdateCompanyAsync(Company updateCompany)
+		{
+			var company = _context.Companies.Attach(updateCompany);
+			company.State = EntityState.Modified;
+			await _context.SaveChangesAsync();
+
+			return updateCompany;
+		}
+
+		public async Task<Company> DeleteCompanyAsync(int id)
         {
             var company = await FindCompanyAsync(id);
 
@@ -65,7 +74,7 @@ namespace StrattonOakmontServices.Sql
 
 		public async Task<Company> FindCompanyAsync(int id)
 		{
-			return await _context.Companies.FindAsync(id);
+			return await _context.Companies.Include(x => x.Securities).FirstOrDefaultAsync(x => x.Id == id);
 		}
-	}
+    }
 }

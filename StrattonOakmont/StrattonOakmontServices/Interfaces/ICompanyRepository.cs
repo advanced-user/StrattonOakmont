@@ -10,6 +10,7 @@ namespace StrattonOakmontServices
         Task<Company> FindCompanyAsync(int id);
         Task<Company> AddCompanyAsync(Company company);
         Task<Company> DeleteCompanyAsync(int id);
+        Task<Company> UpdateCompanyAsync(Company company);
         Company FindCompany(int id);
     }
 }

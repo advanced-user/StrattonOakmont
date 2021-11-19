@@ -1,6 +1,7 @@
 ﻿@page
 @model StrattonOakmont.Pages.AdminArea.UsersModel
 @{
+    ViewData["Title"] = "Users";
 }
 
 <div class="container-fluid">
@@ -32,7 +33,7 @@
                                             <td>@user.UserName</td>
                                             <td>@user.Email</td>
                                             <td style="display: flex; justify-content: flex-end">
-                                                <a class="btn btn-primary" style="margin:5px" asp-page="/Account/Roles/ChangeUserRole" asp-route-userid="@user.Id">Права доступа</a>
+                                                <a class="btn btn-primary" style="margin:5px" asp-page="/AdminArea/Profile" asp-route-userid="@user.Id">Edit</a>
 
                                                 <form asp-route-id="@user.Id" method="post" style="margin:5px">
                                                     <button type="submit" class="btn btn-danger">
@@ -50,15 +51,5 @@
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End PAge Content -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Right sidebar -->
-    <!-- ============================================================== -->
-    <!-- .right-sidebar -->
-    <!-- ============================================================== -->
-    <!-- End Right sidebar -->
-    <!-- ============================================================== -->
 </div>
 

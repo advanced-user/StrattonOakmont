@@ -4,41 +4,62 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using StrattonOakmontServices;
 
 namespace StrattonOakmont.Pages.Security
 {
     public class EditModel : PageModel
     {
-       
-
-
-
         private readonly ISecurityRepository _securityRepository;
+        private readonly ICategoryRepository _dbCategory;
+        private readonly AppDBContext _appDBContext;
 
-        public EditModel(ISecurityRepository securityRepository)
+        public EditModel(ISecurityRepository securityRepository, AppDBContext appDBContext,
+                            ICategoryRepository dbCategory)
         {
             _securityRepository = securityRepository;
+            _appDBContext = appDBContext;
+            _dbCategory = dbCategory;
         }
         [BindProperty]
         public StrattonOakmontModels.Security Security { get; set; }
-        //public IFormFile MyProperty { get; set; }
-        public IActionResult OnGet(int id)
+
+        [BindProperty]
+        public List<StrattonOakmontModels.Category> Categories { get; set; }
+
+        public void OnGet(int id)
         {
             Security = _securityRepository.GetSecurity(id);
-            
-            if (Security == null)
-            {
-                return RedirectToPage("/NotFound");
-            }
-            return Page();
+            Categories = _dbCategory.GetAllCategories.ToList();
         }
 
-        public IActionResult OnPost(StrattonOakmontModels.Security security)
+        public async Task<IActionResult> OnPost(int id)
         {
-            Security = _securityRepository.Update(security);
+            var securityCategory = await _appDBContext.Categories.FindAsync(id);
+            var security = await _appDBContext.Securities.Include(x => x.CategorySec).Include(x => x.CompanySec)
+                .Include(x => x.UserSec).FirstOrDefaultAsync();
+
+            if (securityCategory != null)
+            {
+                if(security.Amount != 0)
+                {
+                    security.Price = Security.Volume / Security.Amount;
+                }
+                else
+                {
+                    security.Price = 0;
+                }
+                
+                security.Percent = Security.Percent;
+                security.CategorySec = securityCategory;
+                security.Volume = Security.Volume;
+
+                _appDBContext.Securities.Update(security);
+                await _appDBContext.SaveChangesAsync();
+            }
+
             return RedirectToPage("Security");
         }
-
     }
 }

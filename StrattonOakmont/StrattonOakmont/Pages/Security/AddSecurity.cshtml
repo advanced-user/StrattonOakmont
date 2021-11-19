@@ -2,18 +2,48 @@
 @model StrattonOakmont.Pages.Security.AddSecurity
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Add security";
 }
 
-<!DOCTYPE html>
+<div class="card">
+    <h2 style="text-align:center; margin:10px">Add new security for @Model.Company.Name</h2><br />
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
+    <div class="card-body">
+        <form class="form-horizontal form-material mx-2" method="post">
+            <input asp-for="@Model.Company.Id" value="@Model.Company.Id" style="display:none;" />
+            <div class="form-group">
+                <label asp-for="@Model.Security.Percent" class="col-md-12"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Security.Percent" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Security.Volume" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Security.Volume" type="number" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Security.Amount" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Security.Amount" type="number" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-12">Select category</label>
+                <div class="col-sm-12 border-bottom">
+                    @Html.DropDownList("Id", new SelectList(Model.Categories, "Id", "CategoryName"), "Select category")
+                </div>
+           </div>
+
+            <div class="form-group">
+                <div class="col-sm-12 d-flex">
+                    <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
-</body>
-</html>

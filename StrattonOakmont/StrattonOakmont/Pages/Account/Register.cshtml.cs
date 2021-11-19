@@ -39,6 +39,10 @@ namespace StrattonOakmont.Pages.Account
             public int Age { get; set; }
 
             [Required]
+            [Display(Name = "Phone number")]
+            public string PhoneNumber { get; set; }
+
+            [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -61,7 +65,7 @@ namespace StrattonOakmont.Pages.Account
 
             if (ModelState.IsValid)
             {
-                User user = new User { Email = Input.Email, UserName = Input.Name, Year = Input.Age };
+                User user = new User { Email = Input.Email, UserName = Input.Name, Year = Input.Age, PhoneNumber = Input.PhoneNumber };
 
                 // добавляем пользователя
                 var result = await _userManager.CreateAsync(user, Input.Password);

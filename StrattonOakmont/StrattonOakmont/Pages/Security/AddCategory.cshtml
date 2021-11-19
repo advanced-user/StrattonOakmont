@@ -1,16 +1,28 @@
 ﻿@page
 @model StrattonOakmont.Pages.Security.AddModel
 @{
+    ViewData["Title"] = "Add security category";
 }
-<h3>Add new category securities</h3>
-<div class="row p-5">
-    <form asp-page="Add" method="post" class="form-horizontal">
-        <div class="form-group">
-            <label asp-for="@Model.Category.CategoryName"></label>
-            <div class="col-12">
-                <input asp-for="@Model.Category.CategoryName" class="form-control" />
+
+<div class="card">
+    <h2 style="text-align:center; margin:10px">Add new security category</h2><br />
+
+    <div class="card-body">
+        <form class="form-horizontal form-material mx-2" method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Category.CategoryName" class="col-md-12"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Category.CategoryName" class="form-control ps-0 form-control-line">
+                </div>
             </div>
-            <input class="btn btn-success" type="submit" value="Add company" />
-        </div>
-    </form>
+
+            <div class="form-group">
+                <div class="col-sm-12 d-flex">
+                    <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

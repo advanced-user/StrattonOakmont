@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StrattonOakmontServices.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class InitDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,6 +27,7 @@ namespace StrattonOakmontServices.Migrations
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Year = table.Column<int>(type: "int", nullable: false),
+                    Img = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -188,19 +189,20 @@ namespace StrattonOakmontServices.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Price = table.Column<int>(type: "int", nullable: false),
-                    PerSent = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    Percent = table.Column<int>(type: "int", nullable: false),
+                    Volume = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
                     CategorySecId = table.Column<int>(type: "int", nullable: true),
                     CompanySecId = table.Column<int>(type: "int", nullable: true),
-                    CompanyIMG = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    UserSecId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Securities", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Securities_AspNetUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Securities_AspNetUsers_UserSecId",
+                        column: x => x.UserSecId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -268,9 +270,9 @@ namespace StrattonOakmontServices.Migrations
                 column: "CompanySecId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Securities_UserId",
+                name: "IX_Securities_UserSecId",
                 table: "Securities",
-                column: "UserId");
+                column: "UserSecId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

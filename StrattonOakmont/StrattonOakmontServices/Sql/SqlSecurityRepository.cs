@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using StrattonOakmontModels;
 
@@ -26,11 +27,11 @@ namespace StrattonOakmontServices.Sql
             return security;
         }
 
-        public Security Update(Security updateSecurity)
+        public async Task<Security> Update(Security updateSecurity)
         {
             var security = _context.Securities.Attach(updateSecurity);
             security.State = EntityState.Modified;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return updateSecurity;
         }

@@ -196,23 +196,26 @@ namespace StrattonOakmontServices.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CategorySecId")
+                    b.Property<int>("Amount")
                         .HasColumnType("int");
 
-                    b.Property<string>("CompanyIMG")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("CategorySecId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("CompanySecId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PerSent")
+                    b.Property<int>("Percent")
                         .HasColumnType("int");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
-                    b.Property<string>("UserId")
+                    b.Property<string>("UserSecId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Volume")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -220,7 +223,7 @@ namespace StrattonOakmontServices.Migrations
 
                     b.HasIndex("CompanySecId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserSecId");
 
                     b.ToTable("Securities");
                 });
@@ -243,6 +246,9 @@ namespace StrattonOakmontServices.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Img")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -354,13 +360,15 @@ namespace StrattonOakmontServices.Migrations
                         .WithMany("Securities")
                         .HasForeignKey("CompanySecId");
 
-                    b.HasOne("StrattonOakmontModels.User", null)
+                    b.HasOne("StrattonOakmontModels.User", "UserSec")
                         .WithMany("Securities")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserSecId");
 
                     b.Navigation("CategorySec");
 
                     b.Navigation("CompanySec");
+
+                    b.Navigation("UserSec");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Category", b =>

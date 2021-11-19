@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace StrattonOakmontServices.Sql
 {
@@ -22,12 +23,17 @@ namespace StrattonOakmontServices.Sql
 			}
 		}
 
-		public Category AddCategory(Category addCategory)
+		public async Task<Category> AddCategoryAsync(Category addCategory)
 		{
-			_context.Categories.Add(addCategory);
-			_context.SaveChanges();
+			await _context.Categories.AddAsync(addCategory);
+			await _context.SaveChangesAsync();
 
 			return addCategory;
+		}
+
+        public async Task<Category> FindCategoryAsync(int id)
+        {
+			return await _context.Categories.FindAsync(id);
 		}
 	}
 }
