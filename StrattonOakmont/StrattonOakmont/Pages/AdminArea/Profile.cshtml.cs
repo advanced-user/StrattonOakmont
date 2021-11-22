@@ -22,45 +22,23 @@ namespace StrattonOakmont.Pages.AdminArea
         [BindProperty]
         public User UserModel { get; set; }
 
-        public List<IdentityRole> AllRoles { get; set; }
-        public IList<string> UserRoles { get; set; }
-
-        public async Task<IActionResult> OnGetAsync(string userId)
+        public void OnGetAsync(string userId)
         {
             UserModel = _userManager.FindByIdAsync(userId).Result;
-            if (UserModel != null)
-            {
-                AllRoles = _roleManager.Roles.ToList();
-                UserRoles = await _userManager.GetRolesAsync(UserModel);
-                
-                return Page();
-            }
-
-            return NotFound();
         }
 
-        public async Task<IActionResult> OnPostAsync(string userId, List<string> roles)
+        public async Task<IActionResult> OnPostAsync(string userId)
         {
             User user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
                 user.Email = UserModel.Email;
-                user.UserName = UserModel.Email;
+                user.UserName = UserModel.UserName;
                 user.Year = UserModel.Year;
                 user.Img = UserModel.Img;
 
-                var userRoles = await _userManager.GetRolesAsync(user);
-
-                var addedRoles = roles.Except(userRoles);
-
-                var removedRoles = userRoles.Except(roles);
-
-                await _userManager.AddToRolesAsync(user, addedRoles);
-
-                await _userManager.RemoveFromRolesAsync(user, removedRoles);
-
-
                 var result = await _userManager.UpdateAsync(user);
+
                 if (result.Succeeded)
                 {
                     return RedirectToPage("/AdminArea/Users");
