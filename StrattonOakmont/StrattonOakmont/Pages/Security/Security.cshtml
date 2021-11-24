@@ -28,8 +28,11 @@
                                 @foreach (var item in Model.Securities)
                                 {
                                 <tr>
-                                    <td>@item.CategorySec.CategoryName</td>
-                                    <td>@item.CompanySec.Name</td>
+                                    @{
+                                        /*<td>@item.CategorySec.CategoryName</td>
+                                    <td>@item.CompanySec.Name</td>*/
+                                    }
+                                    
 
                                     <td style="display: flex; justify-content: flex-end">
                                         <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Edit" asp-route-id="@item.Id">Edit</a>  

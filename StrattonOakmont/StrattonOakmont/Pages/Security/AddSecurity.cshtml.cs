@@ -45,13 +45,13 @@ namespace StrattonOakmont.Pages.Security
 
             if (securityCategory != null && Security != null)
             {
-                Security.CategorySec = securityCategory;
+                //Security.CategorySec = securityCategory;
             }
 
             Company = await _dbContext.Companies.FindAsync(Company.Id);
 
-            Security.CompanySec = Company;
-            Security.Price = Security.Volume / Security.Amount;
+            //Security.CompanySec = Company;
+            //Security.Price = Security.Volume / Security.Amount;
             //await _dbContext.Securities.AddAsync(Security);
 
             /*

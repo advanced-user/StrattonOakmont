@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace StrattonOakmontModels.Securityes
 {
     public class SecurityInd
     {
         public int Id { get; set; }
-        public double Price { get; set; }
-        public int Percent { get; set; }     
-        public Category CategorySec { get; set; }      
-        public User UserSec { get; set; }
-        public List<Date> DateTimesChanges { get; set; }
+        public List<Forward> Forwards { get; set; }
+        public List<Futures> Futures { get; set; }
+        public List<Option> Options { get; set; }
+        public List<Wright> Wrights { get; set; }
     }
 }

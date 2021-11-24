@@ -15,6 +15,8 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material mx-2" method="post">
                         <input asp-for="@Model.Security.Id" value="@Model.Security.Id" style="display:none;" />
+                        @{
+                            /*
                         <div class="form-group">
                             <label class="col-md-12 mb-0">Volume</label>
                             <div class="col-md-12">
@@ -35,6 +37,7 @@
                                 @Html.DropDownList("Id", new SelectList(Model.Categories, "Id", "CategoryName"), "Select category")
                             </div>
                         </div>
+                        */}
                         <div class="form-group">
                             <div class="col-sm-12 d-flex">
                                 <button class="btn btn-success mx-auto mx-md-0 text-white">

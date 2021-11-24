@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity;
-
+﻿using Microsoft.AspNetCore.Identity;
+using StrattonOakmontModels.Securityes.Type;
 
 namespace StrattonOakmontModels
 {
@@ -10,6 +7,6 @@ namespace StrattonOakmontModels
     {
         public int Year { get; set; }
         public string Img { get; set; } 
-        public List<Security> Securities { get; set; }
+        public SecuritySub SecuritySub { get; set; }   
     }
 }

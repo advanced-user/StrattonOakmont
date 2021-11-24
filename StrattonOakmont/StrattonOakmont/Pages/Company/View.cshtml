@@ -35,11 +35,14 @@
                         </thead>
                         <tbody>
                         @{
+                            /*
                             @if (Model.Company.Securities != null)
                             {
                                 @foreach (var item in Model.Company.Securities)
                                 {
                                     <tr>
+                                       @{
+                                          
                                         <td>
                                             @item.CategorySec.CategoryName
                                         </td>
@@ -48,13 +51,14 @@
                                         <td>
                                             @item.Price
                                         </td>
+                                        }
                                         <td>
                                             <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                                             <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                                         </td>
                                     </tr>
-                                } 
-                            }
+                                }
+                            }*/
                         }
                         </tbody>
                     </table>

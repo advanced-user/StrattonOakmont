@@ -30,17 +30,17 @@ namespace StrattonOakmont.Pages.Company
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            var updateCompany = await _appDBContext.Companies.Include(x => x.Securities).FirstOrDefaultAsync(x => x.Id == id);
-            if (Company != null && updateCompany != null)
-            {
-                updateCompany.Ñapitalization = Company.Ñapitalization;
-                updateCompany.Name = Company.Name;
-                updateCompany.Desc = Company.Desc;
-                updateCompany.IMG = Company.IMG;
+            //var updateCompany = await _appDBContext.Companies.Include(x => x.Securities).FirstOrDefaultAsync(x => x.Id == id);
+            //if (Company != null && updateCompany != null)
+            //{
+            //    updateCompany.Ñapitalization = Company.Ñapitalization;
+            //    updateCompany.Name = Company.Name;
+            //    updateCompany.Desc = Company.Desc;
+            //    updateCompany.IMG = Company.IMG;
 
-                _appDBContext.Companies.Update(updateCompany);
-                await _appDBContext.SaveChangesAsync();
-            }
+            //    _appDBContext.Companies.Update(updateCompany);
+            //    await _appDBContext.SaveChangesAsync();
+            //}
 
             return RedirectToPage("/AdminArea/Company");
         }

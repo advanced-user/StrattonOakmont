@@ -74,7 +74,8 @@ namespace StrattonOakmontServices.Sql
 
 		public async Task<Company> FindCompanyAsync(int id)
 		{
-			return await _context.Companies.Include(x => x.Securities).FirstOrDefaultAsync(x => x.Id == id);
+			//return await _context.Companies.Include(x => x.Securities).FirstOrDefaultAsync(x => x.Id == id);
+			return null;
 		}
     }
 }
