@@ -51,7 +51,7 @@ namespace StrattonOakmont.Pages.Security
                     security.Price = 0;
                 }
                 
-                security.Percent = Security.Percent;
+               
                 security.CategorySec = securityCategory;
                 security.Volume = Security.Volume;
 
