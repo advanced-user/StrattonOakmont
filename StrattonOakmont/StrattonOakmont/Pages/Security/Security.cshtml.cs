@@ -21,17 +21,17 @@ namespace StrattonOakmont.Pages.Security
 
         public void OnGet()
         {
-            Securities = _appDBContext.Securities.Include(x => x.CategorySec).Include(x => x.CompanySec);
+            //Securities = _appDBContext.Securities.Include(x => x.CategorySec).Include(x => x.CompanySec);
         }
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            var security = await _appDBContext.Securities.FindAsync(id);
-            if (security != null)
-            {
-                _appDBContext.Securities.Remove(security);
-                await _appDBContext.SaveChangesAsync();
-            }   
+            //var security = await _appDBContext.Securities.FindAsync(id);
+            //if (security != null)
+            //{
+            //    _appDBContext.Securities.Remove(security);
+            //    await _appDBContext.SaveChangesAsync();
+            //}   
 
             return RedirectToPage("/Security/Security");
         }

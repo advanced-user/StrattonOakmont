@@ -36,28 +36,28 @@ namespace StrattonOakmont.Pages.Security
 
         public async Task<IActionResult> OnPost(int id)
         {
-            var securityCategory = await _appDBContext.Categories.FindAsync(id);
-            var security = await _appDBContext.Securities.Include(x => x.CategorySec).Include(x => x.CompanySec)
-                .Include(x => x.UserSec).FirstOrDefaultAsync();
+            //var securityCategory = await _appDBContext.Categories.FindAsync(id);
+            //var security = await _appDBContext.Securities.Include(x => x.CategorySec).Include(x => x.CompanySec)
+            //    .Include(x => x.UserSec).FirstOrDefaultAsync();
 
-            if (securityCategory != null)
-            {
-                if(security.Amount != 0)
-                {
-                    security.Price = Security.Volume / Security.Amount;
-                }
-                else
-                {
-                    security.Price = 0;
-                }
+            //if (securityCategory != null)
+            //{
+            //    if(security.Amount != 0)
+            //    {
+            //        security.Price = Security.Volume / Security.Amount;
+            //    }
+            //    else
+            //    {
+            //        security.Price = 0;
+            //    }
                 
                
-                security.CategorySec = securityCategory;
-                security.Volume = Security.Volume;
+            //    security.CategorySec = securityCategory;
+            //    security.Volume = Security.Volume;
 
-                _appDBContext.Securities.Update(security);
-                await _appDBContext.SaveChangesAsync();
-            }
+            //    _appDBContext.Securities.Update(security);
+            //    await _appDBContext.SaveChangesAsync();
+            //}
 
             return RedirectToPage("Security");
         }

@@ -52,7 +52,7 @@ namespace StrattonOakmont.Pages.Security
 
             Security.CompanySec = Company;
             Security.Price = Security.Volume / Security.Amount;
-            await _dbContext.Securities.AddAsync(Security);
+            //await _dbContext.Securities.AddAsync(Security);
 
             /*
             if (Company.Securities == null)

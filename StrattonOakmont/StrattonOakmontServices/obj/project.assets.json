@@ -5974,19 +5974,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\stolb\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stolb\\Downloads\\StrattonOakmont-main\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
       "projectName": "StrattonOakmontServices",
-      "projectPath": "C:\\Users\\stolb\\Downloads\\StrattonOakmont-main\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
-      "packagesPath": "C:\\Users\\stolb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stolb\\Downloads\\StrattonOakmont-main\\StrattonOakmont\\StrattonOakmontServices\\obj\\",
+      "projectPath": "C:\\Users\\User\\Documents\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Documents\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\stolb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6000,8 +6000,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\stolb\\Downloads\\StrattonOakmont-main\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
-              "projectPath": "C:\\Users\\stolb\\Downloads\\StrattonOakmont-main\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
+            "C:\\Users\\User\\Documents\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
+              "projectPath": "C:\\Users\\User\\Documents\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
             }
           }
         }

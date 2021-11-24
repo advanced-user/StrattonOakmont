@@ -50,16 +50,16 @@ namespace StrattonOakmontServices.Sql
 				return company;
             }
 
-			if (company.Securities != null)
-            {
-				foreach (var security in company.Securities)
-				{
-					if (security != null)
-					{
-						_context.Securities.Remove(security);
-					}
-				}
-			}
+			//if (company.Securities != null)
+   //         {
+			//	foreach (var security in company.Securities)
+			//	{
+			//		if (security != null)
+			//		{
+   //                     _context.Securities.Remove(security);
+   //                 }
+			//	}
+			//}
 
 			_context.Companies.Remove(company);
 			await _context.SaveChangesAsync();

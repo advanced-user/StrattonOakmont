@@ -11,7 +11,6 @@ C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmontMod
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.1\StrattonOakmontModels.deps.json
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.1\StrattonOakmontModels.dll
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\bin\Debug\netstandard2.1\StrattonOakmontModels.pdb
-C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.1\StrattonOakmontModels.csproj.AssemblyReference.cache
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.1\StrattonOakmontModels.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.1\StrattonOakmontModels.AssemblyInfoInputs.cache
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.1\StrattonOakmontModels.AssemblyInfo.cs

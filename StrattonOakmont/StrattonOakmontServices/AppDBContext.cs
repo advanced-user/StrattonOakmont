@@ -6,6 +6,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using StrattonOakmontModels.Securityes;
 using StrattonOakmontModels.Securityes.Type;
+using StrattonOakmontModels.Securityes.Relation;
 
 namespace StrattonOakmontServices
 {
@@ -15,12 +16,15 @@ namespace StrattonOakmontServices
         {
 
         }
+        public DbSet<SecIndCon> SecIndCons { get; set; }
+        public DbSet<SecSubCon> SecSubCons { get; set; }
         public DbSet<Security> Securities { get; set; }
+        public DbSet<SecMainCon> SecMainCons { get; set; }   
         public DbSet<Company> Companies { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Indastrial> Indastrials{ get; set; }
-        public DbSet<SecurityInd> SecurityInds{ get; set; }
-        public DbSet<SecuritySub> SecuritySubs{ get; set; }
+        public DbSet<SecurityInd> SecurityInds { get; set; }
+        public DbSet<SecuritySub> SecuritySubs { get; set; }
         public DbSet<Bill> Bills{ get; set; }
         public DbSet<DepositReceipts> DepositReceipts{ get; set; }
         public DbSet<Stonk> Stonks{ get; set; }

@@ -17,44 +17,49 @@ namespace StrattonOakmontServices.Sql
     
         public IEnumerable<Security> GetAllSecurities()
         {
-            return _context.Securities;
+            //return _context.Securities;
+            return null;
         }
 
         public IEnumerable<Security> AllSecurities { get; }
         public Security GetSecurity(int id)
         {
-            var security = _context.Securities.FirstOrDefault(x => x.Id == id);
-            return security;
+            //var security = _context.Securities.FirstOrDefault(x => x.Id == id);
+            //return security;
+            return null;
         }
 
         public async Task<Security> Update(Security updateSecurity)
         {
-            var security = _context.Securities.Attach(updateSecurity);
-            security.State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            //var security = _context.Securities.Attach(updateSecurity);
+            //security.State = EntityState.Modified;
+            //await _context.SaveChangesAsync();
 
-            return updateSecurity;
+            //return updateSecurity;
+            return null;
         }
 
         public Security Add(Security newSecurity)
         {
-            _context.Securities.Add(newSecurity);
-            _context.SaveChanges();
+            //_context.Securities.Add(newSecurity);
+            //_context.SaveChanges();
 
-            return newSecurity;
+            //return newSecurity;
+            return null;
         }
 
         public Security Delete(int id)
         {
-            var security = _context.Securities.Find(id);
+            //var security = _context.Securities.Find(id);
 
-            if (security != null)
-            {
-                _context.Securities.Remove(security);
-                _context.SaveChanges();
-            }
+            //if (security != null)
+            //{
+            //    _context.Securities.Remove(security);
+            //    _context.SaveChanges();
+            //}
 
-            return security;
+            //return security;
+            return null;
         }
 
 		public IEnumerable<Category> GetAllCategories()
