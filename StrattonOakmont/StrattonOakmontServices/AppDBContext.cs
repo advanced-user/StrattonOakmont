@@ -29,6 +29,7 @@ namespace StrattonOakmontServices
         public DbSet<Futures> Futures{ get; set; }
         public DbSet<Option> Options{ get; set; }
         public DbSet<Wright> Wrights{ get; set; }
+        public DbSet<Date> Dates { get; set; }
 
     }
 }

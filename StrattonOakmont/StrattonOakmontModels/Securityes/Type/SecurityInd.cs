@@ -11,7 +11,6 @@ namespace StrattonOakmontModels.Securityes
         public int Percent { get; set; }     
         public Category CategorySec { get; set; }      
         public User UserSec { get; set; }
-        
-        public List<DateTime> DateTimesChanges { get; set; }
+        public List<Date> DateTimesChanges { get; set; }
     }
 }

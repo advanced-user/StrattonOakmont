@@ -6,8 +6,7 @@ namespace StrattonOakmontModels
 {
     public class Abligation : Security
     {
-        public int id { get; set; }
         public int Percent { get; set; }
-        public DateTime FinalTime { get; set; }
+        public string FinalTime { get; set; }
     }
 }

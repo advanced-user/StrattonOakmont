@@ -13,6 +13,6 @@ namespace StrattonOakmontModels
         public Category CategorySec { get; set; }
         public Company CompanySec { get; set; }
         public User UserSec { get; set; }
-        public List<DateTime> DateTimesChanges { get; set; }
+        public List<Date> DateTimesChanges { get; set; }
     }
 }

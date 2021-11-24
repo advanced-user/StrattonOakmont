@@ -7,9 +7,8 @@ namespace StrattonOakmontModels.Securityes
 {
     public class Bill : SecuritySub
     {
-        public int id { get; set; }
         public string IMG { get; set; }
-        public DateTime FinalTime { get; set; }
+        public string FinalTime { get; set; }
         public string PerSent { get; set; }
         public string Getter { get; set; }
         public string Setter { get; set; }

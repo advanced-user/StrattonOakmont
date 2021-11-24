@@ -7,9 +7,8 @@ namespace StrattonOakmontModels.Securityes
 {
     public class DepositReceipts : SecuritySub
     {
-        public int id { get; set; }
         public string IMG { get; set; }
-        public DateTime FinalTime { get; set; }
+        public string FinalTime { get; set; }
         public Stonk Stonk { get; set; }
         public Abligation Abligation { get; set; }  
     }
