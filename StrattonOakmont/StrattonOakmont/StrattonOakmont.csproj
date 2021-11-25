@@ -20,6 +20,17 @@
     <ProjectReference Include="..\StrattonOakmontServices\StrattonOakmontServices.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Security\Industrial\Forward\" />
+    <Folder Include="Pages\Security\Industrial\Futures\" />
+    <Folder Include="Pages\Security\Industrial\Option\" />
+    <Folder Include="Pages\Security\Industrial\Wright\" />
+    <Folder Include="Pages\Security\Main\Abligation\" />
+    <Folder Include="Pages\Security\Category\" />
+    <Folder Include="Pages\Security\Subsidiary\Bill\" />
+    <Folder Include="Pages\Security\Subsidiary\DepositReceipts\" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -31,6 +31,11 @@ namespace StrattonOakmontServices.Sql
 			return addCategory;
 		}
 
+        public Task<Category> ChangeCategoryAsync(Category addCategory)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Category> FindCategoryAsync(int id)
         {
 			return await _context.Categories.FindAsync(id);

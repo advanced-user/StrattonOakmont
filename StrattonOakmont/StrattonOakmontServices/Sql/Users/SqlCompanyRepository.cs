@@ -50,18 +50,33 @@ namespace StrattonOakmontServices.Sql
 				return company;
             }
 
-			//if (company.Securities != null)
-   //         {
-			//	foreach (var security in company.Securities)
-			//	{
-			//		if (security != null)
-			//		{
-   //                     _context.Securities.Remove(security);
-   //                 }
-			//	}
-			//}
+            if (company.Security != null)
+            {
+				if (company.Security.Abligations != null)
+                {
+					foreach (var abligation in company.Security.Abligations)
+					{
+						if (abligation != null)
+						{
+							_context.Abligations.Remove(abligation);
+						}
+					}
+				}
+				if (company.Security.Stonks != null)
+                {
+					foreach (var stonk in company.Security.Stonks)
+					{
+						if (stonk != null)
+						{
+							_context.Stonks.Remove(stonk);
+						}
+					}
+				}
 
-			_context.Companies.Remove(company);
+				_context.Securities.Remove(company.Security);
+            }
+
+            _context.Companies.Remove(company);
 			await _context.SaveChangesAsync();
 
 			return company;
@@ -74,8 +89,7 @@ namespace StrattonOakmontServices.Sql
 
 		public async Task<Company> FindCompanyAsync(int id)
 		{
-			//return await _context.Companies.Include(x => x.Securities).FirstOrDefaultAsync(x => x.Id == id);
-			return null;
+			return await _context.Companies.Include(x => x.Security).FirstOrDefaultAsync(x => x.Id == id);
 		}
     }
 }

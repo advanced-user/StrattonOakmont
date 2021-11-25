@@ -9,7 +9,7 @@ namespace StrattonOakmontServices
     public interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories { get; }
-        Task<Category> AddCategoryAsync(Category addCategory);
+        Task<Category> ChangeCategoryAsync(Category addCategory);
         Task<Category> FindCategoryAsync(int id);
     }
 }

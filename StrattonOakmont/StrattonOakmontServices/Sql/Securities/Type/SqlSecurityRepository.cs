@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using StrattonOakmontModels;
 
 namespace StrattonOakmontServices.Sql
@@ -9,33 +7,22 @@ namespace StrattonOakmontServices.Sql
     public class SqlSecurityRepository : ISecurityRepository
     {
         private readonly AppDBContext _context;
-        
+
+        public IEnumerable<Stonk> GetAllStonks => throw new System.NotImplementedException();
+
+        public IEnumerable<Abligation> GetAllAbligation => throw new System.NotImplementedException();
+
+        public IEnumerable<Security> GetAllSecurity => throw new System.NotImplementedException();
+
         public SqlSecurityRepository(AppDBContext context)
         {
             _context = context;
         }
     
-        public IEnumerable<Security> GetAllSecurities()
-        {
-            //return _context.Securities;
-            return null;
-        }
-
-        public IEnumerable<Security> AllSecurities { get; }
         public Security GetSecurity(int id)
         {
             //var security = _context.Securities.FirstOrDefault(x => x.Id == id);
             //return security;
-            return null;
-        }
-
-        public async Task<Security> Update(Security updateSecurity)
-        {
-            //var security = _context.Securities.Attach(updateSecurity);
-            //security.State = EntityState.Modified;
-            //await _context.SaveChangesAsync();
-
-            //return updateSecurity;
             return null;
         }
 
@@ -62,9 +49,19 @@ namespace StrattonOakmontServices.Sql
             return null;
         }
 
-		public IEnumerable<Category> GetAllCategories()
-		{
-            return _context.Categories;
-		}
-	}
+        public Task<Security> GetSecurityAsync(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Security> AddAsync(Security newSecurity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Security> DeleteAsync(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
