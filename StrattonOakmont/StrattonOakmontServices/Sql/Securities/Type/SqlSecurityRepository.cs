@@ -1,12 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using StrattonOakmontModels;
+using StrattonOakmontServices.Interfaces;
 
 namespace StrattonOakmontServices.Sql
 {
     public class SqlSecurityRepository : ISecurityRepository
     {
         private readonly AppDBContext _context;
+        private readonly IStonkRepository _stonkRepository;
+        private readonly IAbligationRepository _abligationRepository;
 
         public IEnumerable<Stonk> GetAllStonks => throw new System.NotImplementedException();
 
@@ -14,9 +19,11 @@ namespace StrattonOakmontServices.Sql
 
         public IEnumerable<Security> GetAllSecurity => throw new System.NotImplementedException();
 
-        public SqlSecurityRepository(AppDBContext context)
+        public SqlSecurityRepository(AppDBContext context, IStonkRepository stonkRepository, IAbligationRepository abligationRepository)
         {
             _context = context;
+            _stonkRepository = stonkRepository;
+            _abligationRepository = abligationRepository;
         }
     
         public Security GetSecurity(int id)
@@ -35,20 +42,6 @@ namespace StrattonOakmontServices.Sql
             return null;
         }
 
-        public Security Delete(int id)
-        {
-            //var security = _context.Securities.Find(id);
-
-            //if (security != null)
-            //{
-            //    _context.Securities.Remove(security);
-            //    _context.SaveChanges();
-            //}
-
-            //return security;
-            return null;
-        }
-
         public Task<Security> GetSecurityAsync(int id)
         {
             throw new System.NotImplementedException();
@@ -59,9 +52,27 @@ namespace StrattonOakmontServices.Sql
             throw new System.NotImplementedException();
         }
 
-        public Task<Security> DeleteAsync(int id)
+        public async Task<Security> DeleteAsync(int id)
         {
-            throw new System.NotImplementedException();
+            var security = _context.Securities.Include(x => x.Stonks).Include(x => x.Abligations).FirstOrDefault(x => x.Id == id);
+
+            if (security != null)
+            {
+                if (security.Stonks != null)
+                {
+                    await _stonkRepository.DeleteSecurityStonksAsync(security);
+                }
+                if (security.Abligations != null)
+                {
+                    await _abligationRepository.DeleteSecurityAbligationsAsync(security); 
+                }
+
+
+                _context.Securities.Remove(security);
+                await _context.SaveChangesAsync();
+            }
+
+            return security;
         }
     }
 }

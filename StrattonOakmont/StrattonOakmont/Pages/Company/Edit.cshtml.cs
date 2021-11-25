@@ -12,10 +12,12 @@ namespace StrattonOakmont.Pages.Company
     {
 
         private readonly AppDBContext _appDBContext;
+        private readonly ICompanyRepository _companyRepository;
 
-        public EditModel(AppDBContext appDBContext)
+        public EditModel(AppDBContext appDBContext, ICompanyRepository companyRepository)
         {
             _appDBContext = appDBContext;
+            _companyRepository = companyRepository;
         }
 
         [BindProperty]
@@ -30,17 +32,10 @@ namespace StrattonOakmont.Pages.Company
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
-            //var updateCompany = await _appDBContext.Companies.Include(x => x.Securities).FirstOrDefaultAsync(x => x.Id == id);
-            //if (Company != null && updateCompany != null)
-            //{
-            //    updateCompany.Ñapitalization = Company.Ñapitalization;
-            //    updateCompany.Name = Company.Name;
-            //    updateCompany.Desc = Company.Desc;
-            //    updateCompany.IMG = Company.IMG;
-
-            //    _appDBContext.Companies.Update(updateCompany);
-            //    await _appDBContext.SaveChangesAsync();
-            //}
+            if (Company != null)
+            {
+                await _companyRepository.UpdateCompanyAsync(Company, id);
+            }
 
             return RedirectToPage("/AdminArea/Company");
         }

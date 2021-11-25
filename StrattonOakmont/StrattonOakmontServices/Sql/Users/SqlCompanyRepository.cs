@@ -1,7 +1,5 @@
 ﻿using StrattonOakmontModels;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
@@ -10,10 +8,12 @@ namespace StrattonOakmontServices.Sql
 	public class SqlCompanyRepository : ICompanyRepository
 	{
 		private readonly AppDBContext _context;
+		private readonly ISecurityRepository _securityRepository;
 
-		public SqlCompanyRepository(AppDBContext context)
+		public SqlCompanyRepository(AppDBContext context, ISecurityRepository securityRepository)
 		{
 			_context = context;
+			_securityRepository = securityRepository;
 		}
 
 		public IEnumerable<Company> GetAllCompanies
@@ -32,13 +32,21 @@ namespace StrattonOakmontServices.Sql
 			return company;
 		}
 
-		public async Task<Company> UpdateCompanyAsync(Company updateCompany)
+		public async Task<Company> UpdateCompanyAsync(Company updateCompanym, int companyId)
 		{
-			var company = _context.Companies.Attach(updateCompany);
-			company.State = EntityState.Modified;
-			await _context.SaveChangesAsync();
+			var company = FindCompany(companyId);
 
-			return updateCompany;
+			if (company != null)
+            {
+				company.IMG = updateCompanym.IMG;
+				company.Desc = updateCompanym.Desc;
+				company.Name = updateCompanym.Name;
+				company.Сapitalization = updateCompanym.Сapitalization;
+
+				await _context.SaveChangesAsync();
+			}
+
+			return company;
 		}
 
 		public async Task<Company> DeleteCompanyAsync(int id)
@@ -52,28 +60,7 @@ namespace StrattonOakmontServices.Sql
 
             if (company.Security != null)
             {
-				if (company.Security.Abligations != null)
-                {
-					foreach (var abligation in company.Security.Abligations)
-					{
-						if (abligation != null)
-						{
-							_context.Abligations.Remove(abligation);
-						}
-					}
-				}
-				if (company.Security.Stonks != null)
-                {
-					foreach (var stonk in company.Security.Stonks)
-					{
-						if (stonk != null)
-						{
-							_context.Stonks.Remove(stonk);
-						}
-					}
-				}
-
-				_context.Securities.Remove(company.Security);
+				await _securityRepository.DeleteAsync(company.Security.Id);
             }
 
             _context.Companies.Remove(company);

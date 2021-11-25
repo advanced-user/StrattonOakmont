@@ -5,7 +5,8 @@ namespace StrattonOakmontServices.Interfaces
 {
     public interface IAbligationRepository
     {
-        public Task<Abligation> AddAbligationAsync { get; set; }
-        public Task<Abligation> DeleteAbligationAsync { get; set; }
+        public Task<Abligation> AddAbligationAsync();
+        public Task<Abligation> DeleteAbligationAsync();
+        public Task<Security> DeleteSecurityAbligationsAsync(Security security);
     }
 }

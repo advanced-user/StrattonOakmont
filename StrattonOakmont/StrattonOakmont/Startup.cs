@@ -13,7 +13,10 @@ using Microsoft.Extensions.Hosting;
 using StrattonOakmontServices;
 using StrattonOakmontServices.Sql;
 using Microsoft.AspNetCore.Identity;
-
+using StrattonOakmontServices.Interfaces;
+using StrattonOakmontServices.Sql.Securities.Main;
+using StrattonOakmontServices.Interfaces.Securities;
+using StrattonOakmontServices.Sql.Securities;
 
 namespace StrattonOakmont
 {
@@ -35,9 +38,20 @@ namespace StrattonOakmont
                 .AddEntityFrameworkStores<AppDBContext>();
             
             services.AddRazorPages();
+
+
+
+            // Securities
             services.AddScoped<ICategoryRepository, SqlCategoryRepository>();
-            services.AddScoped<ICompanyRepository, SqlCompanyRepository>();
+            services.AddScoped<IDateRepository, SqlDateRepository>();
+            services.AddScoped<IAbligationRepository, SqlAbligationRepository>();
+            services.AddScoped<IStonkRepository, SqlStonkRepository>();
             services.AddScoped<ISecurityRepository, SqlSecurityRepository>();
+
+            // Users
+            services.AddScoped<ICompanyRepository, SqlCompanyRepository>();
+            
+
 
             services.Configure<RouteOptions>(options =>
             {
