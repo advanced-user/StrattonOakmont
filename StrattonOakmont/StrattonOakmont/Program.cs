@@ -24,6 +24,9 @@ namespace StrattonOakmont
                 var services = scope.ServiceProvider;
                 try
                 {
+                    var context = services.GetRequiredService<AppDBContext>();
+                    SampleData.Initialize(context);
+
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await RoleInitializer.InitializeAsync(userManager, rolesManager);

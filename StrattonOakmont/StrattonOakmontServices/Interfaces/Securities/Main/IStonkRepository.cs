@@ -1,5 +1,4 @@
 ﻿using StrattonOakmontModels;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace StrattonOakmontServices.Interfaces
