@@ -1,0 +1,64 @@
+﻿@page
+@model StrattonOakmont.Pages.Security.Main.Stonk.AddStonkModel
+
+@{
+    ViewData["Title"] = "Add stonk";
+}
+
+<div class="card">
+    <h2 style="text-align:center; margin:10px">Add new stonk for @Model.Company.Name</h2><br />
+
+    <div class="card-body">
+        <form class="form-horizontal form-material mx-2" method="post">
+            <input asp-for="@Model.Company.Id" value="@Model.Company.Id" style="display:none;" />
+            <input asp-for="@Model.CategoryId" value="@Model.CategoryId" style="display:none;" />
+
+            <div class="form-group">
+                <label asp-for="@Model.Divisibility" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input type="radio" asp-for="Divisibility" value="true" />True<br />
+                    <input type="radio" asp-for="Divisibility" value="false" />False<br />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Stonk.Volume" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Stonk.Volume" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Stonk.Amount" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Stonk.Amount" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Date.Year" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Date.Year" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Date.Month" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Date.Month" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Date.Day" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Date.Day" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-12 d-flex">
+                    <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

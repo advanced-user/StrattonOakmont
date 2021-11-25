@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace StrattonOakmontServices.Sql
 {
@@ -71,7 +72,7 @@ namespace StrattonOakmontServices.Sql
 
 		public Company FindCompany(int id)
 		{
-			return _context.Companies.Find(id);
+			return _context.Companies.Include(x => x.Security).FirstOrDefault(x => x.Id == id);
 		}
 
 		public async Task<Company> FindCompanyAsync(int id)

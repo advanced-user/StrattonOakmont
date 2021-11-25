@@ -1,6 +1,7 @@
 ﻿using StrattonOakmontModels;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace StrattonOakmontServices.Sql.Securities.Main

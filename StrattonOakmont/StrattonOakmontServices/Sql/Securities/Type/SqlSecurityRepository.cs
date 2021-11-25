@@ -35,16 +35,17 @@ namespace StrattonOakmontServices.Sql
 
         public Security Add(Security newSecurity)
         {
-            //_context.Securities.Add(newSecurity);
-            //_context.SaveChanges();
+            _context.Securities.Add(newSecurity);
+            _context.SaveChanges();
 
-            //return newSecurity;
-            return null;
+            return newSecurity;
         }
 
         public Task<Security> GetSecurityAsync(int id)
         {
-            throw new System.NotImplementedException();
+            return _context.Securities.Include(x => x.Abligations)
+                                      .Include(x => x.Stonks)
+                                      .Include(x => x.Company).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public Task<Security> AddAsync(Security newSecurity)
