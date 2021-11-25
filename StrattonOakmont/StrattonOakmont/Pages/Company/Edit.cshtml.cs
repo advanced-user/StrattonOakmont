@@ -24,8 +24,8 @@ namespace StrattonOakmont.Pages.Company
 
         public void OnGet(int id)
         {
-            //Company = _appDBContext.Companies.Include(x => x.Securities).FirstOrDefault(x => x.Id == id);
-            //Securities = _appDBContext.Securities.Include(x => x.CategorySec).Where(x => x.CompanySec.Id == id).ToList();
+            Company = _appDBContext.Companies.Include(x => x.Security).FirstOrDefault(x => x.Id == id);
+            Securities = _appDBContext.Securities.Include(x => x.Stonks).Include(x => x.Abligations).Where(x => x.Company.Id == id).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(int id)

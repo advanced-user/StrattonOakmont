@@ -14,7 +14,7 @@ namespace StrattonOakmontModels.Securityes
         public Indastrial IndastrialSec { get; set; }
         public Category CategorySec { get; set; }
         public User UserSec { get; set; }
-        public Security Active { get; set; }
+        public Stonk Active { get; set; }
         public SecurityInd SecurityInd { get; set; }
         public List<Date> DateTimesChanges { get; set; }
 

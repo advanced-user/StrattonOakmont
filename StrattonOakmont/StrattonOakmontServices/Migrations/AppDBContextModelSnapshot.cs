@@ -228,15 +228,10 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SecurityId")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("Сapitalization")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SecurityId");
 
                     b.ToTable("Companies");
                 });
@@ -338,12 +333,18 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<int>("CompanyId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("DateId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("CompanyId")
+                        .IsUnique();
 
                     b.HasIndex("DateId");
 
@@ -909,15 +910,6 @@ namespace StrattonOakmontServices.Migrations
                     b.Navigation("UserSec");
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Company", b =>
-                {
-                    b.HasOne("StrattonOakmontModels.Security", "Security")
-                        .WithMany()
-                        .HasForeignKey("SecurityId");
-
-                    b.Navigation("Security");
-                });
-
             modelBuilder.Entity("StrattonOakmontModels.Date", b =>
                 {
                     b.HasOne("StrattonOakmontModels.Abligation", null)
@@ -968,9 +960,17 @@ namespace StrattonOakmontServices.Migrations
                         .WithMany("Securities")
                         .HasForeignKey("CategoryId");
 
+                    b.HasOne("StrattonOakmontModels.Company", "Company")
+                        .WithOne("Security")
+                        .HasForeignKey("StrattonOakmontModels.Security", "CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("StrattonOakmontModels.Date", null)
                         .WithMany("Securities")
                         .HasForeignKey("DateId");
+
+                    b.Navigation("Company");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Bill", b =>
@@ -1132,7 +1132,7 @@ namespace StrattonOakmontServices.Migrations
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Wright", b =>
                 {
-                    b.HasOne("StrattonOakmontModels.Security", "Active")
+                    b.HasOne("StrattonOakmontModels.Stonk", "Active")
                         .WithMany()
                         .HasForeignKey("ActiveId");
 
@@ -1211,6 +1211,11 @@ namespace StrattonOakmontServices.Migrations
                     b.Navigation("SecuritiesInd");
 
                     b.Navigation("SecuritiesSub");
+                });
+
+            modelBuilder.Entity("StrattonOakmontModels.Company", b =>
+                {
+                    b.Navigation("Security");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Date", b =>

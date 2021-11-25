@@ -5,6 +5,8 @@ namespace StrattonOakmontModels
     public class Security
     {
         public int Id { get; set; }
+        public int CompanyId { get; set; }  
+        public Company Company { get; set; }
         public List<Abligation> Abligations { get; set; }
         public List<Stonk> Stonks { get; set; }
     }

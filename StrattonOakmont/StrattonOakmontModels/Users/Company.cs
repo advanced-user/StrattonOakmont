@@ -1,8 +1,4 @@
-﻿using StrattonOakmontModels.Securityes;
-using StrattonOakmontModels.Securityes.Type;
-using System.Collections.Generic;
-
-namespace StrattonOakmontModels
+﻿namespace StrattonOakmontModels
 {
     public class Company
     {
