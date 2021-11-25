@@ -21,12 +21,12 @@ namespace StrattonOakmont.Pages.Security
 
         public IActionResult OnGet(int Id)
         {
-            Security = _securityRepository.GetSecurity(Id);
+            //Security = _securityRepository.GetSecurity(Id);
 
-            if (Security == null)
-            {
-                return RedirectToPage("/NotFound");
-            }
+            //if (Security == null)
+            //{
+            //    return RedirectToPage("/NotFound");
+            //}
 
             return Page();
         }

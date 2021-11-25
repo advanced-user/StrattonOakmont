@@ -23,4 +23,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\Securities\Industrial\" />
+    <Folder Include="Interfaces\Securities\Subsidiary\" />
+    <Folder Include="Sql\Securities\Industrial\" />
+    <Folder Include="Sql\Securities\Main\" />
+    <Folder Include="Sql\Securities\Subsidiary\" />
+  </ItemGroup>
+
 </Project>

@@ -30,8 +30,8 @@ namespace StrattonOakmont.Pages.Security
 
         public void OnGet(int id)
         {
-            Security = _securityRepository.GetSecurity(id);
-            Categories = _dbCategory.GetAllCategories.ToList();
+            //Security = _securityRepository.GetSecurity(id);
+            //Categories = _dbCategory.GetAllCategories.ToList();
         }
 
         public async Task<IActionResult> OnPost(int id)
