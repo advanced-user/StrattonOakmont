@@ -56,6 +56,7 @@ namespace StrattonOakmont.Pages.Security.Main.Stonk
             if (Stonk != null)
             {
                 Stonk.Divisibility = Divisibility;
+                Stonk.Price = Stonk.Volume / Stonk.Amount;
 
                 if (Date != null)
                 {
@@ -92,6 +93,7 @@ namespace StrattonOakmont.Pages.Security.Main.Stonk
                     security.Stonks.Add(Stonk);
                     company.Security = security;
                 }
+                
                 await _dbContext.SaveChangesAsync();
             }
 

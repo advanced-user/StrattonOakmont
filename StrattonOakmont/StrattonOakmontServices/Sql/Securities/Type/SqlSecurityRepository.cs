@@ -13,24 +13,11 @@ namespace StrattonOakmontServices.Sql
         private readonly IStonkRepository _stonkRepository;
         private readonly IAbligationRepository _abligationRepository;
 
-        public IEnumerable<Stonk> GetAllStonks => throw new System.NotImplementedException();
-
-        public IEnumerable<Abligation> GetAllAbligation => throw new System.NotImplementedException();
-
-        public IEnumerable<Security> GetAllSecurity => throw new System.NotImplementedException();
-
         public SqlSecurityRepository(AppDBContext context, IStonkRepository stonkRepository, IAbligationRepository abligationRepository)
         {
             _context = context;
             _stonkRepository = stonkRepository;
             _abligationRepository = abligationRepository;
-        }
-    
-        public Security GetSecurity(int id)
-        {
-            //var security = _context.Securities.FirstOrDefault(x => x.Id == id);
-            //return security;
-            return null;
         }
 
         public Security Add(Security newSecurity)
@@ -74,6 +61,16 @@ namespace StrattonOakmontServices.Sql
             }
 
             return security;
+        }
+
+        public IEnumerable<Stonk> GetAllStonks(int securityId)
+        {
+            return _context.Stonks.Include(x => x.CategorySec).Where(x => x.Security.Id == securityId);
+        }
+
+        public IEnumerable<Abligation> GetAllAbligation(int securityId)
+        {
+            return _context.Abligations.Include(x => x.CategorySec).Where(x => x.Security.Id == securityId);
         }
     }
 }

@@ -10,24 +10,25 @@ namespace StrattonOakmont.Pages.Company
 {
     public class EditModel : PageModel
     {
-
-        private readonly AppDBContext _appDBContext;
         private readonly ICompanyRepository _companyRepository;
+        private readonly ISecurityRepository _securityRepository;
 
-        public EditModel(AppDBContext appDBContext, ICompanyRepository companyRepository)
+        public EditModel(ICompanyRepository companyRepository, ISecurityRepository securityRepository)
         {
-            _appDBContext = appDBContext;
             _companyRepository = companyRepository;
+            _securityRepository = securityRepository;
         }
 
         [BindProperty]
         public StrattonOakmontModels.Company Company { get; set; }
-        public List<StrattonOakmontModels.Security> Securities { get; set; }  
+        public IEnumerable<StrattonOakmontModels.Stonk> Stonks { get; set; }
+        public IEnumerable<StrattonOakmontModels.Abligation> Abligations { get; set; }
 
         public void OnGet(int id)
         {
-            Company = _appDBContext.Companies.Include(x => x.Security).FirstOrDefault(x => x.Id == id);
-            Securities = _appDBContext.Securities.Include(x => x.Stonks).Include(x => x.Abligations).Where(x => x.Company.Id == id).ToList();
+            Company = _companyRepository.FindCompany(id);
+            Stonks = _securityRepository.GetAllStonks(Company.Security.Id);
+            Abligations = _securityRepository.GetAllAbligation(Company.Security.Id);
         }
 
         public async Task<IActionResult> OnPostAsync(int id)

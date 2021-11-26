@@ -77,28 +77,18 @@
                                 <thead>
                                     <tr>
                                         <th class="border-top-0">Category</th>
-                                        <th class="border-top-0">Volume</th>
-                                        <th class="border-top-0">Percent</th>
-                                        <th class="border-top-0">Price</th>
                                         <th class="border-top-0"></th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    @{/*
-                                        @if (Model.Company.Securities != null)
+                                    @{
+                                        @if (Model.Abligations != null)
                                         {
-                                            @foreach (var item in Model.Securities)
+                                            @foreach (var item in Model.Abligations)
                                             {
                                                 <tr>
-                                                @{
-                                                    
-                                                    <td>@item.CategorySec.CategoryName</td>
-                                                    <td>@item.Volume</td>
-                                                    <td>@item.Price</td>
-                                                    
-                                                }
-                                                    
+                                                    <td>@item.CategorySec.CategoryName</td>                                                    
 
                                                     <td style="display: flex; justify-content: flex-end">
                                                         <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Edit" asp-route-id="@item.Id">Edit</a>  
@@ -109,7 +99,22 @@
                                                 </tr>
                                             }
                                         }
-                                        */
+                                        @if (Model.Stonks != null)
+                                        {
+                                            @foreach (var item in Model.Stonks)
+                                            {
+                                                <tr>
+                                                    <td>@item.CategorySec.CategoryName</td>                                                    
+
+                                                    <td style="display: flex; justify-content: flex-end">
+                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Edit" asp-route-id="@item.Id">Edit</a>  
+                                                        <form asp-route-id="@item.Id" method="post" style="margin:0">
+                                                            <a asp-page="/Security/Security" class="btn btn-danger" style="margin:5px">Delete</a> 
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
                                     }
                                 </tbody>
                             </table>
