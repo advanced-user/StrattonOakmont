@@ -1,4 +1,5 @@
-﻿using StrattonOakmontModels;
+﻿using Microsoft.EntityFrameworkCore;
+using StrattonOakmontModels;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
 using System.Collections.Generic;
@@ -43,12 +44,14 @@ namespace StrattonOakmontServices.Sql.Securities.Main
 
         public async Task<Stonk> DeleteStonkAsync(int id)
         {
-            var stonk = _context.Stonks.Find(id);
-            _context.Stonks.Remove(stonk);
+            var stock = await _context.Stonks.Include(x => x.DateTimesChanges).FirstOrDefaultAsync(x => x.Id == id);
+
+            await _dateRepository.DeleteStoksDatesAsync(stock);
+            _context.Stonks.Remove(stock);
 
             await _context.SaveChangesAsync();
 
-            return stonk;
+            return stock;
         }
     }
 }
