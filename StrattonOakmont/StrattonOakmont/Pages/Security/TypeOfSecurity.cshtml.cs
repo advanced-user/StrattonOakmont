@@ -41,7 +41,7 @@ namespace StrattonOakmont.Pages.Security
                     case "Stonk":
                         return RedirectToPage("Main/Stonk/AddStonk", new { companyId = Company.Id, categoryId = category.Id });
                     case "Abligation":
-                        return RedirectToPage("/Main/Abligation/AddAbligation", new { companyId = Company.Id, categoryId = category.Id });
+                        return RedirectToPage("Main/Abligation/AddAbligation", new { companyId = Company.Id, categoryId = category.Id });
                 }
             }
 

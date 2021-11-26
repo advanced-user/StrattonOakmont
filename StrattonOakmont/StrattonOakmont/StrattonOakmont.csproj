@@ -25,7 +25,6 @@
     <Folder Include="Pages\Security\Industrial\Futures\" />
     <Folder Include="Pages\Security\Industrial\Option\" />
     <Folder Include="Pages\Security\Industrial\Wright\" />
-    <Folder Include="Pages\Security\Main\Abligation\" />
     <Folder Include="Pages\Security\Category\" />
     <Folder Include="Pages\Security\Subsidiary\Bill\" />
     <Folder Include="Pages\Security\Subsidiary\DepositReceipts\" />
