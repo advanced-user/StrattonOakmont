@@ -34,7 +34,6 @@ namespace StrattonOakmontServices
         public DbSet<Option> Options{ get; set; }
         public DbSet<Wright> Wrights{ get; set; }
 
-        public DbSet<Date> Dates { get; set; }
         public DbSet<PriceСhange> PriceСhanges { get; set; }
     }
 }

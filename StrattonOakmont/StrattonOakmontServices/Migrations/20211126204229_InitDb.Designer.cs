@@ -10,7 +10,7 @@ using StrattonOakmontServices;
 namespace StrattonOakmontServices.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20211126185715_InitDb")]
+    [Migration("20211126204229_InitDb")]
     partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -238,33 +238,6 @@ namespace StrattonOakmontServices.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Date", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Day")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Month")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PriceChangeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Year")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PriceChangeId")
-                        .IsUnique();
-
-                    b.ToTable("Dates");
-                });
-
             modelBuilder.Entity("StrattonOakmontModels.Indastrial", b =>
                 {
                     b.Property<int>("Id")
@@ -303,6 +276,9 @@ namespace StrattonOakmontServices.Migrations
 
                     b.Property<int?>("BondId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("DepositReceiptsId")
                         .HasColumnType("int");
@@ -359,17 +335,12 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DateId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("CompanyId")
                         .IsUnique();
-
-                    b.HasIndex("DateId");
 
                     b.ToTable("Securities");
                 });
@@ -646,14 +617,9 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DateId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("DateId");
 
                     b.ToTable("SecurityInds");
                 });
@@ -668,14 +634,9 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DateId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("DateId");
 
                     b.ToTable("SecuritySubs");
                 });
@@ -933,17 +894,6 @@ namespace StrattonOakmontServices.Migrations
                     b.Navigation("UserSec");
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Date", b =>
-                {
-                    b.HasOne("StrattonOakmontModels.Securities.PriceСhange", "PriceChange")
-                        .WithOne("Date")
-                        .HasForeignKey("StrattonOakmontModels.Date", "PriceChangeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PriceChange");
-                });
-
             modelBuilder.Entity("StrattonOakmontModels.Indastrial", b =>
                 {
                     b.HasOne("StrattonOakmontModels.Securityes.SecurityInd", "SecurityInd")
@@ -1003,10 +953,6 @@ namespace StrattonOakmontServices.Migrations
                         .HasForeignKey("StrattonOakmontModels.Security", "CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("StrattonOakmontModels.Date", null)
-                        .WithMany("Securities")
-                        .HasForeignKey("DateId");
 
                     b.Navigation("Company");
                 });
@@ -1151,10 +1097,6 @@ namespace StrattonOakmontServices.Migrations
                     b.HasOne("StrattonOakmontModels.Category", null)
                         .WithMany("SecuritiesInd")
                         .HasForeignKey("CategoryId");
-
-                    b.HasOne("StrattonOakmontModels.Date", null)
-                        .WithMany("SecurityInd")
-                        .HasForeignKey("DateId");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Type.SecuritySub", b =>
@@ -1162,10 +1104,6 @@ namespace StrattonOakmontServices.Migrations
                     b.HasOne("StrattonOakmontModels.Category", null)
                         .WithMany("SecuritiesSub")
                         .HasForeignKey("CategoryId");
-
-                    b.HasOne("StrattonOakmontModels.Date", null)
-                        .WithMany("SecuritySubs")
-                        .HasForeignKey("DateId");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Wright", b =>
@@ -1254,20 +1192,6 @@ namespace StrattonOakmontServices.Migrations
             modelBuilder.Entity("StrattonOakmontModels.Company", b =>
                 {
                     b.Navigation("Security");
-                });
-
-            modelBuilder.Entity("StrattonOakmontModels.Date", b =>
-                {
-                    b.Navigation("Securities");
-
-                    b.Navigation("SecurityInd");
-
-                    b.Navigation("SecuritySubs");
-                });
-
-            modelBuilder.Entity("StrattonOakmontModels.Securities.PriceСhange", b =>
-                {
-                    b.Navigation("Date");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Security", b =>

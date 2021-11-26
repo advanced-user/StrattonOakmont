@@ -1,4 +1,6 @@
-﻿namespace StrattonOakmontModels.Securities
+﻿using System;
+
+namespace StrattonOakmontModels.Securities
 {
     public class PriceСhange
     {
@@ -6,6 +8,6 @@
         public double Price { get; set; }
         public Bond Bond { get; set; } 
         public Stoсk Stoсk { get; set; }
-        public Date Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

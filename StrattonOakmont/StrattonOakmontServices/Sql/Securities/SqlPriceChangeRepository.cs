@@ -24,7 +24,6 @@ namespace StrattonOakmontServices.Sql.Securities
                 {
                     var priceChange = await _context.PriceСhanges.Include(x => x.Date).FirstOrDefaultAsync(x => x.Id == item.Id);
 
-                    _context.Dates.Remove(priceChange.Date);
                     _context.PriceСhanges.Remove(priceChange);
                 }
             }
@@ -44,7 +43,6 @@ namespace StrattonOakmontServices.Sql.Securities
                 {
                     var priceChange = await _context.PriceСhanges.Include(x => x.Date).FirstOrDefaultAsync(x => x.Id == item.Id);
 
-                    _context.Dates.Remove(priceChange.Date);
                     _context.PriceСhanges.Remove(priceChange);
                 }
             }

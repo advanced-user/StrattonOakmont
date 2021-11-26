@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StrattonOakmontServices;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -30,9 +31,6 @@ namespace StrattonOakmont.Pages.Security.Main.Stock
         public StrattonOakmontModels.Company Company { get; set; }
 
         [BindProperty]
-        public StrattonOakmontModels.Date Date { get; set; }
-
-        [BindProperty]
         public int CategoryId { get; set; }
 
         [BindProperty]
@@ -58,17 +56,14 @@ namespace StrattonOakmont.Pages.Security.Main.Stock
                 Stock.Divisibility = Divisibility;
                 Stock.Price = Stock.Volume / Stock.Amount;
 
-                if (Date != null)
+                Stock.Price—hanges = new List<StrattonOakmontModels.Securities.Price—hange>
                 {
-                    Stock.Price—hanges = new List<StrattonOakmontModels.Securities.Price—hange>
+                    new StrattonOakmontModels.Securities.Price—hange()
                     {
-                        new StrattonOakmontModels.Securities.Price—hange()
-                        {
-                            Date = Date,
-                            Price = Stock.Price
-                        }
-                    };
-                }
+                        Date = new DateTime(),
+                        Price = Stock.Price
+                    }
+                };
             }
 
             var company = await _dbCompany.FindCompanyAsync(Company.Id);
