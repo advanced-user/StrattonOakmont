@@ -4752,3 +4752,4 @@ C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\TypeOfSecurity.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Abligation\AddAbligation.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Stonk\Delete.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Abligation\Delete.cshtml.g.cs

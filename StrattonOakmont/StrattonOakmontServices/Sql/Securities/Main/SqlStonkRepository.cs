@@ -46,10 +46,13 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         {
             var stock = await _context.Stonks.Include(x => x.DateTimesChanges).FirstOrDefaultAsync(x => x.Id == id);
 
-            await _dateRepository.DeleteStoksDatesAsync(stock);
-            _context.Stonks.Remove(stock);
+            if (stock != null)
+            {
+                await _dateRepository.DeleteStoksDatesAsync(stock);
+                _context.Stonks.Remove(stock);
 
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
+            }
 
             return stock;
         }

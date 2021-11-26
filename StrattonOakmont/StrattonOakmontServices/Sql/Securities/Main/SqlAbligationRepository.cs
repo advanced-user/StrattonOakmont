@@ -1,4 +1,5 @@
-﻿using StrattonOakmontModels;
+﻿using Microsoft.EntityFrameworkCore;
+using StrattonOakmontModels;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
 using System.Threading.Tasks;
@@ -21,9 +22,19 @@ namespace StrattonOakmontServices.Sql.Securities.Main
             throw new System.NotImplementedException();
         }
 
-        public Task<Abligation> DeleteAbligationAsync()
+        public async Task<Abligation> DeleteAbligationAsync(int bondId)
         {
-            throw new System.NotImplementedException();
+            var bond = await _context.Abligations.Include(x => x.DateTimesChanges).FirstOrDefaultAsync(x => x.Id == bondId);
+
+            if (bond != null)
+            {
+                await _dateRepository.DeleteAbligationDatesAsync(bond);
+                _context.Abligations.Remove(bond);
+
+                await _context.SaveChangesAsync();
+            }
+
+            return bond;
         }
 
         public async Task<Security> DeleteSecurityAbligationsAsync(Security security)
