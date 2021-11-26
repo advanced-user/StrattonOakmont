@@ -4,18 +4,18 @@ using StrattonOakmontServices;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace StrattonOakmont.Pages.Security.Main.Stonk
+namespace StrattonOakmont.Pages.Security.Main.Bond
 {
-    public class AddStonkModel : PageModel
+    public class AddBondModel : PageModel
     {
         private readonly AppDBContext _dbContext;
         private readonly ICompanyRepository _dbCompany;
         private readonly ICategoryRepository _categoryRepository;
         private readonly ISecurityRepository _securityRepository;
 
-        public AddStonkModel(ICompanyRepository dbCompany, AppDBContext dbContext,
-                             ICategoryRepository categoryRepository,
-                             ISecurityRepository securityRepository)
+        public AddBondModel(ICompanyRepository dbCompany, AppDBContext dbContext,
+                                  ICategoryRepository categoryRepository,
+                                  ISecurityRepository securityRepository)
         {
             _dbCompany = dbCompany;
             _dbContext = dbContext;
@@ -24,7 +24,7 @@ namespace StrattonOakmont.Pages.Security.Main.Stonk
         }
 
         [BindProperty]
-        public StrattonOakmontModels.Stonk Stonk { get; set; }
+        public StrattonOakmontModels.Bond Bond { get; set; }
 
         [BindProperty]
         public StrattonOakmontModels.Company Company { get; set; }
@@ -34,9 +34,6 @@ namespace StrattonOakmont.Pages.Security.Main.Stonk
 
         [BindProperty]
         public int CategoryId { get; set; }
-
-        [BindProperty]
-        public bool Divisibility { get; set; }
 
         public void OnGet(int companyId, int categoryId)
         {
@@ -48,19 +45,28 @@ namespace StrattonOakmont.Pages.Security.Main.Stonk
         {
             var securityCategory = await _categoryRepository.FindCategoryAsync(CategoryId);
 
-            if (securityCategory != null && Stonk != null)
+            if (securityCategory != null && Bond != null)
             {
-                Stonk.CategorySec = securityCategory;
+                Bond.CategorySec = securityCategory;
             }
 
-            if (Stonk != null)
+            if (Bond != null)
             {
-                Stonk.Divisibility = Divisibility;
-                Stonk.Price = Stonk.Volume / Stonk.Amount;
+                if (Bond.Amount != 0)
+                {
+                    Bond.Price = Bond.Volume / Bond.Amount;
+                }
 
                 if (Date != null)
                 {
-                    Stonk.DateTimesChanges = new List<StrattonOakmontModels.Date> { Date };
+                    Bond.Price—hanges = new List<StrattonOakmontModels.Securities.Price—hange>
+                    {
+                        new StrattonOakmontModels.Securities.Price—hange()
+                        {
+                            Date = Date,
+                            Price = Bond.Price
+                        }
+                    };
                 }
             }
 
@@ -73,15 +79,15 @@ namespace StrattonOakmont.Pages.Security.Main.Stonk
                     var security = await _securityRepository.GetSecurityAsync(company.Security.Id);
                     if (security != null)
                     {
-                        if (security.Stonks != null)
+                        if (security.Bonds != null)
                         {
-                            security.Stonks.Add(Stonk);
+                            security.Bonds.Add(Bond);
                             company.Security = security;
                         }
                         else
                         {
-                            security.Stonks = new List<StrattonOakmontModels.Stonk>();
-                            security.Stonks.Add(Stonk);
+                            security.Bonds = new List<StrattonOakmontModels.Bond>();
+                            security.Bonds.Add(Bond);
                             company.Security = security;
                         }
                     }
@@ -89,15 +95,15 @@ namespace StrattonOakmont.Pages.Security.Main.Stonk
                 else
                 {
                     var security = new StrattonOakmontModels.Security();
-                    security.Stonks = new List<StrattonOakmontModels.Stonk>();
-                    security.Stonks.Add(Stonk);
+                    security.Bonds = new List<StrattonOakmontModels.Bond>();
+                    security.Bonds.Add(Bond);
                     company.Security = security;
                 }
-                
+
                 await _dbContext.SaveChangesAsync();
             }
 
-            return RedirectToPage("/Company/Edit", new { id = company.Id});
+            return RedirectToPage("/Company/Edit", new { id = company.Id });
         }
     }
 }

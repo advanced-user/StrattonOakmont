@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using StrattonOakmontModels.Securities;
+using System.Collections.Generic;
 
 namespace StrattonOakmontModels.Securityes
 {
@@ -14,7 +15,7 @@ namespace StrattonOakmontModels.Securityes
         public int Percent { get; set; }
         public Category CategorySec { get; set; }
         public User UserSec { get; set; }
-        public List<Date> DateTimesChanges { get; set; }
+        public List<PriceСhange> PriceСhanges { get; set; }
         public Indastrial IndastrialSec { get; set; }
         public SecurityInd SecurityInd { get; set; }
     }

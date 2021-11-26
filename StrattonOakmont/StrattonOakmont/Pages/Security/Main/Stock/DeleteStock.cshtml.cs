@@ -4,17 +4,17 @@ using StrattonOakmontServices;
 using StrattonOakmontServices.Interfaces;
 using System.Threading.Tasks;
 
-namespace StrattonOakmont.Pages.Security.Main.Stonk
+namespace StrattonOakmont.Pages.Security.Main.Stock
 {
-    public class DeleteModel : PageModel
+    public class DeleteStockModel : PageModel
     {
         private readonly ICompanyRepository _dbCompany;
-        private readonly IStonkRepository _stonkRepository;
+        private readonly IStockRepository _stockRepository;
 
-        public DeleteModel(ICompanyRepository dbCompany, IStonkRepository stonkRepository)
+        public DeleteStockModel(ICompanyRepository dbCompany, IStockRepository stockRepository)
         {
             _dbCompany = dbCompany;
-            _stonkRepository = stonkRepository;
+            _stockRepository = stockRepository;
         }
 
         [BindProperty]
@@ -31,7 +31,7 @@ namespace StrattonOakmont.Pages.Security.Main.Stonk
 
         public async Task<IActionResult> OnPostAsync()
         {
-            await _stonkRepository.DeleteStonkAsync(StockId);
+            await _stockRepository.DeleteStockAsync(StockId);
 
             return RedirectToPage("/Company/Edit", new { id = Company.Id });
         }

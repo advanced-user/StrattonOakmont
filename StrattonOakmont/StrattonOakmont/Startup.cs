@@ -43,9 +43,9 @@ namespace StrattonOakmont
 
             // Securities
             services.AddScoped<ICategoryRepository, SqlCategoryRepository>();
-            services.AddScoped<IDateRepository, SqlDateRepository>();
-            services.AddScoped<IAbligationRepository, SqlAbligationRepository>();
-            services.AddScoped<IStonkRepository, SqlStonkRepository>();
+            services.AddScoped<IPriceChangeRepository, SqlPriceChangeRepository>();
+            services.AddScoped<IBondRepository, SqlBondRepository>();
+            services.AddScoped<IStockRepository, SqlStockRepository>();
             services.AddScoped<ISecurityRepository, SqlSecurityRepository>();
 
             // Users
@@ -70,11 +70,11 @@ namespace StrattonOakmont
                 app.UseDeveloperExceptionPage();
             }
             
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            //{
+            //    app.UseExceptionHandler("/Error");
+            //    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            //    app.UseHsts();
+            //}
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

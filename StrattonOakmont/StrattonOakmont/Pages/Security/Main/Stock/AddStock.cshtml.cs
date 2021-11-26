@@ -4,18 +4,18 @@ using StrattonOakmontServices;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace StrattonOakmont.Pages.Security.Main.Abligation
+namespace StrattonOakmont.Pages.Security.Main.Stock
 {
-    public class AddAbligationModel : PageModel
+    public class AddStockModel : PageModel
     {
         private readonly AppDBContext _dbContext;
         private readonly ICompanyRepository _dbCompany;
         private readonly ICategoryRepository _categoryRepository;
         private readonly ISecurityRepository _securityRepository;
 
-        public AddAbligationModel(ICompanyRepository dbCompany, AppDBContext dbContext,
-                                  ICategoryRepository categoryRepository,
-                                  ISecurityRepository securityRepository)
+        public AddStockModel(ICompanyRepository dbCompany, AppDBContext dbContext,
+                             ICategoryRepository categoryRepository,
+                             ISecurityRepository securityRepository)
         {
             _dbCompany = dbCompany;
             _dbContext = dbContext;
@@ -24,7 +24,7 @@ namespace StrattonOakmont.Pages.Security.Main.Abligation
         }
 
         [BindProperty]
-        public StrattonOakmontModels.Abligation Abligation { get; set; }
+        public StrattonOakmontModels.StoÒk Stock { get; set; }
 
         [BindProperty]
         public StrattonOakmontModels.Company Company { get; set; }
@@ -34,6 +34,9 @@ namespace StrattonOakmont.Pages.Security.Main.Abligation
 
         [BindProperty]
         public int CategoryId { get; set; }
+
+        [BindProperty]
+        public bool Divisibility { get; set; }
 
         public void OnGet(int companyId, int categoryId)
         {
@@ -45,21 +48,26 @@ namespace StrattonOakmont.Pages.Security.Main.Abligation
         {
             var securityCategory = await _categoryRepository.FindCategoryAsync(CategoryId);
 
-            if (securityCategory != null && Abligation != null)
+            if (securityCategory != null && Stock != null)
             {
-                Abligation.CategorySec = securityCategory;
+                Stock.CategorySec = securityCategory;
             }
 
-            if (Abligation != null)
+            if (Stock != null)
             {
-                if (Abligation.Amount != 0)
-                {
-                    Abligation.Price = Abligation.Volume / Abligation.Amount;
-                }
+                Stock.Divisibility = Divisibility;
+                Stock.Price = Stock.Volume / Stock.Amount;
 
                 if (Date != null)
                 {
-                    Abligation.DateTimesChanges = new List<StrattonOakmontModels.Date> { Date };
+                    Stock.Price—hanges = new List<StrattonOakmontModels.Securities.Price—hange>
+                    {
+                        new StrattonOakmontModels.Securities.Price—hange()
+                        {
+                            Date = Date,
+                            Price = Stock.Price
+                        }
+                    };
                 }
             }
 
@@ -72,15 +80,15 @@ namespace StrattonOakmont.Pages.Security.Main.Abligation
                     var security = await _securityRepository.GetSecurityAsync(company.Security.Id);
                     if (security != null)
                     {
-                        if (security.Abligations != null)
+                        if (security.Stocks != null)
                         {
-                            security.Abligations.Add(Abligation);
+                            security.Stocks.Add(Stock);
                             company.Security = security;
                         }
                         else
                         {
-                            security.Abligations = new List<StrattonOakmontModels.Abligation>();
-                            security.Abligations.Add(Abligation);
+                            security.Stocks = new List<StrattonOakmontModels.StoÒk>();
+                            security.Stocks.Add(Stock);
                             company.Security = security;
                         }
                     }
@@ -88,8 +96,8 @@ namespace StrattonOakmont.Pages.Security.Main.Abligation
                 else
                 {
                     var security = new StrattonOakmontModels.Security();
-                    security.Abligations = new List<StrattonOakmontModels.Abligation>();
-                    security.Abligations.Add(Abligation);
+                    security.Stocks = new List<StrattonOakmontModels.StoÒk>();
+                    security.Stocks.Add(Stock);
                     company.Security = security;
                 }
 

@@ -4,14 +4,14 @@ using StrattonOakmontServices;
 using StrattonOakmontServices.Interfaces;
 using System.Threading.Tasks;
 
-namespace StrattonOakmont.Pages.Security.Main.Abligation
+namespace StrattonOakmont.Pages.Security.Main.Bond
 {
-    public class DeleteModel : PageModel
+    public class DeleteBondModel : PageModel
     {
         private readonly ICompanyRepository _dbCompany;
-        private readonly IAbligationRepository _bondRepository;
+        private readonly IBondRepository _bondRepository;
 
-        public DeleteModel(ICompanyRepository dbCompany, IAbligationRepository bondRepository)
+        public DeleteBondModel(ICompanyRepository dbCompany, IBondRepository bondRepository)
         {
             _dbCompany = dbCompany;
             _bondRepository = bondRepository;
@@ -31,7 +31,7 @@ namespace StrattonOakmont.Pages.Security.Main.Abligation
 
         public async Task<IActionResult> OnPostAsync()
         {
-            await _bondRepository.DeleteAbligationAsync(BondId);
+            await _bondRepository.DeleteBondAsync(BondId);
 
             return RedirectToPage("/Company/Edit", new { id = Company.Id });
         }

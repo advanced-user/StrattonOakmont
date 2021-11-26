@@ -38,10 +38,10 @@ namespace StrattonOakmont.Pages.Security
             {
                 switch (category.CategoryName)
                 {
-                    case "Stonk":
-                        return RedirectToPage("Main/Stonk/AddStonk", new { companyId = Company.Id, categoryId = category.Id });
-                    case "Abligation":
-                        return RedirectToPage("Main/Abligation/AddAbligation", new { companyId = Company.Id, categoryId = category.Id });
+                    case "Stock":
+                        return RedirectToPage("Main/Stock/AddStock", new { companyId = Company.Id, categoryId = category.Id });
+                    case "Bond":
+                        return RedirectToPage("Main/Bond/AddBond", new { companyId = Company.Id, categoryId = category.Id });
                 }
             }
 

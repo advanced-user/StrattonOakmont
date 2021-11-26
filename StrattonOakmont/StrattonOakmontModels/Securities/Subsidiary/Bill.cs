@@ -1,4 +1,5 @@
-﻿using StrattonOakmontModels.Securityes.Type;
+﻿using StrattonOakmontModels.Securities;
+using StrattonOakmontModels.Securityes.Type;
 using System.Collections.Generic;
 
 namespace StrattonOakmontModels.Securityes
@@ -17,6 +18,6 @@ namespace StrattonOakmontModels.Securityes
         public SecuritySub SecuritySub { get; set; }
         public Category CategorySec { get; set; }
         public User UserSec { get; set; }
-        public List<Date> DateTimesChanges { get; set; }
+        public List<PriceСhange> PriceСhanges { get; set; }
     }
 }

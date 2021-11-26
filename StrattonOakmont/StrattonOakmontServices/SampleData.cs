@@ -15,21 +15,21 @@ namespace StrattonOakmontServices
 					{
 						Name = "Google",
 						Desc = "Goooooooogle!!!!!!",
-						Сapitalization = 250000000000,
+						Сapitalization = 250000000,
 						IMG = "/admin/IMG/Google.jpg",
 					},
 					new Company()
 					{
 						Name = "Amazon",
 						Desc = "Amazooooooooooooooon!!!!!!",
-						Сapitalization = 2000000000,
+						Сapitalization = 20000000,
 						IMG = "/admin/IMG/Amazon.jpg",
 					},
 					new Company()
 					{
 						Name = "Facebook",
 						Desc = "Faceeeeeeeeeebook!!!!!!",
-						Сapitalization = 33333333,
+						Сapitalization = 3333333,
 						IMG = "/admin/IMG/Google.jpg",
 					}
 				);
@@ -40,11 +40,11 @@ namespace StrattonOakmontServices
 				db.Categories.AddRange(
 					new Category()
 					{
-						CategoryName = "Stonk",
+						CategoryName = "Stock",
 					},
 					new Category()
 					{
-						CategoryName = "Abligation",
+						CategoryName = "Bond",
 					}
 				);
 			}
@@ -61,11 +61,11 @@ namespace StrattonOakmontServices
 				{
 					new Category()
 					{
-						CategoryName = "Stonk",
+						CategoryName = "Stock",
 					},
 					new Category()
 					{
-						CategoryName = "Abligation",
+						CategoryName = "Bond",
 					},
 				};
 

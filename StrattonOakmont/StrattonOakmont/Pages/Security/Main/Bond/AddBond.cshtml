@@ -1,12 +1,11 @@
 ﻿@page
-@model StrattonOakmont.Pages.Security.Main.Abligation.AddAbligationModel
-
+@model StrattonOakmont.Pages.Security.Main.Bond.AddBondModel
 @{
-    ViewData["Title"] = "Add abligation";
+    ViewData["Title"] = "Add bond";
 }
 
 <div class="card">
-    <h2 style="text-align:center; margin:10px">Add new abligation for @Model.Company.Name</h2><br />
+    <h2 style="text-align:center; margin:10px">Add new bond for @Model.Company.Name</h2><br />
 
     <div class="card-body">
         <form class="form-horizontal form-material mx-2" method="post">
@@ -14,27 +13,27 @@
             <input asp-for="@Model.CategoryId" value="@Model.CategoryId" style="display:none;" />
             
             <div class="form-group">
-                <label asp-for="@Model.Abligation.Percent" class="col-md-12 mb-0"></label>
+                <label asp-for="@Model.Bond.Percent" class="col-md-12 mb-0"></label>
                 <div class="col-md-12">
-                    <input asp-for="@Model.Abligation.Percent" class="form-control ps-0 form-control-line">
+                    <input asp-for="@Model.Bond.Percent" class="form-control ps-0 form-control-line">
                 </div>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Abligation.FinalTime" class="col-md-12 mb-0"></label>
+                <label asp-for="@Model.Bond.FinalTime" class="col-md-12 mb-0"></label>
                 <div class="col-md-12">
-                    <input asp-for="@Model.Abligation.FinalTime" class="form-control ps-0 form-control-line">
+                    <input asp-for="@Model.Bond.FinalTime" class="form-control ps-0 form-control-line">
                 </div>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Abligation.Volume" class="col-md-12 mb-0"></label>
+                <label asp-for="@Model.Bond.Volume" class="col-md-12 mb-0"></label>
                 <div class="col-md-12">
-                    <input asp-for="@Model.Abligation.Volume" class="form-control ps-0 form-control-line">
+                    <input asp-for="@Model.Bond.Volume" class="form-control ps-0 form-control-line">
                 </div>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Abligation.Amount" class="col-md-12 mb-0"></label>
+                <label asp-for="@Model.Bond.Amount" class="col-md-12 mb-0"></label>
                 <div class="col-md-12">
-                    <input asp-for="@Model.Abligation.Amount" class="form-control ps-0 form-control-line">
+                    <input asp-for="@Model.Bond.Amount" class="form-control ps-0 form-control-line">
                 </div>
             </div>
             <div class="form-group">

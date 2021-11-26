@@ -10,14 +10,14 @@ namespace StrattonOakmontServices.Sql
     public class SqlSecurityRepository : ISecurityRepository
     {
         private readonly AppDBContext _context;
-        private readonly IStonkRepository _stonkRepository;
-        private readonly IAbligationRepository _abligationRepository;
+        private readonly IStockRepository _stockRepository;
+        private readonly IBondRepository _bondRepository;
 
-        public SqlSecurityRepository(AppDBContext context, IStonkRepository stonkRepository, IAbligationRepository abligationRepository)
+        public SqlSecurityRepository(AppDBContext context, IStockRepository stockRepository, IBondRepository bondRepository)
         {
             _context = context;
-            _stonkRepository = stonkRepository;
-            _abligationRepository = abligationRepository;
+            _stockRepository = stockRepository;
+            _bondRepository = bondRepository;
         }
 
         public Security Add(Security newSecurity)
@@ -30,8 +30,8 @@ namespace StrattonOakmontServices.Sql
 
         public Task<Security> GetSecurityAsync(int id)
         {
-            return _context.Securities.Include(x => x.Abligations)
-                                      .Include(x => x.Stonks)
+            return _context.Securities.Include(x => x.Bonds)
+                                      .Include(x => x.Stocks)
                                       .Include(x => x.Company).FirstOrDefaultAsync(x => x.Id == id);
         }
 
@@ -42,17 +42,17 @@ namespace StrattonOakmontServices.Sql
 
         public async Task<Security> DeleteAsync(int id)
         {
-            var security = _context.Securities.Include(x => x.Stonks).Include(x => x.Abligations).FirstOrDefault(x => x.Id == id);
+            var security = _context.Securities.Include(x => x.Stocks).Include(x => x.Bonds).FirstOrDefault(x => x.Id == id);
 
             if (security != null)
             {
-                if (security.Stonks != null)
+                if (security.Stocks != null)
                 {
-                    await _stonkRepository.DeleteSecurityStonksAsync(security);
+                    await _stockRepository.DeleteSecurityStocksAsync(security);
                 }
-                if (security.Abligations != null)
+                if (security.Bonds != null)
                 {
-                    await _abligationRepository.DeleteSecurityAbligationsAsync(security); 
+                    await _bondRepository.DeleteSecurityBondsAsync(security); 
                 }
 
 
@@ -63,14 +63,14 @@ namespace StrattonOakmontServices.Sql
             return security;
         }
 
-        public IEnumerable<Stonk> GetAllStonks(int securityId)
+        public IEnumerable<Stoсk> GetAllStocks(int securityId)
         {
-            return _context.Stonks.Include(x => x.CategorySec).Where(x => x.Security.Id == securityId);
+            return _context.Stocks.Include(x => x.CategorySec).Where(x => x.Security.Id == securityId);
         }
 
-        public IEnumerable<Abligation> GetAllAbligation(int securityId)
+        public IEnumerable<Bond> GetAllBonds(int securityId)
         {
-            return _context.Abligations.Include(x => x.CategorySec).Where(x => x.Security.Id == securityId);
+            return _context.Bonds.Include(x => x.CategorySec).Where(x => x.Security.Id == securityId);
         }
     }
 }

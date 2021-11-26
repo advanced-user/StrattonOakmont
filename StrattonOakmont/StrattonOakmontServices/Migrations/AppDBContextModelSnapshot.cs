@@ -150,7 +150,7 @@ namespace StrattonOakmontServices.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Abligation", b =>
+            modelBuilder.Entity("StrattonOakmontModels.Bond", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -194,7 +194,7 @@ namespace StrattonOakmontServices.Migrations
 
                     b.HasIndex("UserSecId");
 
-                    b.ToTable("Abligations");
+                    b.ToTable("Bonds");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Category", b =>
@@ -228,8 +228,8 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Сapitalization")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<long>("Сapitalization")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
@@ -243,34 +243,13 @@ namespace StrattonOakmontServices.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AbligationId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("BillId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Day")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DepositReceiptsId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ForwardId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FuturesId")
                         .HasColumnType("int");
 
                     b.Property<int>("Month")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OptionId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("StonkId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("WrightId")
+                    b.Property<int>("PriceChangeId")
                         .HasColumnType("int");
 
                     b.Property<int>("Year")
@@ -278,21 +257,8 @@ namespace StrattonOakmontServices.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AbligationId");
-
-                    b.HasIndex("BillId");
-
-                    b.HasIndex("DepositReceiptsId");
-
-                    b.HasIndex("ForwardId");
-
-                    b.HasIndex("FuturesId");
-
-                    b.HasIndex("OptionId");
-
-                    b.HasIndex("StonkId");
-
-                    b.HasIndex("WrightId");
+                    b.HasIndex("PriceChangeId")
+                        .IsUnique();
 
                     b.ToTable("Dates");
                 });
@@ -321,6 +287,61 @@ namespace StrattonOakmontServices.Migrations
                     b.HasIndex("SecurityIndId");
 
                     b.ToTable("Indastrials");
+                });
+
+            modelBuilder.Entity("StrattonOakmontModels.Securities.PriceСhange", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("BillId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BondId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DepositReceiptsId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ForwardId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FuturesId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OptionId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("StoсkId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("WrightId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BillId");
+
+                    b.HasIndex("BondId");
+
+                    b.HasIndex("DepositReceiptsId");
+
+                    b.HasIndex("ForwardId");
+
+                    b.HasIndex("FuturesId");
+
+                    b.HasIndex("OptionId");
+
+                    b.HasIndex("StoсkId");
+
+                    b.HasIndex("WrightId");
+
+                    b.ToTable("PriceСhanges");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Security", b =>
@@ -409,7 +430,7 @@ namespace StrattonOakmontServices.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AbligationId")
+                    b.Property<int?>("BondId")
                         .HasColumnType("int");
 
                     b.Property<int?>("CategorySecId")
@@ -433,7 +454,7 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<int?>("SecuritySubId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("StonkId")
+                    b.Property<int?>("StoсkId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserSecId")
@@ -441,13 +462,13 @@ namespace StrattonOakmontServices.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AbligationId");
+                    b.HasIndex("BondId");
 
                     b.HasIndex("CategorySecId");
 
                     b.HasIndex("SecuritySubId");
 
-                    b.HasIndex("StonkId");
+                    b.HasIndex("StoсkId");
 
                     b.HasIndex("UserSecId");
 
@@ -712,7 +733,7 @@ namespace StrattonOakmontServices.Migrations
                     b.ToTable("Wrights");
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Stonk", b =>
+            modelBuilder.Entity("StrattonOakmontModels.Stoсk", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -753,7 +774,7 @@ namespace StrattonOakmontServices.Migrations
 
                     b.HasIndex("UserSecId");
 
-                    b.ToTable("Stonks");
+                    b.ToTable("Stocks");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.User", b =>
@@ -883,7 +904,7 @@ namespace StrattonOakmontServices.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Abligation", b =>
+            modelBuilder.Entity("StrattonOakmontModels.Bond", b =>
                 {
                     b.HasOne("StrattonOakmontModels.Category", "CategorySec")
                         .WithMany()
@@ -894,7 +915,7 @@ namespace StrattonOakmontServices.Migrations
                         .HasForeignKey("CompanySecId");
 
                     b.HasOne("StrattonOakmontModels.Security", "Security")
-                        .WithMany("Abligations")
+                        .WithMany("Bonds")
                         .HasForeignKey("SecurityId");
 
                     b.HasOne("StrattonOakmontModels.User", "UserSec")
@@ -912,37 +933,13 @@ namespace StrattonOakmontServices.Migrations
 
             modelBuilder.Entity("StrattonOakmontModels.Date", b =>
                 {
-                    b.HasOne("StrattonOakmontModels.Abligation", null)
-                        .WithMany("DateTimesChanges")
-                        .HasForeignKey("AbligationId");
+                    b.HasOne("StrattonOakmontModels.Securities.PriceСhange", "PriceChange")
+                        .WithOne("Date")
+                        .HasForeignKey("StrattonOakmontModels.Date", "PriceChangeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("StrattonOakmontModels.Securityes.Bill", null)
-                        .WithMany("DateTimesChanges")
-                        .HasForeignKey("BillId");
-
-                    b.HasOne("StrattonOakmontModels.Securityes.DepositReceipts", null)
-                        .WithMany("DateTimesChanges")
-                        .HasForeignKey("DepositReceiptsId");
-
-                    b.HasOne("StrattonOakmontModels.Securityes.Forward", null)
-                        .WithMany("DateTimesChanges")
-                        .HasForeignKey("ForwardId");
-
-                    b.HasOne("StrattonOakmontModels.Securityes.Futures", null)
-                        .WithMany("DateTimesChanges")
-                        .HasForeignKey("FuturesId");
-
-                    b.HasOne("StrattonOakmontModels.Securityes.Option", null)
-                        .WithMany("DateTimesChanges")
-                        .HasForeignKey("OptionId");
-
-                    b.HasOne("StrattonOakmontModels.Stonk", null)
-                        .WithMany("DateTimesChanges")
-                        .HasForeignKey("StonkId");
-
-                    b.HasOne("StrattonOakmontModels.Securityes.Wright", null)
-                        .WithMany("DateTimesChanges")
-                        .HasForeignKey("WrightId");
+                    b.Navigation("PriceChange");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Indastrial", b =>
@@ -952,6 +949,45 @@ namespace StrattonOakmontServices.Migrations
                         .HasForeignKey("SecurityIndId");
 
                     b.Navigation("SecurityInd");
+                });
+
+            modelBuilder.Entity("StrattonOakmontModels.Securities.PriceСhange", b =>
+                {
+                    b.HasOne("StrattonOakmontModels.Securityes.Bill", null)
+                        .WithMany("PriceСhanges")
+                        .HasForeignKey("BillId");
+
+                    b.HasOne("StrattonOakmontModels.Bond", "Bond")
+                        .WithMany("PriceСhanges")
+                        .HasForeignKey("BondId");
+
+                    b.HasOne("StrattonOakmontModels.Securityes.DepositReceipts", null)
+                        .WithMany("PriceСhanges")
+                        .HasForeignKey("DepositReceiptsId");
+
+                    b.HasOne("StrattonOakmontModels.Securityes.Forward", null)
+                        .WithMany("PriceСhanges")
+                        .HasForeignKey("ForwardId");
+
+                    b.HasOne("StrattonOakmontModels.Securityes.Futures", null)
+                        .WithMany("PriceСhanges")
+                        .HasForeignKey("FuturesId");
+
+                    b.HasOne("StrattonOakmontModels.Securityes.Option", null)
+                        .WithMany("PriceСhanges")
+                        .HasForeignKey("OptionId");
+
+                    b.HasOne("StrattonOakmontModels.Stoсk", "Stoсk")
+                        .WithMany("PriceСhanges")
+                        .HasForeignKey("StoсkId");
+
+                    b.HasOne("StrattonOakmontModels.Securityes.Wright", null)
+                        .WithMany("PriceСhanges")
+                        .HasForeignKey("WrightId");
+
+                    b.Navigation("Bond");
+
+                    b.Navigation("Stoсk");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Security", b =>
@@ -996,9 +1032,9 @@ namespace StrattonOakmontServices.Migrations
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.DepositReceipts", b =>
                 {
-                    b.HasOne("StrattonOakmontModels.Abligation", "Abligation")
+                    b.HasOne("StrattonOakmontModels.Bond", "Bond")
                         .WithMany()
-                        .HasForeignKey("AbligationId");
+                        .HasForeignKey("BondId");
 
                     b.HasOne("StrattonOakmontModels.Category", "CategorySec")
                         .WithMany()
@@ -1008,21 +1044,21 @@ namespace StrattonOakmontServices.Migrations
                         .WithMany("DepositReceipts")
                         .HasForeignKey("SecuritySubId");
 
-                    b.HasOne("StrattonOakmontModels.Stonk", "Stonk")
+                    b.HasOne("StrattonOakmontModels.Stoсk", "Stoсk")
                         .WithMany()
-                        .HasForeignKey("StonkId");
+                        .HasForeignKey("StoсkId");
 
                     b.HasOne("StrattonOakmontModels.User", "UserSec")
                         .WithMany()
                         .HasForeignKey("UserSecId");
 
-                    b.Navigation("Abligation");
+                    b.Navigation("Bond");
 
                     b.Navigation("CategorySec");
 
                     b.Navigation("SecuritySub");
 
-                    b.Navigation("Stonk");
+                    b.Navigation("Stoсk");
 
                     b.Navigation("UserSec");
                 });
@@ -1132,7 +1168,7 @@ namespace StrattonOakmontServices.Migrations
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Wright", b =>
                 {
-                    b.HasOne("StrattonOakmontModels.Stonk", "Active")
+                    b.HasOne("StrattonOakmontModels.Stoсk", "Active")
                         .WithMany()
                         .HasForeignKey("ActiveId");
 
@@ -1163,7 +1199,7 @@ namespace StrattonOakmontServices.Migrations
                     b.Navigation("UserSec");
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Stonk", b =>
+            modelBuilder.Entity("StrattonOakmontModels.Stoсk", b =>
                 {
                     b.HasOne("StrattonOakmontModels.Category", "CategorySec")
                         .WithMany()
@@ -1174,7 +1210,7 @@ namespace StrattonOakmontServices.Migrations
                         .HasForeignKey("CompanySecId");
 
                     b.HasOne("StrattonOakmontModels.Security", "Security")
-                        .WithMany("Stonks")
+                        .WithMany("Stocks")
                         .HasForeignKey("SecurityId");
 
                     b.HasOne("StrattonOakmontModels.User", "UserSec")
@@ -1199,9 +1235,9 @@ namespace StrattonOakmontServices.Migrations
                     b.Navigation("SecuritySub");
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Abligation", b =>
+            modelBuilder.Entity("StrattonOakmontModels.Bond", b =>
                 {
-                    b.Navigation("DateTimesChanges");
+                    b.Navigation("PriceСhanges");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Category", b =>
@@ -1227,36 +1263,41 @@ namespace StrattonOakmontServices.Migrations
                     b.Navigation("SecuritySubs");
                 });
 
+            modelBuilder.Entity("StrattonOakmontModels.Securities.PriceСhange", b =>
+                {
+                    b.Navigation("Date");
+                });
+
             modelBuilder.Entity("StrattonOakmontModels.Security", b =>
                 {
-                    b.Navigation("Abligations");
+                    b.Navigation("Bonds");
 
-                    b.Navigation("Stonks");
+                    b.Navigation("Stocks");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Bill", b =>
                 {
-                    b.Navigation("DateTimesChanges");
+                    b.Navigation("PriceСhanges");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.DepositReceipts", b =>
                 {
-                    b.Navigation("DateTimesChanges");
+                    b.Navigation("PriceСhanges");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Forward", b =>
                 {
-                    b.Navigation("DateTimesChanges");
+                    b.Navigation("PriceСhanges");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Futures", b =>
                 {
-                    b.Navigation("DateTimesChanges");
+                    b.Navigation("PriceСhanges");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Option", b =>
                 {
-                    b.Navigation("DateTimesChanges");
+                    b.Navigation("PriceСhanges");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.SecurityInd", b =>
@@ -1279,12 +1320,12 @@ namespace StrattonOakmontServices.Migrations
 
             modelBuilder.Entity("StrattonOakmontModels.Securityes.Wright", b =>
                 {
-                    b.Navigation("DateTimesChanges");
+                    b.Navigation("PriceСhanges");
                 });
 
-            modelBuilder.Entity("StrattonOakmontModels.Stonk", b =>
+            modelBuilder.Entity("StrattonOakmontModels.Stoсk", b =>
                 {
-                    b.Navigation("DateTimesChanges");
+                    b.Navigation("PriceСhanges");
                 });
 #pragma warning restore 612, 618
         }

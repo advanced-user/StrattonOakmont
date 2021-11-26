@@ -1,4 +1,5 @@
-﻿using StrattonOakmontModels.Securityes.Type;
+﻿using StrattonOakmontModels.Securities;
+using StrattonOakmontModels.Securityes.Type;
 using System.Collections.Generic;
 
 namespace StrattonOakmontModels.Securityes
@@ -11,11 +12,11 @@ namespace StrattonOakmontModels.Securityes
         public double Price { get; set; }
         public int Percent { get; set; }
         public int LifeCycle { get; set; }
-        public Stonk Stonk { get; set; }
-        public Abligation Abligation { get; set; }
+        public Stoсk Stoсk { get; set; }
+        public Bond Bond { get; set; }
         public SecuritySub SecuritySub { get; set; }
         public Category CategorySec { get; set; }
         public User UserSec { get; set; }
-        public List<Date> DateTimesChanges { get; set; }
+        public List<PriceСhange> PriceСhanges { get; set; }
     }
 }

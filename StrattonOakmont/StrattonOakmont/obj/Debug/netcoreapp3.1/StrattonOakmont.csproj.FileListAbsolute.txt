@@ -4747,9 +4747,9 @@ C:\Users\stolb\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\bi
 C:\Users\stolb\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\StrattonOakmont.Views.pdb
 C:\Users\stolb\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\StrattonOakmont.csproj.CopyComplete
 C:\Users\stolb\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\StrattonOakmont.genruntimeconfig.cache
-C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Stonk\Edit.cshtml.g.cs
-C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Stonk\AddStonk.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\TypeOfSecurity.cshtml.g.cs
-C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Abligation\AddAbligation.cshtml.g.cs
-C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Stonk\Delete.cshtml.g.cs
-C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Abligation\Delete.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\bond\AddBond.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Bond\DeleteBond.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Stock\AddStock.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Stock\DeleteStock.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\Main\Stock\EditStock.cshtml.g.cs

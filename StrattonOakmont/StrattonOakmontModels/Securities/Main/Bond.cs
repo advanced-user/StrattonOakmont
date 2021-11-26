@@ -1,11 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using StrattonOakmontModels.Securities;
+using System.Collections.Generic;
 
-namespace StrattonOakmontModels 
+namespace StrattonOakmontModels
 {
-    public class Stonk 
+    public class Bond
     {
         public int Id { get; set; }
-        public bool Divisibility { get; set; }
+        public int Percent { get; set; }
+        public string FinalTime { get; set; }
         public double Price { get; set; }
         public int Volume { get; set; }
         public int Amount { get; set; }
@@ -13,6 +15,6 @@ namespace StrattonOakmontModels
         public Category CategorySec { get; set; }
         public Company CompanySec { get; set; }
         public User UserSec { get; set; }
-        public List<Date> DateTimesChanges { get; set; }
+        public List<PriceСhange> PriceСhanges { get; set; }
     }
 }

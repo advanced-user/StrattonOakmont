@@ -19,14 +19,17 @@ namespace StrattonOakmont.Pages.Company
 
         [BindProperty]
         public StrattonOakmontModels.Company Company { get; set; }
-        public IEnumerable<StrattonOakmontModels.Stonk> Stonks { get; set; }
-        public IEnumerable<StrattonOakmontModels.Abligation> Abligations { get; set; }
+        public IEnumerable<StrattonOakmontModels.Stoñk> Stocks { get; set; }
+        public IEnumerable<StrattonOakmontModels.Bond> Abligations { get; set; }
 
         public void OnGet(int id)
         {
             Company = _companyRepository.FindCompany(id);
-            Stonks = _securityRepository.GetAllStonks(Company.Security.Id);
-            Abligations = _securityRepository.GetAllAbligation(Company.Security.Id);
+            if (Company.Security != null)
+            {
+                Stocks = _securityRepository.GetAllStocks(Company.Security.Id);
+                Abligations = _securityRepository.GetAllBonds(Company.Security.Id);
+            }
         }
 
         public async Task<IActionResult> OnPostAsync(int id)
