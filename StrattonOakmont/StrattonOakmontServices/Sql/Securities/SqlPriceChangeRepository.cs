@@ -39,10 +39,8 @@ namespace StrattonOakmontServices.Sql.Securities
 
             if (stock != null)
             {
-                foreach (var item in stock.PriceСhanges)
+                foreach (var priceChange in stock.PriceСhanges)
                 {
-                    var priceChange = await _context.PriceСhanges.Include(x => x.Date).FirstOrDefaultAsync(x => x.Id == item.Id);
-
                     _context.PriceСhanges.Remove(priceChange);
                 }
             }

@@ -59,7 +59,7 @@ namespace StrattonOakmont.Pages.Security.Main.Bond
                 {
                     new StrattonOakmontModels.Securities.Price—hange()
                     {
-                        Date =  new DateTime(),
+                        Date =  DateTime.Now,
                         Price = Bond.Price
                     }
                 };
