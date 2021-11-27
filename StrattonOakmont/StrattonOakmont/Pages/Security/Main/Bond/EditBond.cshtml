@@ -12,17 +12,12 @@
             <div class="card">
                 <h2 style="text-align:center; margin:10px">Editing a bond for @Model.Company.Name</h2><br />
                 <div class="card-body">
-                    <a asp-page="/Security/Main/Bond/AddNewPrice" asp-route-companyId="@Model.Company.Id"
-                                                                   asp-route-bondId="@Model.Bond.Id"
-                                                                   class="btn btn-success mx-auto mx-md-0 text-white "
-                                                                   style="margin-bottom: 10px">Add new price</a><br />
-
                     <form class="form-horizontal form-material mx-2" method="post">
                         <input asp-for="@Model.Bond.Id" value="@Model.Bond.Id" style="display:none;" />
                         <input asp-for="@Model.Company.Id" value="@Model.Company.Id" style="display:none;" />
                         @{
                             <div class="form-group">
-                                <label class="col-md-12 mb-0">Price: @Model.Bond.Price</label>
+                                <label class="col-md-12 mb-0">Price: @Model.PriceСhange.Price</label>
                             </div>
                              <div class="form-group">
                                 <label class="col-md-12 mb-0">Percent</label>
@@ -41,14 +36,14 @@
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Volume</label>
                                 <div class="col-md-12">
-                                    <input asp-for="@Model.Bond.Volume" type="text" value="@Model.Bond.Volume"
+                                    <input asp-for="@Model.PriceСhange.Volume" type="text" value="@Model.PriceСhange.Volume"
                                             class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Amount</label>
                                 <div class="col-md-12">
-                                    <input asp-for="@Model.Bond.Amount" type="text" value="@Model.Bond.Amount"
+                                    <input asp-for="@Model.PriceСhange.Amount" type="text" value="@Model.PriceСhange.Amount"
                                             class="form-control ps-0 form-control-line">
                                 </div>
                             </div>

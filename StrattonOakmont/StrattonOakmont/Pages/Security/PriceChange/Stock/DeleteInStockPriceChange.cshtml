@@ -1,0 +1,21 @@
+﻿@page
+@model StrattonOakmont.Pages.Security.PriceChange.DeleteInStockPriceChangeModel
+@{
+}
+
+<div class="card">
+    <h2 style="text-align:center; margin:10px">Confirm the deletion of the stock price for @Model.Company.Name in @Model.PriceChange.Date</h2><br />
+    <div class="card-body">
+        <form class="form-horizontal form-material mx-2" method="post">
+            <input asp-for="@Model.Company.Id" value="@Model.Company.Id" style="display:none;" />
+            <input asp-for="@Model.PriceChange.Id" value="@Model.PriceChange.Id" style="display:none;" />
+            <div class="form-group">
+                <div class="col-sm-12 d-flex">
+                    <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

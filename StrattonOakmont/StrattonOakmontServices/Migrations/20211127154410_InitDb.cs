@@ -325,9 +325,6 @@ namespace StrattonOakmontServices.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Percent = table.Column<int>(type: "int", nullable: false),
                     FinalTime = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<double>(type: "float", nullable: false),
-                    Volume = table.Column<int>(type: "int", nullable: false),
-                    Amount = table.Column<int>(type: "int", nullable: false),
                     SecurityId = table.Column<int>(type: "int", nullable: true),
                     CategorySecId = table.Column<int>(type: "int", nullable: true),
                     CompanySecId = table.Column<int>(type: "int", nullable: true),
@@ -510,9 +507,6 @@ namespace StrattonOakmontServices.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Divisibility = table.Column<bool>(type: "bit", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false),
-                    Volume = table.Column<int>(type: "int", nullable: false),
-                    Amount = table.Column<int>(type: "int", nullable: false),
                     SecurityId = table.Column<int>(type: "int", nullable: true),
                     CategorySecId = table.Column<int>(type: "int", nullable: true),
                     CompanySecId = table.Column<int>(type: "int", nullable: true),
@@ -659,6 +653,8 @@ namespace StrattonOakmontServices.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Price = table.Column<double>(type: "float", nullable: false),
+                    Volume = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
                     BondId = table.Column<int>(type: "int", nullable: true),
                     StoсkId = table.Column<int>(type: "int", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),

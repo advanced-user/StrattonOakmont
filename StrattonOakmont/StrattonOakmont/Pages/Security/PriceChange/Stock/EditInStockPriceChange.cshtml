@@ -1,8 +1,6 @@
 ﻿@page
-@model StrattonOakmont.Pages.Security.Main.Stock.EditStockModel
-
+@model StrattonOakmont.Pages.Security.PriceChange.EditInStockPriceChangeModel
 @{
-    ViewData["Title"] = "Edit stock";
 }
 
 <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
@@ -11,26 +9,26 @@
     <div class="container-fluid">
         <div class="row mt-3">
             <div class="card">
-                <h2 style="text-align:center; margin:10px">Editing a stock for @Model.Company.Name</h2><br />
+                <h2 style="text-align:center; margin:10px">Change in the stock price of @Model.Company.Name for @Model.PriceChange.Date</h2><br />
                 <div class="card-body">
                     <form class="form-horizontal form-material mx-2" method="post">
-                        <input asp-for="@Model.Stock.Id" value="@Model.Stock.Id" style="display:none;" />
+                        <input asp-for="@Model.PriceChange.Id" value="@Model.PriceChange.Id" style="display:none;" />
                         <input asp-for="@Model.Company.Id" value="@Model.Company.Id" style="display:none;" />
                         @{
                             <div class="form-group">
-                                <label class="col-md-12 mb-0">Price: @Model.PriceСhange.Price</label>
+                                <label class="col-md-12 mb-0">Price: @Model.PriceChange.Price</label>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Volume</label>
                                 <div class="col-md-12">
-                                    <input asp-for="@Model.PriceСhange.Volume" type="text" value="@Model.PriceСhange.Volume"
+                                    <input asp-for="@Model.PriceChange.Volume" type="text" value="@Model.PriceChange.Volume"
                                             class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12 mb-0">Amount</label>
                                 <div class="col-md-12">
-                                    <input asp-for="@Model.PriceСhange.Amount" type="text" value="@Model.PriceСhange.Amount"
+                                    <input asp-for="@Model.PriceChange.Amount" type="text" value="@Model.PriceChange.Amount"
                                             class="form-control ps-0 form-control-line">
                                 </div>
                             </div>
@@ -39,7 +37,6 @@
                             <div class="col-sm-12 d-flex">
                                 <button class="btn btn-success mx-auto mx-md-0 text-white">
                                     Update
-                                    Stock
                                 </button>
                             </div>
                         </div>

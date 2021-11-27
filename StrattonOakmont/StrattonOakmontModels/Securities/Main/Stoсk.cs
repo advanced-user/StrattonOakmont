@@ -7,9 +7,6 @@ namespace StrattonOakmontModels
     {
         public int Id { get; set; }
         public bool Divisibility { get; set; }
-        public double Price { get; set; }
-        public int Volume { get; set; }
-        public int Amount { get; set; }
         public Security Security { get; set; }
         public Category CategorySec { get; set; }
         public Company CompanySec { get; set; }

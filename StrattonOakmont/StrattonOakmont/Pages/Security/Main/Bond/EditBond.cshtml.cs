@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using StrattonOakmontServices;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
+using System;
 using System.Threading.Tasks;
 
 namespace StrattonOakmont.Pages.Security.Main.Bond
@@ -29,25 +30,46 @@ namespace StrattonOakmont.Pages.Security.Main.Bond
         [BindProperty]
         public StrattonOakmontModels.Company Company { get; set; }
 
+        [BindProperty]
+        public StrattonOakmontModels.Securities.Price—hange Price—hange { get; set; }
+
         public void OnGet(int companyId, int bondId)
         {
             Bond = _stockRepository.GetBond(bondId);
             Company = _companyRepository.FindCompany(companyId);
+
+            if (Bond.Price—hanges != null && Bond.Price—hanges.Count != 0)
+            {
+                Price—hange = _priceChangeRepository.GetLatestBondPriceChage(bondId);
+            }
+            else
+            {
+                Price—hange = new StrattonOakmontModels.Securities.Price—hange
+                {
+                    Price = 0,
+                    Amount = 0,
+                    Volume = 0
+                };
+            }
         }
 
         public async Task<IActionResult> OnPost()
         {
             var bond = await _stockRepository.GetBondAsync(Bond.Id);
-            if (Bond != null && bond != null && Bond.Amount != 0)
+            if (Bond != null && bond != null && Price—hange.Amount != 0)
             {
                 bond.Percent = Bond.Percent;
                 bond.FinalTime = Bond.FinalTime;
-                bond.Amount = Bond.Amount;
-                bond.Volume = Bond.Volume;
-                bond.Price = Bond.Volume / Bond.Amount;
 
-                var priceChage = await _priceChangeRepository.GetLatestBondPriceChageAsync(bond.Id);
-                priceChage.Price = bond.Price;
+                var priceChange = new StrattonOakmontModels.Securities.Price—hange()
+                {
+                    Date = DateTime.Now,
+                    Price = Price—hange.Volume / Price—hange.Amount,
+                    Amount = Price—hange.Amount,
+                    Volume = Price—hange.Volume
+                };
+
+                bond.Price—hanges.Add(priceChange);
 
                 await _appDBContext.SaveChangesAsync();
             }

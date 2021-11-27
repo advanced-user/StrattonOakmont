@@ -31,6 +31,9 @@ namespace StrattonOakmont.Pages.Security.Main.Bond
         public StrattonOakmontModels.Company Company { get; set; }
 
         [BindProperty]
+        public StrattonOakmontModels.Securities.Price—hange Price—hange { get; set; }
+
+        [BindProperty]
         public int CategoryId { get; set; }
 
         public void OnGet(int companyId, int categoryId)
@@ -50,19 +53,21 @@ namespace StrattonOakmont.Pages.Security.Main.Bond
 
             if (Bond != null)
             {
-                if (Bond.Amount != 0)
+                if (Price—hange != null && Price—hange.Amount != 0)
                 {
-                    Bond.Price = Bond.Volume / Bond.Amount;
-                }
+                    Price—hange.Price = Price—hange.Volume / Price—hange.Amount;
 
-                Bond.Price—hanges = new List<StrattonOakmontModels.Securities.Price—hange>
-                {
-                    new StrattonOakmontModels.Securities.Price—hange()
+                    Bond.Price—hanges = new List<StrattonOakmontModels.Securities.Price—hange>
                     {
-                        Date =  DateTime.Now,
-                        Price = Bond.Price
-                    }
-                };
+                        new StrattonOakmontModels.Securities.Price—hange()
+                        {
+                            Date = DateTime.Now,
+                            Price = Price—hange.Volume / Price—hange.Amount,
+                            Amount = Price—hange.Amount,
+                            Volume = Price—hange.Volume
+                        }
+                    };
+                }
             }
 
             var company = await _dbCompany.FindCompanyAsync(Company.Id);

@@ -157,9 +157,6 @@ namespace StrattonOakmontServices.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
                     b.Property<int?>("CategorySecId")
                         .HasColumnType("int");
 
@@ -172,17 +169,11 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<int>("Percent")
                         .HasColumnType("int");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
                     b.Property<int?>("SecurityId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserSecId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Volume")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -269,6 +260,9 @@ namespace StrattonOakmontServices.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
                     b.Property<int?>("BillId")
                         .HasColumnType("int");
 
@@ -294,6 +288,9 @@ namespace StrattonOakmontServices.Migrations
                         .HasColumnType("float");
 
                     b.Property<int?>("StoсkId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Volume")
                         .HasColumnType("int");
 
                     b.Property<int?>("WrightId")
@@ -701,9 +698,6 @@ namespace StrattonOakmontServices.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
                     b.Property<int?>("CategorySecId")
                         .HasColumnType("int");
 
@@ -713,17 +707,11 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<bool>("Divisibility")
                         .HasColumnType("bit");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
                     b.Property<int?>("SecurityId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserSecId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Volume")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
