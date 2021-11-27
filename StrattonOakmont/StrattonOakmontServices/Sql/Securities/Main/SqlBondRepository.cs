@@ -43,7 +43,7 @@ namespace StrattonOakmontServices.Sql.Securities.Main
             {
                 foreach (var bond in security.Bonds)
                 {
-                    await _priceChangeRepository.DeleteStockPriceChages(bond.Id); ;
+                    await _priceChangeRepository.DeleteBondPriceChages(bond.Id); ;
                     _context.Bonds.Remove(bond);
                 }
             }
