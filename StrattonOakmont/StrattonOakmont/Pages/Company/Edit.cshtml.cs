@@ -20,7 +20,7 @@ namespace StrattonOakmont.Pages.Company
         [BindProperty]
         public StrattonOakmontModels.Company Company { get; set; }
         public IEnumerable<StrattonOakmontModels.Stoñk> Stocks { get; set; }
-        public IEnumerable<StrattonOakmontModels.Bond> Abligations { get; set; }
+        public IEnumerable<StrattonOakmontModels.Bond> Bonds { get; set; }
 
         public void OnGet(int id)
         {
@@ -28,7 +28,7 @@ namespace StrattonOakmont.Pages.Company
             if (Company.Security != null)
             {
                 Stocks = _securityRepository.GetAllStocks(Company.Security.Id);
-                Abligations = _securityRepository.GetAllBonds(Company.Security.Id);
+                Bonds = _securityRepository.GetAllBonds(Company.Security.Id);
             }
         }
 

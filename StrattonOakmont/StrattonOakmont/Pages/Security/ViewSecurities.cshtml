@@ -32,7 +32,18 @@
                                             <td>@bond.CategorySec.CategoryName</td>
 
                                             <td style="display: flex; justify-content: flex-end">
-                                                <a class="btn btn-primary" style="margin:5px" asp-page="Main/Bond/ViewBond" asp-route-id="@security.Company.Id">Details</a>  
+                                                <a class="btn btn-success" style="margin:5px" asp-page="Main/Bond/ChangeInBondPrices"
+                                                                                              asp-route-companyId="@security.Company.Id"
+                                                                                              asp-route-bondId="@bond.Id">Report</a>
+
+                                                <a class="btn btn-primary" style="margin:5px" asp-page="Main/Bond/EditBond"
+                                                                                              asp-route-companyId="@security.Company.Id"
+                                                                                              asp-route-bondId="@bond.Id">Edit</a>
+                                                <form method="post" style="margin:0">
+                                                    <a asp-route-companyId="@security.Company.Id" asp-route-bondId="@bond.Id"     
+                                                                                                  asp-page="Main/Bond/DeleteBond"
+                                                                                                  class="btn btn-danger" style="margin:5px">Delete</a>
+                                                </form>
                                             </td>
                                         </tr>
                                     }
@@ -43,7 +54,18 @@
                                             <td>@stock.CategorySec.CategoryName</td>
 
                                             <td style="display: flex; justify-content: flex-end">
-                                                <a class="btn btn-primary" style="margin:5px" asp-page="Main/Stock/ViewStock" asp-route-id="@security.Company.Id">Details</a>  
+                                                <a class="btn btn-success" style="margin:5px" asp-page="Main/Stock/ChangeInStockPrices"
+                                                                                              asp-route-companyId="@security.Company.Id"
+                                                                                              asp-route-stockId="@stock.Id">Report</a>
+
+                                                <a class="btn btn-primary" style="margin:5px" asp-page="Main/Stock/EditStock"
+                                                                                              asp-route-companyId="@security.Company.Id"
+                                                                                              asp-route-stockId="@stock.Id">Edit</a>
+                                                <form method="post" style="margin:0">
+                                                    <a asp-route-companyId="@security.Company.Id" asp-route-stockId="@stock.Id"     
+                                                                                                  asp-page="Main/Stock/DeleteStock"
+                                                                                                  class="btn btn-danger" style="margin:5px">Delete</a> 
+                                                </form>
                                             </td>
                                         </tr>
                                     }

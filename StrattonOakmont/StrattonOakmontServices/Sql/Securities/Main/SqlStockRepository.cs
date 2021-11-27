@@ -2,6 +2,7 @@
 using StrattonOakmontModels;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace StrattonOakmontServices.Sql.Securities.Main
@@ -63,7 +64,7 @@ namespace StrattonOakmontServices.Sql.Securities.Main
 
         public Stoсk GetStoсk(int stockId)
         {
-            return _context.Stocks.Find(stockId);
+            return _context.Stocks.Include(x => x.PriceСhanges).FirstOrDefault(x => x.Id == stockId);
         }
     }
 }

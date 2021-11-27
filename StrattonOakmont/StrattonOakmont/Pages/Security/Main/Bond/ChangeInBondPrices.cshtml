@@ -1,0 +1,43 @@
+﻿@page
+@model StrattonOakmont.Pages.Security.Main.Bond.ChangeInBondPricesModel
+@{
+     ViewData["Title"] = "ChangeInBondPrices";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Change in bond prices for @Model.Company.Name</h4>
+                    <h6 class="card-subtitle"> <code></code></h6>
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Price</th>
+                                    <th class="border-top-0">Date</th>
+                                    <th class="border-top-0"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (Model.Bond != null && Model.Bond.PriceСhanges != null)
+                                {
+                                    @foreach (var priceChange in Model.Bond.PriceСhanges)
+                                    {
+                                        <tr>
+                                            <td>@priceChange.Price</td>
+                                            <td>@priceChange.Date</td>
+                                        </tr>
+                                    }
+                                }
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

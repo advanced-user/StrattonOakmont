@@ -2,6 +2,7 @@
 using StrattonOakmontModels;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace StrattonOakmontServices.Sql.Securities.Main
@@ -55,7 +56,7 @@ namespace StrattonOakmontServices.Sql.Securities.Main
 
         public Bond GetBond(int bondId)
         {
-            return _context.Bonds.Find(bondId);
+            return _context.Bonds.Include(x => x.PriceСhanges).FirstOrDefault(x => x.Id == bondId);
         }
 
         public async Task<Bond> GetBondAsync(int bondId)
