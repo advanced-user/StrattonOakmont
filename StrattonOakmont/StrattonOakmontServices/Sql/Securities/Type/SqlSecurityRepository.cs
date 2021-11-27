@@ -13,6 +13,18 @@ namespace StrattonOakmontServices.Sql
         private readonly IStockRepository _stockRepository;
         private readonly IBondRepository _bondRepository;
 
+        public IEnumerable<Security> GetAllSecurities
+        {
+            get 
+            {
+                return _context.Securities.Include(x => x.Bonds)
+                                          .ThenInclude(bond => bond.CategorySec)
+                                          .Include(x => x.Stocks)
+                                          .ThenInclude(stock => stock.CategorySec)
+                                          .Include(x => x.Company);
+            }
+        }
+
         public SqlSecurityRepository(AppDBContext context, IStockRepository stockRepository, IBondRepository bondRepository)
         {
             _context = context;
@@ -28,9 +40,9 @@ namespace StrattonOakmontServices.Sql
             return newSecurity;
         }
 
-        public Task<Security> GetSecurityAsync(int id)
+        public async Task<Security> GetSecurityAsync(int id)
         {
-            return _context.Securities.Include(x => x.Bonds)
+            return await _context.Securities.Include(x => x.Bonds)
                                       .Include(x => x.Stocks)
                                       .Include(x => x.Company).FirstOrDefaultAsync(x => x.Id == id);
         }
@@ -65,12 +77,12 @@ namespace StrattonOakmontServices.Sql
 
         public IEnumerable<Stoсk> GetAllStocks(int securityId)
         {
-            return _context.Stocks.Include(x => x.CategorySec).Where(x => x.Security.Id == securityId);
+            return _context.Stocks.Include(x => x.CategorySec).Include(x => x.CompanySec).Where(x => x.Security.Id == securityId);
         }
 
         public IEnumerable<Bond> GetAllBonds(int securityId)
         {
-            return _context.Bonds.Include(x => x.CategorySec).Where(x => x.Security.Id == securityId);
+            return _context.Bonds.Include(x => x.CategorySec).Include(x => x.CompanySec).Where(x => x.Security.Id == securityId);
         }
     }
 }

@@ -1,0 +1,58 @@
+﻿@page
+@model StrattonOakmont.Pages.Security.ViewSecuritiesModel
+@{
+     ViewData["Title"] = "View securities";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">All securities</h4>
+                    <h6 class="card-subtitle"> <code></code></h6>
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Company name</th>
+                                    <th class="border-top-0">Category</th>
+                                    <th class="border-top-0"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var security in Model.Securities)
+                                {
+                                    @foreach (var bond in security.Bonds)
+                                    {
+                                        <tr>
+                                            <td>@security.Company.Name</td>
+                                            <td>@bond.CategorySec.CategoryName</td>
+
+                                            <td style="display: flex; justify-content: flex-end">
+                                                <a class="btn btn-primary" style="margin:5px" asp-page="Main/Bond/ViewBond" asp-route-id="@security.Company.Id">Details</a>  
+                                            </td>
+                                        </tr>
+                                    }
+                                    @foreach (var stock in security.Stocks)
+                                    {
+                                        <tr>
+                                            <td>@security.Company.Name</td>
+                                            <td>@stock.CategorySec.CategoryName</td>
+
+                                            <td style="display: flex; justify-content: flex-end">
+                                                <a class="btn btn-primary" style="margin:5px" asp-page="Main/Stock/ViewStock" asp-route-id="@security.Company.Id">Details</a>  
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

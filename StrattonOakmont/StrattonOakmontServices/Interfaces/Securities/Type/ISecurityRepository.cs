@@ -6,6 +6,7 @@ namespace StrattonOakmontServices
 {
     public interface ISecurityRepository
     {
+        public IEnumerable<Security> GetAllSecurities { get; }
         public IEnumerable<Stoсk> GetAllStocks(int securityId);
         public IEnumerable<Bond> GetAllBonds(int securityId);
         public Task<Security> GetSecurityAsync(int id);

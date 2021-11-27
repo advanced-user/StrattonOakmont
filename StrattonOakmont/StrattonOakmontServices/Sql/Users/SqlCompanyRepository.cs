@@ -21,7 +21,7 @@ namespace StrattonOakmontServices.Sql
 		{
 			get
 			{
-				return _context.Companies;
+				return _context.Companies.Include(x => x.Security);
 			}
 		}
 
