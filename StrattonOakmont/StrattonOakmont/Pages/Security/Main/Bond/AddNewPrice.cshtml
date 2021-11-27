@@ -1,0 +1,36 @@
+﻿@page
+@model StrattonOakmont.Pages.Security.Main.Bond.AddNewPriceModel
+@{
+}
+
+<div class="card">
+    <h2 style="text-align:center; margin:10px">Add new stock price for @Model.Company.Name</h2><br />
+
+    <div class="card-body">
+        <form class="form-horizontal form-material mx-2" method="post">
+            <input asp-for="@Model.Bond.Id" value="@Model.Bond.Id" style="display:none;" />
+            <input asp-for="@Model.Company.Id" value="@Model.Company.Id" style="display:none;" />
+
+            <div class="form-group">
+                <label asp-for="@Model.Bond.Volume" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Bond.Volume" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Bond.Amount" class="col-md-12 mb-0"></label>
+                <div class="col-md-12">
+                    <input asp-for="@Model.Bond.Amount" class="form-control ps-0 form-control-line">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-12 d-flex">
+                    <button type="submit" class="btn btn-success mx-auto mx-md-0 text-white">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

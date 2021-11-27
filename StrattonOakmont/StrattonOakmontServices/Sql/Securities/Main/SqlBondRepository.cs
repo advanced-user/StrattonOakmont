@@ -57,5 +57,10 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         {
             return _context.Bonds.Find(bondId);
         }
+
+        public async Task<Bond> GetBondAsync(int bondId)
+        {
+            return await _context.Bonds.Include(x => x.PriceСhanges).FirstOrDefaultAsync(x => x.Id == bondId);
+        }
     }
 }

@@ -59,12 +59,12 @@ namespace StrattonOakmontServices.Sql.Securities
             return await _context.PriceСhanges.FindAsync(latestId);
         }
 
-        public async Task<StrattonOakmontModels.Securities.PriceСhange> GetLatestStockPriceChageAsync(AppDBContext context ,int stockId)
+        public async Task<StrattonOakmontModels.Securities.PriceСhange> GetLatestStockPriceChageAsync(int stockId)
         {
-            var latestId = await context.PriceСhanges.Where(x => x.Stoсk.Id == stockId)
+            var latestId = await _context.PriceСhanges.Where(x => x.Stoсk.Id == stockId)
                                                       .MaxAsync(p => p.Id);
 
-            return await context.PriceСhanges.FindAsync(latestId);
+            return await _context.PriceСhanges.FindAsync(latestId);
         }
     }
 }

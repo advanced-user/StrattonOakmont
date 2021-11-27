@@ -8,7 +8,7 @@ namespace StrattonOakmontServices.Interfaces.Securities
     {
         public Task<Stoсk> DeleteStockPriceChages(int stockId);
         public Task<Bond> DeleteBondPriceChages(int bondId);
-        public Task<PriceСhange> GetLatestStockPriceChageAsync(AppDBContext appDBContext, int stockId);
+        public Task<PriceСhange> GetLatestStockPriceChageAsync(int stockId);
         public Task<PriceСhange> GetLatestBondPriceChageAsync(int bondId);
 
     }

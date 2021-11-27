@@ -5,16 +5,16 @@ using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
 using System.Threading.Tasks;
 
-namespace StrattonOakmont.Pages.Security.Main.Stock
+namespace StrattonOakmont.Pages.Security.Main.Bond
 {
-    public class EditStockModel : PageModel
+    public class EditBondModel : PageModel
     {
-        private readonly IStockRepository _stockRepository;
+        private readonly IBondRepository _stockRepository;
         private readonly ICompanyRepository _companyRepository;
         private readonly IPriceChangeRepository _priceChangeRepository;
         private readonly AppDBContext _appDBContext;
 
-        public EditStockModel(AppDBContext appDBContext, IStockRepository stockRepository,
+        public EditBondModel(AppDBContext appDBContext, IBondRepository stockRepository,
                               ICompanyRepository companyRepository, IPriceChangeRepository priceChangeRepository)
         {
             _appDBContext = appDBContext;
@@ -24,28 +24,30 @@ namespace StrattonOakmont.Pages.Security.Main.Stock
         }
 
         [BindProperty]
-        public StrattonOakmontModels.Stoñk Stock { get; set; }
+        public StrattonOakmontModels.Bond Bond { get; set; }
 
         [BindProperty]
         public StrattonOakmontModels.Company Company { get; set; }
 
-        public void OnGet(int companyId, int stockId)
+        public void OnGet(int companyId, int bondId)
         {
-            Stock = _stockRepository.GetStoñk(stockId);
+            Bond = _stockRepository.GetBond(bondId);
             Company = _companyRepository.FindCompany(companyId);
         }
 
         public async Task<IActionResult> OnPost()
         {
-            var stock = await _stockRepository.GetStockAsync(Stock.Id);    
-            if (Stock != null && stock != null && Stock.Amount != 0)
+            var bond = await _stockRepository.GetBondAsync(Bond.Id);
+            if (Bond != null && bond != null && Bond.Amount != 0)
             {
-                stock.Amount = Stock.Amount;
-                stock.Volume = Stock.Volume;
-                stock.Price = Stock.Volume / Stock.Amount;
-               
-                var priceChage = await _priceChangeRepository.GetLatestStockPriceChageAsync(stock.Id);
-                priceChage.Price = stock.Price;
+                bond.Percent = Bond.Percent;
+                bond.FinalTime = Bond.FinalTime;
+                bond.Amount = Bond.Amount;
+                bond.Volume = Bond.Volume;
+                bond.Price = Bond.Volume / Bond.Amount;
+
+                var priceChage = await _priceChangeRepository.GetLatestBondPriceChageAsync(bond.Id);
+                priceChage.Price = bond.Price;
 
                 await _appDBContext.SaveChangesAsync();
             }
