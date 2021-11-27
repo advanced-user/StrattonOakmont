@@ -13,6 +13,21 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">All companies</h4>
+
+                    <form method="get">
+                        <div class="form-inline form-group">
+                            <label class="control-label">Name: </label>
+                            <input name="name" class="form-control" />
+                             <button class="btn primary" style="margin:5px" type="submit">Search</button> 
+
+                            @*<label class="control-label"> </label>
+                             <span asp-validation-for="Companies"></span>
+ 
+                            <input type="submit" value="Фильтр" class="btn btn-default" />*@
+                        </div>
+                    </form>
+
+
                     <h6 class="card-subtitle"> <code></code></h6>
                     <div class="table-responsive">
                         <table class="table user-table">
@@ -24,6 +39,8 @@
                             </thead>
 
                             <tbody>
+                                  
+                                
                                 @foreach (var item in Model.Companies)
                                 {
                                 <tr>
@@ -37,10 +54,11 @@
                                     </td>
                                 </tr>
                                 }
+
                                 </tbody>
                         </table>
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StrattonOakmontServices;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -14,12 +15,22 @@ namespace StrattonOakmont.Pages.AdminArea
         {
             _dbCompany = dbCompany;
         }
+       
+       
+        public IEnumerable<StrattonOakmontModels.Company> Companies { get; set; }     
+        //public StrattonOakmontModels.Company CompanyFilter { get; set; }
 
-        public IEnumerable<StrattonOakmontModels.Company> Companies { get; set; }
-
-        public void OnGet()
+        public void OnGet(string name)
         {
-            Companies = _dbCompany.GetAllCompanies;
+            if (String.IsNullOrEmpty(name))
+            {
+                Companies = _dbCompany.GetAllCompanies;
+            }
+            else
+            {
+                Companies = _dbCompany.GetCompaniesByName(name); 
+            }
+            
         }
 
         public async Task<IActionResult> OnPostAsync(int id)
@@ -28,5 +39,7 @@ namespace StrattonOakmont.Pages.AdminArea
 
             return RedirectToPage("Company");
         }
+
+
     }
 }

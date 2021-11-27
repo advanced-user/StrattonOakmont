@@ -46,3 +46,4 @@ C:\Users\stolb\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmontMod
 C:\Users\stolb\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.1\StrattonOakmontModels.dll
 C:\Users\stolb\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.1\StrattonOakmontModels.pdb
 C:\Users\stolb\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.1\StrattonOakmontModels.csproj.AssemblyReference.cache
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmontModels\obj\Debug\netstandard2.1\StrattonOakmontModels.csproj.AssemblyReference.cache

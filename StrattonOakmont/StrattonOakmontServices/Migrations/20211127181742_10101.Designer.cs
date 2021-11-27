@@ -10,8 +10,8 @@ using StrattonOakmontServices;
 namespace StrattonOakmontServices.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20211127154410_InitDb")]
-    partial class InitDb
+    [Migration("20211127181742_10101")]
+    partial class _10101
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

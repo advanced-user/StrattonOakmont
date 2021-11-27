@@ -79,5 +79,17 @@ namespace StrattonOakmontServices.Sql
 		{
 			return await _context.Companies.Include(x => x.Security).FirstOrDefaultAsync(x => x.Id == id);
 		}
+
+        public IEnumerable<Company> GetCompaniesByName(string Name)
+        {
+			
+			return _context.Companies.Include(x => x.Security).Where(o => o.Name == Name);
+			
+		}
+
+        public Company FindCompanyFilter(string Name)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
