@@ -2,25 +2,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StrattonOakmontServices;
 using StrattonOakmontServices.Interfaces;
-using StrattonOakmontServices.Interfaces.Securities;
+using System;
 using System.Threading.Tasks;
 
 namespace StrattonOakmont.Pages.Security.Main.Stock
 {
-    public class EditStockModel : PageModel
+    public class AddNewPriceModel : PageModel
     {
         private readonly IStockRepository _stockRepository;
         private readonly ICompanyRepository _companyRepository;
-        private readonly IPriceChangeRepository _priceChangeRepository;
-        private readonly AppDBContext _appDBContext;
+        private readonly AppDBContext _context;
 
-        public EditStockModel(AppDBContext appDBContext, IStockRepository stockRepository,
-                              ICompanyRepository companyRepository, IPriceChangeRepository priceChangeRepository)
+        public AddNewPriceModel(AppDBContext context, IStockRepository stockRepository,
+                                ICompanyRepository companyRepository)
         {
-            _appDBContext = appDBContext;
             _stockRepository = stockRepository;
-            _companyRepository = companyRepository;
-            _priceChangeRepository = priceChangeRepository;
+            _context = context;
+            _companyRepository = companyRepository; 
         }
 
         [BindProperty]
@@ -37,17 +35,22 @@ namespace StrattonOakmont.Pages.Security.Main.Stock
 
         public async Task<IActionResult> OnPost()
         {
-            var stock = await _stockRepository.GetStockAsync(Stock.Id);    
-            if (Stock != null && stock != null && Stock.Amount != 0)
+            var stock = await _stockRepository.GetStockAsync(Stock.Id);
+            if (Stock != null && stock != null && stock.Amount != 0)
             {
                 stock.Amount = Stock.Amount;
                 stock.Volume = Stock.Volume;
                 stock.Price = Stock.Volume / Stock.Amount;
-               
-                var priceChage = await _priceChangeRepository.GetLatestStockPriceChageAsync(_appDBContext ,stock.Id);
-                priceChage.Price = stock.Price;
 
-                await _appDBContext.SaveChangesAsync();
+                var priceChange = new StrattonOakmontModels.Securities.Price—hange()
+                {
+                    Date = DateTime.Now,
+                    Price = stock.Price
+                };
+
+                stock.Price—hanges.Add(priceChange);
+
+                await _context.SaveChangesAsync();
             }
 
             return RedirectToPage("/Company/Edit", new { id = Company.Id });

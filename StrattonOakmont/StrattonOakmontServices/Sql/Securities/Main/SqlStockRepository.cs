@@ -55,5 +55,15 @@ namespace StrattonOakmontServices.Sql.Securities.Main
 
             return stock;
         }
+
+        public async Task<Stoсk> GetStockAsync(int stockId)
+        {
+            return await _context.Stocks.Include(x => x.PriceСhanges).FirstOrDefaultAsync(x => x.Id == stockId);
+        }
+
+        public Stoсk GetStoсk(int stockId)
+        {
+            return _context.Stocks.Find(stockId);
+        }
     }
 }

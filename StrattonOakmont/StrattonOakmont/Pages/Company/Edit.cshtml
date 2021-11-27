@@ -91,7 +91,7 @@
                                                     <td>@item.CategorySec.CategoryName</td>                                                    
 
                                                     <td style="display: flex; justify-content: flex-end">
-                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Edit" asp-route-companyId="@Model.Company.Id" asp-route-bondId="@item.Id">Edit</a>  
+                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Main/Bond/EditBond" asp-route-companyId="@Model.Company.Id" asp-route-bondId="@item.Id">Edit</a>  
                                                         <form method="post" style="margin:0">
                                                             <a asp-route-companyId="@Model.Company.Id" asp-route-bondId="@item.Id" asp-page="/Security/Main/Bond/DeleteBond" class="btn btn-danger" style="margin:5px">Delete</a> 
                                                         </form>
@@ -107,7 +107,7 @@
                                                     <td>@item.CategorySec.CategoryName</td>                                                    
 
                                                     <td style="display: flex; justify-content: flex-end">
-                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Edit" asp-route-companyId="@Model.Company.Id" asp-route-stockId="@item.Id">Edit</a>  
+                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Main/Stock/EditStock" asp-route-companyId="@Model.Company.Id" asp-route-stockId="@item.Id">Edit</a>  
                                                         <form method="post" style="margin:0">
                                                             <a asp-route-companyId="@Model.Company.Id" asp-route-stockId="@item.Id" asp-page="/Security/Main/Stock/DeleteStock" class="btn btn-danger" style="margin:5px">Delete</a> 
                                                         </form>

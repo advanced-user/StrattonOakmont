@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StrattonOakmontModels;
 using StrattonOakmontServices.Interfaces.Securities;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace StrattonOakmontServices.Sql.Securities
@@ -48,6 +49,22 @@ namespace StrattonOakmontServices.Sql.Securities
             await _context.SaveChangesAsync();
 
             return stock;
+        }
+
+        public async Task<StrattonOakmontModels.Securities.PriceСhange> GetLatestBondPriceChageAsync(int bondId)
+        {
+            var latestId = await _context.PriceСhanges.Where(x => x.Bond.Id == bondId)
+                                                      .MaxAsync(p => p.Id);
+
+            return await _context.PriceСhanges.FindAsync(latestId);
+        }
+
+        public async Task<StrattonOakmontModels.Securities.PriceСhange> GetLatestStockPriceChageAsync(AppDBContext context ,int stockId)
+        {
+            var latestId = await context.PriceСhanges.Where(x => x.Stoсk.Id == stockId)
+                                                      .MaxAsync(p => p.Id);
+
+            return await context.PriceСhanges.FindAsync(latestId);
         }
     }
 }

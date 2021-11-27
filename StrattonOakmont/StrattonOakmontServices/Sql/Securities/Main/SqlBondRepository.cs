@@ -52,5 +52,10 @@ namespace StrattonOakmontServices.Sql.Securities.Main
 
             return security;
         }
+
+        public Bond GetBond(int bondId)
+        {
+            return _context.Bonds.Find(bondId);
+        }
     }
 }
