@@ -1,4 +1,5 @@
-﻿@page
+﻿@page "{handler?}"
+
 @model StrattonOakmont.Pages.AdminArea.CompanyModel
 @{
      ViewData["Title"] = "Company";
@@ -14,19 +15,15 @@
                 <div class="card-body">
                     <h4 class="card-title">All companies</h4>
 
-                    <form method="get">
-                        <div class="form-inline form-group">
-
-                            <label class="control-label">Name: </label>
-                            <input name="name" class="form-control" />
-                             <button class="btn primary" style="margin:5px" type="submit">Search</button> 
-
-
-                            @*<label class="control-label">Security: </label>
-                            <select name="company" asp-items="Securities" class="form-control"></select> 
-                            <input type="submit" value="Фильтр" class="btn btn-default" />*@
-
-                        </div>
+                    <form method="post">
+                        @foreach (var category in Model.AllCategories)
+                        {
+                            <div class="col-md-12">
+                                <input type="checkbox" name="categories" value="@category.CategoryName"
+                                        @(Model.CheckedCategories.Contains(category.CategoryName) ? "checked=\"checked\"" : "") />@category.CategoryName<br />
+                            </div>
+                        }
+                        <input type="submit" asp-page-handler="Filter" value="Filter" />
                     </form>
 
 

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
 using System.Collections.Generic;
 using StrattonOakmontModels;
-
+using System;
 
 namespace StrattonOakmont.Pages.AdminArea
 {
@@ -23,6 +23,25 @@ namespace StrattonOakmont.Pages.AdminArea
         public void OnGet()
         {
             Users = _userManager.Users.ToList();
+        }
+
+        public void OnPostSearch(string name)
+        {
+            Users = new List<User>();
+
+            if (String.IsNullOrEmpty(name))
+            {
+                Users = _userManager.Users.ToList();
+            }
+            else
+            {
+                var user = _userManager.Users.FirstOrDefault(x => x.UserName == name || x.Email == name);
+
+                if (user != null)
+                {
+                    Users.Add(user);
+                }
+            }
         }
 
         public async Task<IActionResult> OnPostAsync(string id)

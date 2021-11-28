@@ -362,9 +362,11 @@ else
 
                         <li class="nav-item search-box">
                             <a class="nav-link text-muted" href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search" style="display: none;">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="ti-close"></i></a> </form>
+                            <form class="app-search" style="display: none;" method="post">
+                                <input name="name" type="text" class="form-control" placeholder="Search &amp; enter">
+                                <a class="srh-btn"><i class="ti-close"></i></a>
+                                <input type="submit" asp-page-handler="Search" style="display:none"/>
+                            </form>
                         </li>
                     </ul> 
                 </div>
@@ -420,8 +422,8 @@ else
     </div>
 
         <script src="~/admin/assets/plugins/jquery/dist/jquery.min.js"></script>
+
         <!-- Bootstrap tether Core JavaScript -->
-        <script src="~/admin/assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="~/admin/js/app-style-switcher.js"></script>
         <!--Wave Effects -->
         <script src="~/admin/js/waves.js"></script>

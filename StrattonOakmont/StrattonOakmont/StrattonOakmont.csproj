@@ -6,6 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Security\Category\**" />
+    <Compile Remove="Pages\Security\Industrial\**" />
+    <Compile Remove="Pages\Security\Subsidiary\**" />
+    <Content Remove="Pages\Security\Category\**" />
+    <Content Remove="Pages\Security\Industrial\**" />
+    <Content Remove="Pages\Security\Subsidiary\**" />
+    <EmbeddedResource Remove="Pages\Security\Category\**" />
+    <EmbeddedResource Remove="Pages\Security\Industrial\**" />
+    <EmbeddedResource Remove="Pages\Security\Subsidiary\**" />
+    <None Remove="Pages\Security\Category\**" />
+    <None Remove="Pages\Security\Industrial\**" />
+    <None Remove="Pages\Security\Subsidiary\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
@@ -18,16 +33,6 @@
   <ItemGroup>
     <ProjectReference Include="..\StrattonOakmontModels\StrattonOakmontModels.csproj" />
     <ProjectReference Include="..\StrattonOakmontServices\StrattonOakmontServices.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Security\Industrial\Forward\" />
-    <Folder Include="Pages\Security\Industrial\Futures\" />
-    <Folder Include="Pages\Security\Industrial\Option\" />
-    <Folder Include="Pages\Security\Industrial\Wright\" />
-    <Folder Include="Pages\Security\Category\" />
-    <Folder Include="Pages\Security\Subsidiary\Bill\" />
-    <Folder Include="Pages\Security\Subsidiary\DepositReceipts\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
