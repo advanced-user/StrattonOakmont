@@ -16,14 +16,16 @@
 
                     <form method="get">
                         <div class="form-inline form-group">
+
                             <label class="control-label">Name: </label>
                             <input name="name" class="form-control" />
                              <button class="btn primary" style="margin:5px" type="submit">Search</button> 
 
-                            @*<label class="control-label"> </label>
-                             <span asp-validation-for="Companies"></span>
- 
+
+                            @*<label class="control-label">Security: </label>
+                            <select name="company" asp-items="Securities" class="form-control"></select> 
                             <input type="submit" value="Фильтр" class="btn btn-default" />*@
+
                         </div>
                     </form>
 
