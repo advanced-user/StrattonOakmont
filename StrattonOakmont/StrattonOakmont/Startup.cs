@@ -50,7 +50,9 @@ namespace StrattonOakmont
 
             // Users
             services.AddScoped<ICompanyRepository, SqlCompanyRepository>();
-            
+
+            services.AddScoped<ISQLRepository, SQLRepository>();
+
 
 
             services.Configure<RouteOptions>(options =>

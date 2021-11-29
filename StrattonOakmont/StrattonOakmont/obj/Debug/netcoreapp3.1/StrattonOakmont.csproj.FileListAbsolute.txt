@@ -4770,3 +4770,4 @@ C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debu
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\PriceChange\Stock\EditInStockPriceChange.cshtml.g.cs
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\TypeOfSecurity.cshtml.g.cs
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\ViewSecurities.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\SQL.cshtml.g.cs

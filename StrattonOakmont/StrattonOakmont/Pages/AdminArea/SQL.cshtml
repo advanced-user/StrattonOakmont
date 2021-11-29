@@ -1,0 +1,65 @@
+﻿@page
+@using System.Data
+@model StrattonOakmont.Pages.AdminArea.SQLModel
+@{
+}
+
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> 
+
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="card">
+                <h2 style="text-align:center; margin:10px">SQL</h2><br />
+                <div class="card-body">
+                    <form class="form-horizontal form-material mx-2" method="post">
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1"></label>
+                            <textarea asp-for="@Model.Query" class="form-control" id="exampleFormControlTextarea1" rows="10">SELECT</textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12 d-flex">
+                                <button class="btn btn-success mx-auto mx-md-0 text-white">
+                                    DO
+                                    SQL
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+     
+                            @foreach (DataTable dt in Model.Data.Tables)
+                            {
+                                <thead>  
+                                    <tr>
+                                    @foreach (DataColumn column in dt.Columns)
+                                    {
+                                        <th class="border-top-0">@column.ColumnName</th>
+                                    }
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (DataRow row in dt.Rows)
+                                    {
+                                        <tr>
+                                            @foreach (object cell in row.ItemArray)
+                                            {
+                                                <td>@cell</td>
+                                            }
+                                        </tr>
+                                    }
+                                </tbody>
+                            }
+                       </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
