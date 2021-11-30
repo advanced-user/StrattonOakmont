@@ -23,9 +23,14 @@ namespace StrattonOakmont.Pages.AdminArea
         [BindProperty]
         public DataSet Data { get; set; }
 
+        [BindProperty]
+        public string Smile { get; set; }
+
         public void OnGet()
         {
             Data = new DataSet();
+            Query = "SELECT";
+            Smile = "";
         }
 
         public void OnPost()
@@ -33,10 +38,11 @@ namespace StrattonOakmont.Pages.AdminArea
             try
             {
                 Data = _sqlRepository.DoSql(Query);
+                Smile = "/admin/IMG/right.gif";
             }
             catch
             {
-
+                Smile = "/admin/IMG/not_right.gif";
             }
         }
     }

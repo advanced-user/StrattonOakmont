@@ -4,8 +4,6 @@
 @{
 }
 
-<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
-        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full"> 
 
     <div class="container-fluid">
         <div class="row mt-3">
@@ -14,8 +12,18 @@
                 <div class="card-body">
                     <form class="form-horizontal form-material mx-2" method="post">
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1"></label>
-                            <textarea asp-for="@Model.Query" class="form-control" id="exampleFormControlTextarea1" rows="10">SELECT</textarea>
+                                <div class="container-fluid">
+                                    <div class="row mt-3">
+                                        <!-- Column -->
+                                        <div class="col-lg-8 col-xlg-9 col-md-7">
+                                            <textarea asp-for="@Model.Query" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+                                        </div>
+                                        <div class="col-lg-4 col-xlg-3 col-md-5">
+                                            <img src="@Model.Smile" />
+                                        </div>    
+                                     </div>
+                                </div>
+                              
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12 d-flex">
@@ -30,12 +38,16 @@
                     <br />
                     <br />
                     <br />
+                    <h3 style="text-align:center; margin:10px">Output: </h3><br />
+                    <br />
+                    <br />
+                    <br />
 
                     <div class="table-responsive">
-                        <table class="table user-table">
-     
-                            @foreach (DataTable dt in Model.Data.Tables)
-                            {
+
+                        @foreach (DataTable dt in Model.Data.Tables)
+                        {
+                            <table class="table user-table">
                                 <thead>  
                                     <tr>
                                     @foreach (DataColumn column in dt.Columns)
@@ -56,8 +68,8 @@
                                         </tr>
                                     }
                                 </tbody>
-                            }
-                       </table>
+                            </table>
+                        }
                 </div>
             </div>
         </div>
