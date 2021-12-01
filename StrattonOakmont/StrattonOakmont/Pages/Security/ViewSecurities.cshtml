@@ -23,51 +23,56 @@
                             </thead>
 
                             <tbody>
-                                @foreach (var security in Model.Securities)
+                                @if (Model.Securities != null)
                                 {
-                                    @foreach (var bond in security.Bonds)
+                                    @foreach (var security in Model.Securities)
                                     {
-                                        <tr>
-                                            <td>@security.Company.Name</td>
-                                            <td>@bond.CategorySec.CategoryName</td>
+                                        @foreach (var bond in security.Bonds)
+                                        {
+                                            <tr>
+                                                <td>@security.Company.Name</td>
+                                                <td>@bond.CategorySec.CategoryName</td>
 
-                                            <td style="display: flex; justify-content: flex-end">
-                                                <a class="btn btn-success" style="margin:5px" asp-page="Main/Bond/ChangeInBondPrices"
-                                                                                              asp-route-companyId="@security.Company.Id"
-                                                                                              asp-route-bondId="@bond.Id">Report</a>
+                                                <td style="display: flex; justify-content: flex-end">
+                                                    <a class="btn btn-success" style="margin:5px" asp-page="Main/Bond/ChangeInBondPrices"
+                                                                                                  asp-route-companyId="@security.Company.Id"
+                                                                                                  asp-route-bondId="@bond.Id">Report</a>
 
-                                                <a class="btn btn-primary" style="margin:5px" asp-page="Main/Bond/EditBond"
-                                                                                              asp-route-companyId="@security.Company.Id"
-                                                                                              asp-route-bondId="@bond.Id">Edit</a>
-                                                <form method="post" style="margin:0">
-                                                    <a asp-route-companyId="@security.Company.Id" asp-route-bondId="@bond.Id"     
-                                                                                                  asp-page="Main/Bond/DeleteBond"
-                                                                                                  class="btn btn-danger" style="margin:5px">Delete</a>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    }
-                                    @foreach (var stock in security.Stocks)
-                                    {
-                                        <tr>
-                                            <td>@security.Company.Name</td>
-                                            <td>@stock.CategorySec.CategoryName</td>
+                                                    <a class="btn btn-primary" style="margin:5px" asp-page="Main/Bond/EditBond"
+                                                                                                  asp-route-companyId="@security.Company.Id"
+                                                                                                  asp-route-bondId="@bond.Id">Edit</a>
+                                                    <form method="post" style="margin:0">
+                                                        <a asp-route-companyId="@security.Company.Id" asp-route-bondId="@bond.Id"     
+                                                                                                      asp-page="Main/Bond/DeleteBond"
+                                                                                                      class="btn btn-danger" style="margin:5px">Delete</a>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        }
+                                
 
-                                            <td style="display: flex; justify-content: flex-end">
-                                                <a class="btn btn-success" style="margin:5px" asp-page="Main/Stock/ChangeInStockPrices"
-                                                                                              asp-route-companyId="@security.Company.Id"
-                                                                                              asp-route-stockId="@stock.Id">Report</a>
+                                        @foreach (var stock in security.Stocks)
+                                        {
+                                            <tr>
+                                                <td>@security.Company.Name</td>
+                                                <td>@stock.CategorySec.CategoryName</td>
 
-                                                <a class="btn btn-primary" style="margin:5px" asp-page="Main/Stock/EditStock"
-                                                                                              asp-route-companyId="@security.Company.Id"
-                                                                                              asp-route-stockId="@stock.Id">Edit</a>
-                                                <form method="post" style="margin:0">
-                                                    <a asp-route-companyId="@security.Company.Id" asp-route-stockId="@stock.Id"     
-                                                                                                  asp-page="Main/Stock/DeleteStock"
-                                                                                                  class="btn btn-danger" style="margin:5px">Delete</a> 
-                                                </form>
-                                            </td>
-                                        </tr>
+                                                <td style="display: flex; justify-content: flex-end">
+                                                    <a class="btn btn-success" style="margin:5px" asp-page="Main/Stock/ChangeInStockPrices"
+                                                                                                  asp-route-companyId="@security.Company.Id"
+                                                                                                  asp-route-stockId="@stock.Id">Report</a>
+
+                                                    <a class="btn btn-primary" style="margin:5px" asp-page="Main/Stock/EditStock"
+                                                                                                  asp-route-companyId="@security.Company.Id"
+                                                                                                  asp-route-stockId="@stock.Id">Edit</a>
+                                                    <form method="post" style="margin:0">
+                                                        <a asp-route-companyId="@security.Company.Id" asp-route-stockId="@stock.Id"     
+                                                                                                      asp-page="Main/Stock/DeleteStock"
+                                                                                                      class="btn btn-danger" style="margin:5px">Delete</a> 
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        }
                                     }
                                 }
                                 </tbody>
