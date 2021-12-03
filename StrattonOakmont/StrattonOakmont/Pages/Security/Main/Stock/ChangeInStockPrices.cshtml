@@ -16,18 +16,23 @@
                         <table class="table user-table">
                             <thead>
                                 <tr>
-                                    <th class="border-top-0">Price</th>
-                                    <th class="border-top-0">Volume</th>
-                                    <th class="border-top-0">Amount</th>
-                                    <th class="border-top-0">Date</th>
-                                    <th class="border-top-0"></th>
+                                    <form method="post">
+                                        <input asp-for="@Model.Company.Id" value="@Model.Company.Id" style="display:none" />
+                                        <input asp-for="@Model.StockId" value="@Model.StockId" style="display:none" />
+                                        <input asp-for="@Model.Sort" value="@Model.Sort" style="display:none" />
+                                        <th class="border-top-0"><input class="btn btn-primary" type="submit" asp-page-handler="Sort" name="fill" value="Price" /></th>                            
+                                        <th class="border-top-0"><input class="btn btn-primary" type="submit" asp-page-handler="Sort" name="fill" value="Volume" /></th>
+                                        <th class="border-top-0"><input class="btn btn-primary" type="submit" asp-page-handler="Sort" name="fill" value="Amount" /></th>
+                                        <th class="border-top-0"><input class="btn btn-primary" type="submit" asp-page-handler="Sort" name="fill" value="Date" /></th>
+                                        <th class="border-top-0"></th>
+                                    </form>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                @if (Model.Stock != null && Model.Stock.PriceСhanges != null)
+                                @if (Model.PriceСhanges != null)
                                 {
-                                    @foreach (var priceChange in Model.Stock.PriceСhanges)
+                                    @foreach (var priceChange in Model.PriceСhanges)
                                     {
                                         <tr>
                                             <td>@priceChange.Price</td>
