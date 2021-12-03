@@ -99,39 +99,12 @@
     <div class="container">
 
         <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5">
-            <span class="navbar-brand">Categories:</span>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nextNav"
-                    aria-controls="nextNav" aria-expanded="false" aria-label="Toggle navigation">
-
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse navbar-collapse" id="nextNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Shop" asp-action="Index">Все</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Shop" asp-action="Index" asp-route-category="Спортивные велосипеды">Спортивные велосипеды</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Shop" asp-action="Index" asp-route-category="Горные велосипеды">Горные велосипеды</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Shop" asp-action="Index" asp-route-category="Городские велосипеды">Городские велосипеды</a>
-                    </li>
-                </ul>
-
-                <form class="form-inline">
-                    <div class="md-form my-0">
-                        <input type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" />
-                    </div>
-                </form>
-            </div>
-
+            <form method="post">
+                <div class="md-form my-0">
+                    <input name="name" type="text" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" />
+                    <input type="submit" asp-page-handler="Search" style="display:none"/>
+                </div>
+            </form>
         </nav>
 
         <section class="text-center mb-4">

@@ -20,5 +20,9 @@ namespace StrattonOakmont.Pages.Company
             Companies = _dbCompany.GetAllCompanies;
         }
 
+        public void OnPostSearch(string name)
+        {
+            Companies = _dbCompany.GetCompaniesByName(name);
+        }
     }
 }

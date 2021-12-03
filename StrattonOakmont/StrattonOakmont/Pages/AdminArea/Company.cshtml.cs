@@ -32,6 +32,9 @@ namespace StrattonOakmont.Pages.AdminArea
         [BindProperty]
         public List<string> CheckedCategories { get; set; }
         
+        [BindProperty]
+        public int Sort { get; set; }
+        
 
         public void OnGet()
         {
@@ -58,6 +61,22 @@ namespace StrattonOakmont.Pages.AdminArea
                 Companies = _dbCompany.GetCompaniesByName(name).ToList();
             }
             Securities = _dbSecurity.GetAllSecurities;
+        }
+
+        public void OnPostSort(List<string> categories)
+        {
+            if (Sort == 1)
+            {
+                Companies = _dbCompany.FilterCompanies(categories).OrderByDescending(x => x.Name).ToList();
+                Sort = -1;
+            }
+            else
+            {
+                Sort = 1;
+                Companies = _dbCompany.FilterCompanies(categories).OrderBy(x => x.Name).ToList();
+            }
+            AllCategories = _dbCategory.GetAllCategories;
+            CheckedCategories = categories;
         }
 
         public async Task<IActionResult> OnPostAsync(int id)

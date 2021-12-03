@@ -23,7 +23,9 @@
                                         @(Model.CheckedCategories.Contains(category.CategoryName) ? "checked=\"checked\"" : "") />@category.CategoryName<br />
                             </div>
                         }
-                        <input type="submit" asp-page-handler="Filter" value="Filter" />
+                        <input asp-for="@Model.Sort" value="@Model.Sort" style="display:none;" />
+                        <input type="submit" class="btn btn-primary" asp-page-handler="Filter" value="Filter" />
+                        <input type="submit" class="btn btn-primary" asp-page-handler="Sort" value="Sort" />
                     </form>
 
 

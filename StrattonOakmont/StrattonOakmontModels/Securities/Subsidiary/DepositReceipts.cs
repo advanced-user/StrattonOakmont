@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace StrattonOakmontModels.Securityes
 {
-    public class DepositReceipts 
+    public class DepositReceipts
     {
         public int Id { get; set; }
         public string IMG { get; set; }
