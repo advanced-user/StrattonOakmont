@@ -92,17 +92,34 @@ namespace StrattonOakmontServices.Sql
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Company> FilterCompanies(List<string> categoryNames)
+        public List<Company> FilterCompanies(List<string> categoryNames)
         {
-			return _context.Companies.Include(x => x.Security)
-												.ThenInclude(x => x.Bonds)
-												.ThenInclude(x => x.CategorySec)
-												.Include(x => x.Security)
-												.ThenInclude(x => x.Stocks)
-												.ThenInclude(x => x.CategorySec)
-												.Where(x => x.Security.Bonds.Where(b => categoryNames.Contains(b.CategorySec.CategoryName)) != null)
-												.Where(x => x.Security.Stocks.Where(b => categoryNames.Contains(b.CategorySec.CategoryName)) != null)
-												.ToList();
+			List<Company> companies = new List<Company>();
+			if (categoryNames.Count() == 2)
+            {
+				return _context.Companies.Include(x => x.Security)
+										 .ThenInclude(x => x.Stocks)
+										 .ThenInclude(x => x.CategorySec)
+										 .Include(x => x.Security)
+										 .ThenInclude(x => x.Bonds)
+										 .ThenInclude(x => x.CategorySec).ToList();
+			}
+			else if (categoryNames[0] == "Stock")
+            {
+				return _context.Companies.Include(x => x.Security)
+						 .ThenInclude(x => x.Stocks)
+						 .ThenInclude(x => x.CategorySec).Where(x => x.Security.Stocks.Count() != 0).ToList();
+			}
+			else if (categoryNames[0] == "Bond")
+            {
+				return _context.Companies.Include(x => x.Security)
+						 .ThenInclude(x => x.Bonds)
+						 .ThenInclude(x => x.CategorySec).Where(x => x.Security.Bonds.Count() != 0).ToList();
+			}
+            else
+            {
+				return new List<Company>();
+            }
         }
     }
 }

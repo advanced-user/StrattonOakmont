@@ -22,8 +22,8 @@ namespace StrattonOakmont.Pages.AdminArea
             _dbCategory = dbCategory;
         }
        
-       
-        public IEnumerable<StrattonOakmontModels.Company> Companies { get; set; }  
+        [BindProperty]
+        public List<StrattonOakmontModels.Company> Companies { get; set; }  
         public IEnumerable<StrattonOakmontModels.Security> Securities { get; set; }
 
         [BindProperty]
@@ -35,7 +35,7 @@ namespace StrattonOakmont.Pages.AdminArea
 
         public void OnGet()
         {
-            Companies = _dbCompany.GetAllCompanies;
+            Companies = _dbCompany.GetAllCompanies.ToList();
             AllCategories = _dbCategory.GetAllCategories;
             CheckedCategories = new List<string>();
         }
@@ -43,6 +43,7 @@ namespace StrattonOakmont.Pages.AdminArea
         public void OnPostFilter(List<string> categories)
         {
             Companies = _dbCompany.FilterCompanies(categories);
+            AllCategories = _dbCategory.GetAllCategories;
             CheckedCategories = categories;
         }
 
@@ -50,11 +51,11 @@ namespace StrattonOakmont.Pages.AdminArea
         {
             if (String.IsNullOrEmpty(name))
             {
-                Companies = _dbCompany.GetAllCompanies;
+                Companies = _dbCompany.GetAllCompanies.ToList();
             }
             else
             {
-                Companies = _dbCompany.GetCompaniesByName(name);
+                Companies = _dbCompany.GetCompaniesByName(name).ToList();
             }
             Securities = _dbSecurity.GetAllSecurities;
         }

@@ -8,7 +8,7 @@ namespace StrattonOakmontServices
     {
         IEnumerable<Company> GetAllCompanies { get; }
         IEnumerable<Company> GetCompaniesByName(string Name);
-        IEnumerable<Company> FilterCompanies(List<string> categoryNames);
+        List<Company> FilterCompanies(List<string> categoryNames);
         Task<Company> FindCompanyAsync(int id);
         Task<Company> AddCompanyAsync(Company company);
         Task<Company> DeleteCompanyAsync(int id);
