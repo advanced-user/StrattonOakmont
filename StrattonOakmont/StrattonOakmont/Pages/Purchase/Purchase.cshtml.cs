@@ -8,8 +8,6 @@ using StrattonOakmontModels.Securities;
 using StrattonOakmontServices;
 using StrattonOakmontServices.Interfaces.Securities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace StrattonOakmont.Pages.Purchase
@@ -38,7 +36,7 @@ namespace StrattonOakmont.Pages.Purchase
         public StrattonOakmontModels.Company Company { get; set; }
 
         [BindProperty]
-        public List<Stoñk> Stoñks { get; set; }
+        public Stoñk Stoñks { get; set; }
 
         [BindProperty]
         public int Amount { get; set; }
@@ -49,21 +47,21 @@ namespace StrattonOakmont.Pages.Purchase
         public void OnGet(int companyId)
         {
             Company = _companyRepository.FindCompany(companyId);
-            Stoñks = Company.Security.Stocks.ToList();
+            Stoñks = Company.Security.Stocks;
 
-            if (Stoñks.Count != 0)
+            if (Stoñks != null)
             {
-                PriceÑhange = _priceChangeRepository.GetLatestStockPriceChage(Stoñks[0].Id);
+                PriceÑhange = _priceChangeRepository.GetLatestStockPriceChage(Stoñks.Id);
             }
         }
 
         public async Task<IActionResult> OnPost()
         {
             Company = _companyRepository.FindCompany(Company.Id);
-            Stoñks = Company.Security.Stocks.ToList();
+            Stoñks = Company.Security.Stocks;
             PriceÑhange = _priceChangeRepository.GetPriceÑhange(PriceÑhange.Id);
 
-            if (Stoñks.Count != 0 && PriceÑhange.Amount >= Amount)
+            if (Stoñks != null && PriceÑhange.Amount >= Amount)
             {
                 var user = await _userManager.Users.Include(x => x.Receipts).ThenInclude(x => x.Stock)
                                                     .FirstOrDefaultAsync(x => x.UserName == User.Identity.Name);
@@ -72,7 +70,7 @@ namespace StrattonOakmont.Pages.Purchase
                 receipt.Date = DateTime.Now;
                 receipt.Company = Company;
                 receipt.User = user;
-                receipt.Stock = Stoñks[0];
+                receipt.Stock = Stoñks;
                 receipt.Amount = Amount;
                 receipt.Price = PriceÑhange.Price * Amount;
                 receipt.Tax = receipt.Price * 0.05;

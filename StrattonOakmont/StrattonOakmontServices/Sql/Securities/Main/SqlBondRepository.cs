@@ -42,11 +42,8 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         {
             if (security != null && security.Bonds != null)
             {
-                foreach (var bond in security.Bonds)
-                {
-                    await _priceChangeRepository.DeleteBondPriceChages(bond.Id); ;
-                    _context.Bonds.Remove(bond);
-                }
+                await _priceChangeRepository.DeleteBondPriceChages(security.Bonds.Id); ;
+                _context.Bonds.Remove(security.Bonds);
             }
 
             await _context.SaveChangesAsync();

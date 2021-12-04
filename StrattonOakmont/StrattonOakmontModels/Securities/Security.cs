@@ -7,7 +7,7 @@ namespace StrattonOakmontModels
         public int Id { get; set; }
         public int CompanyId { get; set; }  
         public Company Company { get; set; }
-        public List<Bond> Bonds { get; set; }
-        public List<Stoсk> Stocks { get; set; }
+        public Bond Bonds { get; set; }
+        public Stoсk Stocks { get; set; }
     }
 }

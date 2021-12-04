@@ -27,48 +27,47 @@
                                 {
                                     @foreach (var security in Model.Securities)
                                     {
-                                        @foreach (var bond in security.Bonds)
+                                        @if(security.Bonds != null)
                                         {
-                                            <tr>
+                                           <tr>
                                                 <td>@security.Company.Name</td>
-                                                <td>@bond.CategorySec.CategoryName</td>
+                                                <td>@security.Bonds.CategorySec.CategoryName</td>
 
                                                 <td style="display: flex; justify-content: flex-end">
                                                     <a class="btn btn-success" style="margin:5px" asp-page="Main/Bond/ChangeInBondPrices"
-                                                                                                  asp-route-companyId="@security.Company.Id"
-                                                                                                  asp-route-bondId="@bond.Id">Report</a>
+                                                                                                    asp-route-companyId="@security.Company.Id"
+                                                                                                    asp-route-bondId="@security.Bonds.Id">Report</a>
 
                                                     <a class="btn btn-primary" style="margin:5px" asp-page="Main/Bond/EditBond"
-                                                                                                  asp-route-companyId="@security.Company.Id"
-                                                                                                  asp-route-bondId="@bond.Id">Edit</a>
+                                                                                                    asp-route-companyId="@security.Company.Id"
+                                                                                                    asp-route-bondId="@security.Bonds.Id">Edit</a>
                                                     <form method="post" style="margin:0">
-                                                        <a asp-route-companyId="@security.Company.Id" asp-route-bondId="@bond.Id"     
-                                                                                                      asp-page="Main/Bond/DeleteBond"
-                                                                                                      class="btn btn-danger" style="margin:5px">Delete</a>
+                                                        <a asp-route-companyId="@security.Company.Id" asp-route-bondId="@security.Bonds.Id"     
+                                                                                                        asp-page="Main/Bond/DeleteBond"
+                                                                                                        class="btn btn-danger" style="margin:5px">Delete</a>
                                                     </form>
                                                 </td>
                                             </tr>
                                         }
-                                
 
-                                        @foreach (var stock in security.Stocks)
+                                        @if(security.Stocks != null)
                                         {
                                             <tr>
                                                 <td>@security.Company.Name</td>
-                                                <td>@stock.CategorySec.CategoryName</td>
+                                                <td>@security.Stocks.CategorySec.CategoryName</td>
 
                                                 <td style="display: flex; justify-content: flex-end">
                                                     <a class="btn btn-success" style="margin:5px" asp-page="Main/Stock/ChangeInStockPrices"
-                                                                                                  asp-route-companyId="@security.Company.Id"
-                                                                                                  asp-route-stockId="@stock.Id">Report</a>
+                                                                                                    asp-route-companyId="@security.Company.Id"
+                                                                                                    asp-route-stockId="@security.Stocks.Id">Report</a>
 
                                                     <a class="btn btn-primary" style="margin:5px" asp-page="Main/Stock/EditStock"
-                                                                                                  asp-route-companyId="@security.Company.Id"
-                                                                                                  asp-route-stockId="@stock.Id">Edit</a>
+                                                                                                    asp-route-companyId="@security.Company.Id"
+                                                                                                    asp-route-stockId="@security.Stocks.Id">Edit</a>
                                                     <form method="post" style="margin:0">
-                                                        <a asp-route-companyId="@security.Company.Id" asp-route-stockId="@stock.Id"     
-                                                                                                      asp-page="Main/Stock/DeleteStock"
-                                                                                                      class="btn btn-danger" style="margin:5px">Delete</a> 
+                                                        <a asp-route-companyId="@security.Company.Id" asp-route-stockId="@security.Stocks.Id"     
+                                                                                                        asp-page="Main/Stock/DeleteStock"
+                                                                                                        class="btn btn-danger" style="margin:5px">Delete</a> 
                                                     </form>
                                                 </td>
                                             </tr>

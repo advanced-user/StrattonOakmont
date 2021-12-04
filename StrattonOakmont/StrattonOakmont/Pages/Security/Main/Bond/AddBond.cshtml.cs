@@ -44,6 +44,13 @@ namespace StrattonOakmont.Pages.Security.Main.Bond
 
         public async Task<IActionResult> OnPostAsync()
         {
+            var company = await _dbCompany.FindCompanyAsync(Company.Id);
+
+            if (company.Security != null && company.Security.Bonds != null)
+            {
+                return RedirectToPage("/Company/Edit", new { id = company.Id });
+            }
+
             var securityCategory = await _categoryRepository.FindCategoryAsync(CategoryId);
 
             if (securityCategory != null && Bond != null)
@@ -70,8 +77,6 @@ namespace StrattonOakmont.Pages.Security.Main.Bond
                 }
             }
 
-            var company = await _dbCompany.FindCompanyAsync(Company.Id);
-
             if (company != null)
             {
                 if (company.Security != null)
@@ -79,24 +84,14 @@ namespace StrattonOakmont.Pages.Security.Main.Bond
                     var security = await _securityRepository.GetSecurityAsync(company.Security.Id);
                     if (security != null)
                     {
-                        if (security.Bonds != null)
-                        {
-                            security.Bonds.Add(Bond);
-                            company.Security = security;
-                        }
-                        else
-                        {
-                            security.Bonds = new List<StrattonOakmontModels.Bond>();
-                            security.Bonds.Add(Bond);
-                            company.Security = security;
-                        }
+                        security.Bonds = Bond;
+                        company.Security = security;
                     }
                 }
                 else
                 {
                     var security = new StrattonOakmontModels.Security();
-                    security.Bonds = new List<StrattonOakmontModels.Bond>();
-                    security.Bonds.Add(Bond);
+                    security.Bonds = Bond;
                     company.Security = security;
                 }
 

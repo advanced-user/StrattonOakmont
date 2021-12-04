@@ -108,13 +108,13 @@ namespace StrattonOakmontServices.Sql
             {
 				return _context.Companies.Include(x => x.Security)
 						 .ThenInclude(x => x.Stocks)
-						 .ThenInclude(x => x.CategorySec).Where(x => x.Security.Stocks.Count() != 0).ToList();
+						 .ThenInclude(x => x.CategorySec).Where(x => x.Security.Stocks != null).ToList();
 			}
 			else if (categoryNames[0] == "Bond")
             {
 				return _context.Companies.Include(x => x.Security)
 						 .ThenInclude(x => x.Bonds)
-						 .ThenInclude(x => x.CategorySec).Where(x => x.Security.Bonds.Count() != 0).ToList();
+						 .ThenInclude(x => x.CategorySec).Where(x => x.Security.Bonds != null).ToList();
 			}
             else
             {

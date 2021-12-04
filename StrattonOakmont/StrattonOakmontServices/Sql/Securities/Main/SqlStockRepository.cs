@@ -30,11 +30,8 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         {
             if (security != null && security.Stocks != null)
             {
-                foreach (var stock in security.Stocks)
-                {
-                    await _priceChangeRepository.DeleteStockPriceChages(stock.Id);
-                    _context.Stocks.Remove(stock);
-                }
+                await _priceChangeRepository.DeleteStockPriceChages(security.Stocks.Id);
+                _context.Stocks.Remove(security.Stocks);
             }
 
             await _context.SaveChangesAsync();

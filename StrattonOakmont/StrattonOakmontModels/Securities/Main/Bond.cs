@@ -8,6 +8,7 @@ namespace StrattonOakmontModels
         public int Id { get; set; }
         public int Percent { get; set; }
         public string FinalTime { get; set; }
+        public int SecurityId { get; set; }
         public Security Security { get; set; }
         public Category CategorySec { get; set; }
         public Company CompanySec { get; set; }

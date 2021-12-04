@@ -47,6 +47,13 @@ namespace StrattonOakmont.Pages.Security.Main.Stock
 
         public async Task<IActionResult> OnPostAsync()
         {
+            var company = await _dbCompany.FindCompanyAsync(Company.Id);
+
+            if (company.Security != null && company.Security.Stocks != null)
+            {
+                return RedirectToPage("/Company/Edit", new { id = company.Id });
+            }
+
             var securityCategory = await _categoryRepository.FindCategoryAsync(CategoryId);
 
             if (securityCategory != null && Stock != null)
@@ -74,7 +81,6 @@ namespace StrattonOakmont.Pages.Security.Main.Stock
 
             }
 
-            var company = await _dbCompany.FindCompanyAsync(Company.Id);
 
             if (company != null)
             {
@@ -83,24 +89,14 @@ namespace StrattonOakmont.Pages.Security.Main.Stock
                     var security = await _securityRepository.GetSecurityAsync(company.Security.Id);
                     if (security != null)
                     {
-                        if (security.Stocks != null)
-                        {
-                            security.Stocks.Add(Stock);
-                            company.Security = security;
-                        }
-                        else
-                        {
-                            security.Stocks = new List<StrattonOakmontModels.Stoñk>();
-                            security.Stocks.Add(Stock);
-                            company.Security = security;
-                        }
+                        security.Stocks = Stock;
+                        company.Security = security;
                     }
                 }
                 else
                 {
                     var security = new StrattonOakmontModels.Security();
-                    security.Stocks = new List<StrattonOakmontModels.Stoñk>();
-                    security.Stocks.Add(Stock);
+                    security.Stocks = Stock;
                     company.Security = security;
                 }
 
