@@ -6,6 +6,7 @@ namespace StrattonOakmontModels.Securities
     {
         public int Id { get; set; } 
         public double Price { get; set; }
+        public double Tax { get; set; }
         public int Amount { get; set; }
         public DateTime Date { get; set; }
         public Stoсk Stock { get; set; }

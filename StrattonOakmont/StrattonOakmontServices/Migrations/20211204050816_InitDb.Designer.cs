@@ -10,7 +10,7 @@ using StrattonOakmontServices;
 namespace StrattonOakmontServices.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20211204030442_InitDb")]
+    [Migration("20211204050816_InitDb")]
     partial class InitDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -343,6 +343,9 @@ namespace StrattonOakmontServices.Migrations
 
                     b.Property<int?>("StockId")
                         .HasColumnType("int");
+
+                    b.Property<double>("Tax")
+                        .HasColumnType("float");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");

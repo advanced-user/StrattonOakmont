@@ -2,3 +2,64 @@
 @model StrattonOakmont.Pages.AdminArea.Receipts.IncomeModel
 @{
 }
+
+<script src="~/lib/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+$('.myprint').click(function(){             //при клике на что срабатывает печать
+var html_to_print=$('.to_print').html();    //что печатаем
+var iframe=$('<iframe id="print_frame">');
+$('body').append(iframe);
+var doc = $('#print_frame')[0].contentDocument || $('#print_frame')[0].contentWindow.document;
+var win = $('#print_frame')[0].contentWindow || $('#print_frame')[0];
+doc.getElementsByTagName('body')[0].innerHTML=html_to_print;
+win.print();
+$('iframe').remove();
+});
+});
+</script>
+<style>#print_frame{display: none;}</style>
+
+<div class="to_print">
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Income</h4>
+                    <h6 class="card-subtitle"> <code></code></h6>
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Company</th>
+                                    <th class="border-top-0">User</th>
+                                    <th class="border-top-0">Date</th>
+                                    <th class="border-top-0">Income</th>
+                                    <th class="border-top-0"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                  
+                                
+                                @foreach (var item in Model.Receipts)
+                                {
+                                <tr>
+                                    <td>@item.Company.Name</td>
+                                    <td>@item.User.UserName</td>
+                                    <td>@item.Date</td>
+                                    <td>@item.Tax</td>
+                                </tr>
+                                }
+
+                                </tbody>
+                        </table>
+                        <label>Итого: @Model.Income</label><br />
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+<button class="myprint btn btn-primary">Печать</button>

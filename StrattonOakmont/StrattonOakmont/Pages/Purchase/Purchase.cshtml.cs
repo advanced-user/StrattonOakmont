@@ -75,6 +75,7 @@ namespace StrattonOakmont.Pages.Purchase
                 receipt.Stock = Stoñks[0];
                 receipt.Amount = Amount;
                 receipt.Price = PriceÑhange.Price * Amount;
+                receipt.Tax = receipt.Price * 0.05;
 
 
                 await _appDBContext.Receipts.AddAsync(receipt);

@@ -342,6 +342,9 @@ namespace StrattonOakmontServices.Migrations
                     b.Property<int?>("StockId")
                         .HasColumnType("int");
 
+                    b.Property<double>("Tax")
+                        .HasColumnType("float");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
