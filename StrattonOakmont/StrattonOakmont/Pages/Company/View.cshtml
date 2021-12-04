@@ -72,10 +72,10 @@ topiewData["Title"]bottomcompany";
                                                     <td>@item.CategorySec.CategoryName</td>                                                    
 
                                                     <td style="display: flex; justify-content: flex-end">
-                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Main/Bond/ChangeInBondPrices"
+                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Forecast/Forecast"
                                                                                               asp-route-companyId="@Model.Company.Id"
                                                                                               asp-route-bondId="@item.Id">Forecast</a>
-                                                       <a class="btn btn-success" style="margin:5px" asp-page="/Security/Main/Bond/ChangeInBondPrices"
+                                                       <a class="btn btn-success" style="margin:5px" asp-page="/Purchase/Purchase"
                                                                                               asp-route-companyId="@Model.Company.Id"
                                                                                               asp-route-bondId="@item.Id">Buy</a>
                                                     </td>
@@ -90,10 +90,10 @@ topiewData["Title"]bottomcompany";
                                                     <td>@item.CategorySec.CategoryName</td>                                                    
 
                                                     <td style="display: flex; justify-content: flex-end">
-                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Security/Main/Stock/ChangeInStockPrices"
+                                                        <a class="btn btn-primary" style="margin:5px" asp-page="/Forecast/Forecast"
                                                                                               asp-route-companyId="@Model.Company.Id"
                                                                                               asp-route-stockId="@item.Id">Forecast</a>
-                                                        <a class="btn btn-success" style="margin:5px" asp-page="/Security/Main/Bond/ChangeInBondPrices"
+                                                        <a class="btn btn-success" style="margin:5px" asp-page="/Purchase/Purchase"
                                                                                               asp-route-companyId="@Model.Company.Id"
                                                                                               asp-route-bondId="@item.Id">Buy</a>
                                                     </td>

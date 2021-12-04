@@ -35,5 +35,6 @@ namespace StrattonOakmontServices
         public DbSet<Wright> Wrights{ get; set; }
 
         public DbSet<PriceСhange> PriceСhanges { get; set; }
+        public DbSet<Receipt> Receipts { get; set; }
     }
 }

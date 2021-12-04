@@ -4770,3 +4770,8 @@ C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debu
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\TypeOfSecurity.cshtml.g.cs
 C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Security\ViewSecurities.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\SQL.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Forecast\Forecast.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Purchase\Purchase.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Income.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Receipt.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Receipts.cshtml.g.cs

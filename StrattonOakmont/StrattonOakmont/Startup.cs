@@ -53,7 +53,9 @@ namespace StrattonOakmont
 
             services.AddScoped<ISQLRepository, SQLRepository>();
 
+            services.AddScoped<IReceiptRepository, SqlReceiptRepository>();
 
+            
 
             services.Configure<RouteOptions>(options =>
             {

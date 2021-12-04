@@ -23,7 +23,6 @@ namespace StrattonOakmont.Pages.Security.Main.Stock
         public List<StrattonOakmontModels.Securities.Price—hange> Price—hanges { get; set; }
 
         [BindProperty]
-
         public StrattonOakmontModels.Company Company { get; set; }
 
         [BindProperty]

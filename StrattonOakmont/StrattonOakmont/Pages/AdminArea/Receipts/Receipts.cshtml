@@ -1,0 +1,51 @@
+﻿@page
+@model StrattonOakmont.Pages.Receipts.ReceiptsModel
+@{
+     ViewData["Title"] = "Receipts";
+}
+
+<div class="container-fluid">
+    <a asp-page="/Company/Add" class="btn btn-success" style="margin-bottom: 10px">Income</a><br />
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">All receipts</h4>
+                    <h6 class="card-subtitle"> <code></code></h6>
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Company</th>
+                                    <th class="border-top-0">User</th>
+                                    <th class="border-top-0">Date</th>
+                                    <th class="border-top-0"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                  
+                                
+                                @foreach (var item in Model.Receipts)
+                                {
+                                <tr>
+                                    <td>@item.Company.Name</td>
+                                    <td>@item.User.UserName</td>
+                                    <td>@item.Date</td>
+
+                                    <td style="display: flex; justify-content: flex-end">
+                                        <a class="btn btn-primary" style="margin:5px" asp-page="Receipt" asp-route-id="@item.Id">View</a>  
+                                    </td>
+                                </tr>
+                                }
+
+                                </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>

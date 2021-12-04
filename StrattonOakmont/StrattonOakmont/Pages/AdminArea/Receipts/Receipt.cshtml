@@ -1,0 +1,37 @@
+﻿@page
+@model StrattonOakmont.Pages.AdminArea.Receipts.ReceiptModel
+
+<script src="~/lib/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+$('.myprint').click(function(){             //при клике на что срабатывает печать
+var html_to_print=$('.to_print').html();    //что печатаем
+var iframe=$('<iframe id="print_frame">');
+$('body').append(iframe);
+var doc = $('#print_frame')[0].contentDocument || $('#print_frame')[0].contentWindow.document;
+var win = $('#print_frame')[0].contentWindow || $('#print_frame')[0];
+doc.getElementsByTagName('body')[0].innerHTML=html_to_print;
+win.print();
+$('iframe').remove();
+});
+});
+</script>
+<style>#print_frame{display: none;}</style>
+
+<div class="to_print">
+    <div class="card">
+        <h2 style="text-align:center; margin:10px">Receipt</h2><br />
+
+        <div class="card-body">
+            <div class="form-group">
+               <label class="col-md-12 mb-0">Company: @Model.Receipt.Company.Name</label><br>
+               <label class="col-md-12 mb-0">Category: Stock</label><br>
+               <label class="col-md-12 mb-0">User: @Model.Receipt.User.UserName</label><br>
+               <label class="col-md-12 mb-0">Amount: @Model.Receipt.Amount</label><br>
+               <label class="col-md-12 mb-0">Price: @Model.Receipt.Price</label><br>
+               <label class="col-md-12 mb-0">Date: @Model.Receipt.Date</label>
+             </div>
+        </div>
+    </div>
+</div>
+<button class="myprint btn btn-primary">Печать</button>

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace StrattonOakmontServices.Migrations
 {
-    public partial class _10101 : Migration
+    public partial class InitDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -594,6 +594,49 @@ namespace StrattonOakmontServices.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Receipts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StockId = table.Column<int>(type: "int", nullable: true),
+                    BondId = table.Column<int>(type: "int", nullable: true),
+                    CompanyId = table.Column<int>(type: "int", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Receipts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Receipts_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Receipts_Bonds_BondId",
+                        column: x => x.BondId,
+                        principalTable: "Bonds",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Receipts_Companies_CompanyId",
+                        column: x => x.CompanyId,
+                        principalTable: "Companies",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Receipts_Stocks_StockId",
+                        column: x => x.StockId,
+                        principalTable: "Stocks",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Wrights",
                 columns: table => new
                 {
@@ -928,6 +971,26 @@ namespace StrattonOakmontServices.Migrations
                 column: "WrightId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Receipts_BondId",
+                table: "Receipts",
+                column: "BondId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Receipts_CompanyId",
+                table: "Receipts",
+                column: "CompanyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Receipts_StockId",
+                table: "Receipts",
+                column: "StockId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Receipts_UserId",
+                table: "Receipts",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Securities_CategoryId",
                 table: "Securities",
                 column: "CategoryId");
@@ -1013,6 +1076,9 @@ namespace StrattonOakmontServices.Migrations
 
             migrationBuilder.DropTable(
                 name: "PriceСhanges");
+
+            migrationBuilder.DropTable(
+                name: "Receipts");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

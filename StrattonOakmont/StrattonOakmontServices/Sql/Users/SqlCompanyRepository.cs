@@ -72,7 +72,7 @@ namespace StrattonOakmontServices.Sql
 
 		public Company FindCompany(int id)
 		{
-			return _context.Companies.Include(x => x.Security).FirstOrDefault(x => x.Id == id);
+			return _context.Companies.Include(x => x.Security).ThenInclude(x => x.Stocks).ThenInclude(x => x.UserSec).FirstOrDefault(x => x.Id == id);
 		}
 
 		public async Task<Company> FindCompanyAsync(int id)

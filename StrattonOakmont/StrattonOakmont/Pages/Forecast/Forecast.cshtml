@@ -1,0 +1,43 @@
+﻿@page
+@model StrattonOakmont.Pages.Forecast.ForecastModel
+@{
+}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<h1>Predicting stock prices for @Model.Company.Name</h1>
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<script>
+    setup()
+
+    async function setup() {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const globalTemps = await getData();
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+        labels: globalTemps.years,
+        datasets: [
+            {
+            label: 'Temperature in °C',
+            data: globalTemps.temps,
+            fill: false,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderWidth: 1
+            }
+        ]
+        },
+        options: {}
+    });
+    }
+
+    async function getData() {
+    years = @Model.Dates
+    temps = @Model.Prices
+    console.log(years);
+    console.log(temps);
+
+    return { years, temps };
+    }
+</script>

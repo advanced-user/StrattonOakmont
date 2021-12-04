@@ -317,6 +317,47 @@ namespace StrattonOakmontServices.Migrations
                     b.ToTable("PriceСhanges");
                 });
 
+            modelBuilder.Entity("StrattonOakmontModels.Securities.Receipt", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BondId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CompanyId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int?>("StockId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BondId");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("StockId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Receipts");
+                });
+
             modelBuilder.Entity("StrattonOakmontModels.Security", b =>
                 {
                     b.Property<int>("Id")
@@ -928,6 +969,33 @@ namespace StrattonOakmontServices.Migrations
                     b.Navigation("Stoсk");
                 });
 
+            modelBuilder.Entity("StrattonOakmontModels.Securities.Receipt", b =>
+                {
+                    b.HasOne("StrattonOakmontModels.Bond", "Bond")
+                        .WithMany()
+                        .HasForeignKey("BondId");
+
+                    b.HasOne("StrattonOakmontModels.Company", "Company")
+                        .WithMany("Receipts")
+                        .HasForeignKey("CompanyId");
+
+                    b.HasOne("StrattonOakmontModels.Stoсk", "Stock")
+                        .WithMany()
+                        .HasForeignKey("StockId");
+
+                    b.HasOne("StrattonOakmontModels.User", "User")
+                        .WithMany("Receipts")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Bond");
+
+                    b.Navigation("Company");
+
+                    b.Navigation("Stock");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("StrattonOakmontModels.Security", b =>
                 {
                     b.HasOne("StrattonOakmontModels.Category", null)
@@ -1177,6 +1245,8 @@ namespace StrattonOakmontServices.Migrations
 
             modelBuilder.Entity("StrattonOakmontModels.Company", b =>
                 {
+                    b.Navigation("Receipts");
+
                     b.Navigation("Security");
                 });
 
@@ -1238,6 +1308,11 @@ namespace StrattonOakmontServices.Migrations
             modelBuilder.Entity("StrattonOakmontModels.Stoсk", b =>
                 {
                     b.Navigation("PriceСhanges");
+                });
+
+            modelBuilder.Entity("StrattonOakmontModels.User", b =>
+                {
+                    b.Navigation("Receipts");
                 });
 #pragma warning restore 612, 618
         }
