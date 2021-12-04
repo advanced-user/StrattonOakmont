@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using StrattonOakmontModels.Securities;
 using StrattonOakmontServices;
 using StrattonOakmontServices.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 
 namespace StrattonOakmont.Pages.Forecast
 {
@@ -19,9 +21,8 @@ namespace StrattonOakmont.Pages.Forecast
             _companyRepository = companyRepository;
         }
 
-
         [BindProperty]
-        public List<double> Prices { get; set; }
+        public string Prices { get; set; }
 
         [BindProperty]
         public List<DateTime> Dates { get; set; }
@@ -34,8 +35,9 @@ namespace StrattonOakmont.Pages.Forecast
 
         public void OnGet(int companyId, int stockId)
         {
-            Prices = _stockRepository.GetStoñk(stockId).PriceÑhanges.Select(x => x.Price).ToList();
             Dates = _stockRepository.GetStoñk(stockId).PriceÑhanges.Select(x => x.Date).ToList();
+
+            Prices = JsonSerializer.Serialize(_stockRepository.GetStoñk(stockId).PriceÑhanges.Select(x => x.Price).ToList());
 
             Company = _companyRepository.FindCompany(companyId);
         }

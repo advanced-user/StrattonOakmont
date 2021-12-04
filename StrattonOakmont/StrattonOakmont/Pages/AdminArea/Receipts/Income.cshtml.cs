@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StrattonOakmontModels.Securities;
 using StrattonOakmontServices.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace StrattonOakmont.Pages.AdminArea.Receipts
@@ -21,6 +22,9 @@ namespace StrattonOakmont.Pages.AdminArea.Receipts
         [BindProperty]
         public double Income { get; set; }
 
+        [BindProperty]
+        public DateTime Date { get; set; }
+
         public void OnGet()
         {
             Receipts = _receiptRepository.GetReceipts();
@@ -29,6 +33,8 @@ namespace StrattonOakmont.Pages.AdminArea.Receipts
             {
                 Income += r.Tax;
             }
+
+            Date = DateTime.Now;
         }
     }
 }

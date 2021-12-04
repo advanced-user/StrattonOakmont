@@ -4,13 +4,90 @@
 }
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-<h1>Predicting stock prices for @Model.Company.Name</h1>
+<div style="margin-top: 100px;">
+    <h1>Predicting stock prices for @Model.Company.Name</h1>
+</div>
 <canvas id="myChart" width="400" height="200"></canvas>
 
-<script>
-    setup()
+<input id="dates" value="@Model.Prices"  />
 
-    async function setup() {
+<script>
+let x_vals = []
+let y_vals = []
+
+epoch = 10000
+let a, b, c, d
+
+const leatningRate = 0.2
+const optimizer = tf.train.adam(leatningRate)
+
+setup()
+
+function setup(){
+     a = tf.variable(tf.scalar(-0.5))
+     b = tf.variable(tf.scalar(0.5))
+     c = tf.variable(tf.scalar(-0.3))
+     d = tf.variable(tf.scalar(0.4))
+
+    x_vals = JSON.parse(document.getElementById("dates").value);
+
+    for (var i = 0; i < x_vals.length; i++){
+        y_vals.push(i+1)
+    }
+
+    for (var i = 0; i < epoch; i++){
+         fit()
+    }
+    a.print()
+    b.print()
+    c.print()
+    d.print()
+}
+
+function loss(predict, labels){
+    return predict.sub(labels).square().mean()
+}
+
+function predict(x){
+      const xs = tf.tensor1d(x)
+
+      const ys = xs.pow(tf.scalar(3)).mul(a)
+                   .add(xs.square().mul(b))
+                   .add(xs.mul(c))
+                   .add(d)
+      return ys
+}
+
+function fit(){
+      tf.tidy(() => {
+          if (x_vals.length > 0){
+            const ys = tf.tensor1d(y_vals)
+            optimizer.minimize(() => loss(predict(x_vals), ys))
+          }
+        })
+
+
+      const curveX = []
+      for (let x = -1; x < 1.01; x+=0.05){
+        curveX.push(x)
+      }
+
+      const ys = tf.tidy(() => predict(curveX))
+      let curveY = ys.dataSync()
+      ys.dispose()
+
+      for (let i = 0; i < curveX.length; i++){
+        let x = map(curveX[i], -1, 1, 0, width)
+        let y = map(curveY[i], -1, 1, height, 0)
+        vertex(x, y)
+      } 
+    }
+
+
+    /*
+    set()
+
+    async function set() {
     const ctx = document.getElementById('myChart').getContext('2d');
     const globalTemps = await getData();
     const myChart = new Chart(ctx, {
@@ -40,4 +117,5 @@
 
     return { years, temps };
     }
+    */
 </script>

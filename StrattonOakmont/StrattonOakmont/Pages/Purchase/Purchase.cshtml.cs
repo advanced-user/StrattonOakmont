@@ -76,7 +76,7 @@ namespace StrattonOakmont.Pages.Purchase
                 receipt.Amount = Amount;
                 receipt.Price = Price—hange.Price * Amount;
                 receipt.Tax = receipt.Price * 0.05;
-
+                Price—hange.Amount -= Amount;
 
                 await _appDBContext.Receipts.AddAsync(receipt);
                 await _appDBContext.SaveChangesAsync();
