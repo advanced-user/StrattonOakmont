@@ -3838,7 +3838,6 @@ C:\Users\Admin\Downloads\StrattonOakmont-main\StrattonOakmont\StrattonOakmont\ob
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Company.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Profile.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Users.cshtml.g.cs
-C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Company\Edit.cshtml.g.cs
 C:\Users\stolb\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\stolb\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\bin\Debug\netcoreapp3.1\appsettings.json
@@ -4775,3 +4774,10 @@ C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Income.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Receipt.cshtml.g.cs
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Receipts.cshtml.g.cs
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Income.cshtml.g.cs
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Receipt.cshtml.g.cs
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\Receipts\Receipts.cshtml.g.cs
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\AdminArea\SQL.cshtml.g.cs
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Forecast\Forecast.cshtml.g.cs
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Purchase\Purchase.cshtml.g.cs
+C:\Users\User\Documents\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.cshtml.g.cs
