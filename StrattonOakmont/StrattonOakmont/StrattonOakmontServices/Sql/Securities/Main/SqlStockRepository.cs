@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StrattonOakmontModels;
+using StrattonOakmontModels.Securities;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace StrattonOakmontServices.Sql.Securities.Main
     {
         private readonly AppDBContext _context;
         private readonly IPriceChangeRepository _priceChangeRepository;
+
 
         public SqlStockRepository(AppDBContext context, IPriceChangeRepository priceChangeRepository)
         {
@@ -70,6 +72,36 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         public Stoсk GetStoсk(int stockId)
         {
             return _context.Stocks.Include(x => x.PriceСhanges).FirstOrDefault(x => x.Id == stockId);
+        }
+
+        public List<PriceСhange> GetСheapStocks()
+        {
+            var stocks = GetAllStock;
+
+            var priceChanges = new List<PriceСhange>();
+
+            foreach (var stock in stocks)
+            {
+                var price = _priceChangeRepository.GetLatestStockPriceChage(stock.Id);
+                priceChanges.Add(price);
+            }
+
+            return priceChanges.OrderBy(x => x.Price).Take(5).ToList();
+        }
+
+        public List<PriceСhange> GetExpensiveStocks()
+        {
+            var stocks = GetAllStock;
+
+            var priceChanges = new List<PriceСhange>();
+
+            foreach (var stock in stocks)
+            {
+                var price = _priceChangeRepository.GetLatestStockPriceChage(stock.Id);
+                priceChanges.Add(price);
+            }
+
+            return priceChanges.OrderByDescending(x => x.Price).Take(5).ToList();
         }
     }
 }

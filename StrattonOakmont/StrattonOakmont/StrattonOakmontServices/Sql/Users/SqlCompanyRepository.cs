@@ -148,10 +148,7 @@ namespace StrattonOakmontServices.Sql
             }
 
 			return priceChanges.Select(x => x.Stoсk.CompanySec).ToList();
-			//return _context.Companies.Include(x => x.Security)
-			//							.ThenInclude(x => x.Stocks)
-			//							.Include(x => x.Security)
-			//							.ThenInclude(x => x.Bonds).Where(x => x.Security.Stocks.PriceСhanges.Contains()).ToList();
+
         }
     }
 }

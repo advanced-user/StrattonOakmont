@@ -2,3 +2,186 @@
 @model StrattonOakmont.Pages.Statistics.StatisticsModel
 @{
 }
+
+<div clasbottomner-fluid" style="margin-top:100px; margin-bottom: 100px">
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">TOP-5 companies by capitalization</h4>
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Name</th>
+                                    <th class="border-top-0">Capitalization</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                  
+                                
+                                @foreach (var item in Model.Companies)
+                                {
+                                <tr>
+                                    <td>@item.Name</td>
+
+                                    <td>@item.Сapitalization</td>
+                                </tr>
+                                }
+
+                                </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">TOP-5 expensive stocks</h4>
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Company</th>
+                                    <th class="border-top-0">Price</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                  
+                                
+                                @foreach (var item in Model.ExpensiveStocks)
+                                {
+                                <tr>
+                                    <td>@item.Stoсk.CompanySec.Name</td>
+
+                                    <td>@item.Price</td>
+                                </tr>
+                                }
+
+                                </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">TOP-5 chaepe stocks</h4>
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Company</th>
+                                    <th class="border-top-0">Price</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                  
+                                
+                                @foreach (var item in Model.СheapeStocks)
+                                {
+                                <tr>
+                                    <td>@item.Stoсk.CompanySec.Name</td>
+
+                                    <td>@item.Price</td>
+                                </tr>
+                                }
+
+                                </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">TOP-5 expensive bonds</h4>
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Company</th>
+                                    <th class="border-top-0">Price</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                  
+                                
+                                @foreach (var item in Model.ExpensiveBonds)
+                                {
+                                <tr>
+                                    <td>@item.Bond.CompanySec.Name</td>
+
+                                    <td>@item.Price</td>
+                                </tr>
+                                }
+
+                                </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+    <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">TOP-5 cheape bonds</h4>
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Company</th>
+                                    <th class="border-top-0">Price</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                  
+                                
+                                @foreach (var item in Model.СheapeBonds)
+                                {
+                                <tr>
+                                    <td>@item.Bond.CompanySec.Name</td>
+
+                                    <td>@item.Price</td>
+                                </tr>
+                                }
+
+                                </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>

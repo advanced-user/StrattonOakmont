@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StrattonOakmontModels;
+using StrattonOakmontModels.Securities;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,6 +18,14 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         {
             _context = context;
             _priceChangeRepository = priceChangeRepository;
+        }
+
+        public List<Bond> GetAllBonds
+        {
+            get
+            {
+                return _context.Bonds.ToList();
+            }
         }
 
         public Task<Bond> AddBondAsync()
@@ -59,6 +69,36 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         public async Task<Bond> GetBondAsync(int bondId)
         {
             return await _context.Bonds.Include(x => x.PriceСhanges).FirstOrDefaultAsync(x => x.Id == bondId);
+        }
+
+        public List<PriceСhange> GetСheapBonds()
+        {
+            var bonds = GetAllBonds;
+
+            var priceChanges = new List<PriceСhange>();
+
+            foreach (var bond in bonds)
+            {
+                var price = _priceChangeRepository.GetLatestBondPriceChage(bond.Id);
+                priceChanges.Add(price);
+            }
+
+            return priceChanges.OrderBy(x => x.Price).Take(5).ToList();
+        }
+
+        public List<PriceСhange> GetExpensiveBonds()
+        {
+            var bonds = GetAllBonds;
+
+            var priceChanges = new List<PriceСhange>();
+
+            foreach (var bond in bonds)
+            {
+                var price = _priceChangeRepository.GetLatestBondPriceChage(bond.Id);
+                priceChanges.Add(price);
+            }
+
+            return priceChanges.OrderByDescending(x => x.Price).Take(5).ToList();
         }
     }
 }

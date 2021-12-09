@@ -53,9 +53,10 @@ namespace StrattonOakmont.Pages.Security.Main.Bond
 
             var securityCategory = await _categoryRepository.FindCategoryAsync(CategoryId);
 
-            if (securityCategory != null && Bond != null)
+            if (securityCategory != null && Bond != null && company != null)
             {
                 Bond.CategorySec = securityCategory;
+                Bond.CompanySec = company;
             }
 
             if (Bond != null)
