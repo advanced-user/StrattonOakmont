@@ -26,6 +26,10 @@
                         <input asp-for="@Model.Sort" value="@Model.Sort" style="display:none;" />
                         <input type="submit" class="btn btn-primary" asp-page-handler="Filter" value="Filter" />
                         <input type="submit" class="btn btn-primary" asp-page-handler="Sort" value="Sort" />
+
+                        <input asp-for="@Model.More" placeholder="0"/>
+                        <input asp-for="@Model.Less" placeholder="999999"/>
+                        <input type="submit" class="btn btn-primary" asp-page-handler="FilterPrice" value="FilterPrice" />
                     </form>
 
 

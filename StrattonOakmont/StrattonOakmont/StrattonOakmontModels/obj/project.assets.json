@@ -930,11 +930,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
       "projectName": "StrattonOakmontModels",
-      "projectPath": "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

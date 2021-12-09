@@ -69,7 +69,9 @@ namespace StrattonOakmontServices.Sql.Securities
         {
             var latestId = _context.PriceСhanges.Where(x => x.Stoсk.Id == stockId).Max(p => p.Id);
 
-            return _context.PriceСhanges.Find(latestId);
+            return _context.PriceСhanges.Include(x => x.Stoсk.CompanySec).ThenInclude(x => x.Security).ThenInclude(x => x.Stocks)
+                                        .Include(x => x.Bond.CompanySec).ThenInclude(x => x.Security).ThenInclude(x => x.Bonds)
+                                        .FirstOrDefault(x => x.Id == latestId);
         }
 
         public StrattonOakmontModels.Securities.PriceСhange GetPriceСhange(int priceChangeId)

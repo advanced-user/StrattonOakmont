@@ -2,6 +2,7 @@
 using StrattonOakmontModels;
 using StrattonOakmontServices.Interfaces;
 using StrattonOakmontServices.Interfaces.Securities;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -16,6 +17,13 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         {
             _context = context;
             _priceChangeRepository = priceChangeRepository; 
+        }
+
+        public List<Stoсk> GetAllStock {
+            get
+            {
+                return _context.Stocks.ToList();
+            }
         }
 
         public async Task<Stoсk> AddStockAsync(Stoсk stock)

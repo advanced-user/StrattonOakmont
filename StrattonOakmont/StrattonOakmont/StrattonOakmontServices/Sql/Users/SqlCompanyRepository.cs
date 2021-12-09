@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
+using StrattonOakmontModels.Securities;
+using StrattonOakmontServices.Interfaces.Securities;
+using StrattonOakmontServices.Interfaces;
 
 namespace StrattonOakmontServices.Sql
 {
@@ -10,11 +13,17 @@ namespace StrattonOakmontServices.Sql
 	{
 		private readonly AppDBContext _context;
 		private readonly ISecurityRepository _securityRepository;
+		private readonly IPriceChangeRepository _priceChangeRepository;
+		private readonly IStockRepository _stockRepository;
 
-		public SqlCompanyRepository(AppDBContext context, ISecurityRepository securityRepository)
+		public SqlCompanyRepository(AppDBContext context, ISecurityRepository securityRepository,
+									IPriceChangeRepository priceChangeRepository,
+									IStockRepository stockRepository)
 		{
 			_context = context;
 			_securityRepository = securityRepository;
+			_priceChangeRepository = priceChangeRepository;
+			_stockRepository = stockRepository;
 		}
 
 		public IEnumerable<Company> GetAllCompanies
@@ -120,6 +129,29 @@ namespace StrattonOakmontServices.Sql
             {
 				return new List<Company>();
             }
+        }
+
+        public List<Company> FilterPrice(int more, int less)
+        {
+			var stocks = _stockRepository.GetAllStock;
+			
+			var priceChanges = new List<PriceСhange>();
+
+			foreach (var stock in stocks)
+            {
+				var price = _priceChangeRepository.GetLatestStockPriceChage(stock.Id);
+				if (price.Price >= more && price.Price <= less)
+                {
+					priceChanges.Add(price);
+				}
+				
+            }
+
+			return priceChanges.Select(x => x.Stoсk.CompanySec).ToList();
+			//return _context.Companies.Include(x => x.Security)
+			//							.ThenInclude(x => x.Stocks)
+			//							.Include(x => x.Security)
+			//							.ThenInclude(x => x.Bonds).Where(x => x.Security.Stocks.PriceСhanges.Contains()).ToList();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using StrattonOakmontModels;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace StrattonOakmontServices.Interfaces
@@ -6,6 +7,7 @@ namespace StrattonOakmontServices.Interfaces
     public interface IStockRepository
     {
         public Stoсk GetStoсk(int stockId);
+        public List<Stoсk> GetAllStock { get; }
         public Task<Stoсk> GetStockAsync(int stockId);
         public Task<Stoсk> AddStockAsync(Stoсk stock);
         public Task<Stoсk> DeleteStockAsync(int id);

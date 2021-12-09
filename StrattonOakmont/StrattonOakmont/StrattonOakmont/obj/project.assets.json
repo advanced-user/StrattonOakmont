@@ -8831,11 +8831,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
       "projectName": "StrattonOakmont",
-      "projectPath": "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8852,11 +8852,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
+            "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontModels\\StrattonOakmontModels.csproj"
             },
-            "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Downloads\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj"
+            "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Desktop\\StrattonOakmont\\StrattonOakmont\\StrattonOakmont\\StrattonOakmontServices\\StrattonOakmontServices.csproj"
             }
           }
         }

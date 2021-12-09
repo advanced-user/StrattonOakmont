@@ -79,6 +79,17 @@ namespace StrattonOakmont.Pages.AdminArea
             CheckedCategories = categories;
         }
 
+        [BindProperty]
+        public int More { get; set; }
+
+        [BindProperty]
+        public int Less { get; set; }
+
+        public void OnPostFilterPrice()
+        {
+            Companies = _dbCompany.FilterPrice(More, Less);
+        }
+
         public async Task<IActionResult> OnPostAsync(int id)
         {
             await _dbCompany.DeleteCompanyAsync(id);
