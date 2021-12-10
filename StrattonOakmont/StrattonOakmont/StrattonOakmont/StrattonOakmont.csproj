@@ -36,11 +36,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Forecast\Regression\libraries\p5.dom.js" />
-    <None Include="wwwroot\Forecast\Regression\libraries\p5.js" />
-    <None Include="wwwroot\Forecast\Regression\libraries\p5.sound.js" />
-    <None Include="wwwroot\Forecast\Regression\libraries\regression.js" />
-    <None Include="wwwroot\Forecast\Regression\sketch.js" />
+    <None Include="wwwroot\Forecast\libraries\p5.dom.js" />
+    <None Include="wwwroot\Forecast\libraries\p5.js" />
+    <None Include="wwwroot\Forecast\libraries\p5.sound.js" />
+    <None Include="wwwroot\Forecast\libraries\regression.js" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

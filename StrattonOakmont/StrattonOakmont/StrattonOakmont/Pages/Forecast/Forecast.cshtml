@@ -7,11 +7,15 @@
 <div style="margin-top: 100px;">
     <h1>Predicting stock prices for @Model.Company.Name</h1>
 </div>
-<canvas id="myChart" width="400" height="200"></canvas>
 
-<input id="dates" value="@Model.Prices"  />
+<canvas id="myChart" width="400" height="200"></canvas>
+<h2 id="verdict"></h2>
+
+<input id="prices" value="@Model.Prices" style="display:none;" />
 
 <script>
+
+
 let x_vals = []
 let y_vals = []
 
@@ -21,101 +25,128 @@ let a, b, c, d
 const leatningRate = 0.2
 const optimizer = tf.train.adam(leatningRate)
 
-setup()
+set()
 
-function setup(){
-     a = tf.variable(tf.scalar(-0.5))
-     b = tf.variable(tf.scalar(0.5))
-     c = tf.variable(tf.scalar(-0.3))
-     d = tf.variable(tf.scalar(0.4))
-
-    x_vals = JSON.parse(document.getElementById("dates").value);
-
-    for (var i = 0; i < x_vals.length; i++){
-        y_vals.push(i+1)
-    }
-
-    for (var i = 0; i < epoch; i++){
-         fit()
-    }
-    a.print()
-    b.print()
-    c.print()
-    d.print()
-}
-
-function loss(predict, labels){
-    return predict.sub(labels).square().mean()
-}
-
-function predict(x){
-      const xs = tf.tensor1d(x)
-
-      const ys = xs.pow(tf.scalar(3)).mul(a)
-                   .add(xs.square().mul(b))
-                   .add(xs.mul(c))
-                   .add(d)
-      return ys
-}
-
-function fit(){
-      tf.tidy(() => {
-          if (x_vals.length > 0){
-            const ys = tf.tensor1d(y_vals)
-            optimizer.minimize(() => loss(predict(x_vals), ys))
-          }
-        })
-
-
-      const curveX = []
-      for (let x = -1; x < 1.01; x+=0.05){
-        curveX.push(x)
-      }
-
-      const ys = tf.tidy(() => predict(curveX))
-      let curveY = ys.dataSync()
-      ys.dispose()
-
-      for (let i = 0; i < curveX.length; i++){
-        let x = map(curveX[i], -1, 1, 0, width)
-        let y = map(curveY[i], -1, 1, height, 0)
-        vertex(x, y)
-      } 
-    }
-
-
-    /*
-    set()
-
-    async function set() {
+async function set() {
     const ctx = document.getElementById('myChart').getContext('2d');
-    const globalTemps = await getData();
+    const globalTemps = await setup();
+
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
-        labels: globalTemps.years,
-        datasets: [
-            {
-            label: 'Temperature in °C',
-            data: globalTemps.temps,
-            fill: false,
-            borderColor: 'rgba(255, 99, 132, 1)',
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-            borderWidth: 1
-            }
-        ]
+            labels: globalTemps.curveX,
+            datasets: [
+                {
+                    label: 'Predicted price',
+                    data: globalTemps.curveY,
+                    fill: false,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Price',
+                    data: globalTemps.y_vals,
+                    fill: false,
+                    borderColor: 'rgba(106, 90, 205, 1)',
+                    backgroundColor: 'rgba(106, 90, 205, 0.5)',
+                    borderWidth: 1
+                }
+            ]
         },
         options: {}
     });
+
+
+    let verdict = forecast(globalTemps.curveX.length);
+    let elVerd = document.getElementById("verdict");
+
+    if (verdict === true) {
+        elVerd.innerHTML = "Прогноз: стоит купить"
+    }
+    else {
+        elVerd.innerHTML = "Прогноз: стоит продать"
+    }
+}
+
+
+async function setup() {
+    a = tf.variable(tf.scalar(-0.5))
+    b = tf.variable(tf.scalar(0.5))
+    c = tf.variable(tf.scalar(-0.3))
+    d = tf.variable(tf.scalar(0.4))
+
+    y_vals = JSON.parse(document.getElementById("prices").value);
+
+    for (var i = 0; i < y_vals.length; i++) {
+        x_vals.push(i + 1)
     }
 
-    async function getData() {
-    years = @Model.Dates
-    temps = @Model.Prices
-    console.log(years);
-    console.log(temps);
-
-    return { years, temps };
+    for (var i = 0; i < epoch; i++) {
+        fit()
     }
-    */
+
+    const curveX = []
+
+    for (let x = 0; x < x_vals.length; x++) {
+        curveX.push(x + 1)
+    }
+
+    const ys = tf.tidy(() => predict(curveX))
+    let curveY = ys.dataSync()
+    ys.dispose()
+
+    return { curveX, curveY, y_vals }
+}
+
+function loss(predict, labels) {
+    return predict.sub(labels).square().mean()
+}
+
+function predict(x) {
+    const xs = tf.tensor1d(x)
+
+    const ys = xs.pow(tf.scalar(3)).mul(a)
+        .add(xs.square().mul(b))
+        .add(xs.mul(c))
+        .add(d)
+    return ys
+}
+
+function fit() {
+    tf.tidy(() => {
+        if (x_vals.length > 0) {
+            const ys = tf.tensor1d(y_vals)
+            optimizer.minimize(() => loss(predict(x_vals), ys))
+        }
+    })
+}
+
+function forecast(lenghtX) {
+    result = 0;
+
+    const curveX = []
+
+    for (let x = lenghtX; x < lenghtX+4; x++) {
+        curveX.push(x)
+    }
+
+    const ys = tf.tidy(() => predict(curveX))
+    let curveY = ys.dataSync()
+    ys.dispose()
+
+    for (let i = 1; i < curveX.length; i++) {
+        result += curveY[i] - curveY[i - 1]
+        console.log(result)
+
+    }
+
+    console.log(result)
+
+    if (result <= 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
 </script>
