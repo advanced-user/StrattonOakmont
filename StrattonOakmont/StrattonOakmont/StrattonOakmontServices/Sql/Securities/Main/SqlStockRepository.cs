@@ -6,6 +6,7 @@ using StrattonOakmontServices.Interfaces.Securities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using StrattonOakmontModels.Securities.Main;
 
 namespace StrattonOakmontServices.Sql.Securities.Main
 {
@@ -18,7 +19,7 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         public SqlStockRepository(AppDBContext context, IPriceChangeRepository priceChangeRepository)
         {
             _context = context;
-            _priceChangeRepository = priceChangeRepository; 
+            _priceChangeRepository = priceChangeRepository;
         }
 
         public List<Stoсk> GetAllStock {
@@ -102,6 +103,32 @@ namespace StrattonOakmontServices.Sql.Securities.Main
             }
 
             return priceChanges.OrderByDescending(x => x.Price).Take(5).ToList();
+        }
+
+        public List<StockCount> BestSellingStocks()
+        {
+            List<StockCount> StockCount = new List<StockCount>();
+
+            foreach (var company in _context.Companies.Include(x => x.Receipts)
+                                                      .ThenInclude(x => x.Stock)
+                                                      .Include(x => x.Security)
+                                                      .ThenInclude(x => x.Stocks))
+            {
+                if (company != null && company.Security != null && company.Security.Stocks != null)
+                {
+                    int stocks_count = company.Receipts.Where(x => x.Stock != null).Count();
+
+                    StockCount stockCount = new StockCount();
+
+                    stockCount.Stoсk = company.Security.Stocks;
+                    stockCount.Count = stocks_count;
+
+                    StockCount.Add(stockCount);
+                }
+
+            }
+
+            return StockCount.OrderByDescending(x => x.Count).Take(5).ToList();
         }
     }
 }

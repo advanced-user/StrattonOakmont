@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using StrattonOakmontModels;
 using StrattonOakmontModels.Securities;
+using StrattonOakmontModels.Securities.Main;
 using StrattonOakmontServices;
 using StrattonOakmontServices.Interfaces;
 using System.Collections.Generic;
@@ -36,6 +38,9 @@ namespace StrattonOakmont.Pages.Statistics
         [BindProperty]
         public List<Price—hange> —heapeBonds { get; set; }
 
+        [BindProperty]
+        public List<StockCount> BestSellingStocks { get; set; }
+
 
         public void OnGet()
         {
@@ -46,6 +51,8 @@ namespace StrattonOakmont.Pages.Statistics
 
             ExpensiveBonds = _bondRepository.GetExpensiveBonds();
             —heapeBonds = _bondRepository.Get—heapBonds();
+
+            BestSellingStocks = _stockRepository.BestSellingStocks();
         }
     }
 }

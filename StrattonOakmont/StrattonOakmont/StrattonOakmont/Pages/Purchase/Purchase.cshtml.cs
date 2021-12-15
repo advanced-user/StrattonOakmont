@@ -66,8 +66,10 @@ namespace StrattonOakmont.Pages.Purchase
 
             if (Stoñks != null && PriceÑhange.Amount >= Amount)
             {
-                var user = await _userManager.Users.Include(x => x.Stocks).Include(x => x.Receipts).ThenInclude(x => x.Stock)
-                                                    .FirstOrDefaultAsync(x => x.UserName == User.Identity.Name);
+                var user = await _userManager.Users.Include(x => x.Stocks).ThenInclude(x => x.Stoñk)
+                                                   .ThenInclude(x => x.Security).ThenInclude(x => x.Stocks)
+                                                   .ThenInclude(x => x.CompanySec).Include(x => x.Receipts).ThenInclude(x => x.Stock)
+                                                   .FirstOrDefaultAsync(x => x.UserName == User.Identity.Name);
                 var receipt = new Receipt();
 
                 receipt.Date = DateTime.Now;

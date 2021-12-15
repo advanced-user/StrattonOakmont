@@ -184,4 +184,40 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+    <!-- column -->
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">TOP-5 Best selling stocks</h4>
+
+                    <div class="table-responsive">
+                        <table class="table user-table">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Company</th>
+                                    <th class="border-top-0">Number of sales</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                  
+                                
+                                @foreach (var item in Model.BestSellingStocks)
+                                {
+                                <tr>
+                                    <td>@item.Stoсk.CompanySec.Name</td>
+
+                                    <td>@item.Count</td>
+                                </tr>
+                                }
+
+                                </tbody>
+                        </table>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
 </div>

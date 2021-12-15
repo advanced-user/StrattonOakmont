@@ -140,11 +140,10 @@ namespace StrattonOakmontServices.Sql
 			foreach (var stock in stocks)
             {
 				var price = _priceChangeRepository.GetLatestStockPriceChage(stock.Id);
-				if (price.Price >= more && price.Price <= less)
+				if (less == 0 && price.Price >= more || less != 0 && price.Price >= more && price.Price <= less)
                 {
 					priceChanges.Add(price);
-				}
-				
+				}				
             }
 
 			return priceChanges.Select(x => x.Stoсk.CompanySec).ToList();
