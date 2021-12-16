@@ -140,6 +140,18 @@
                                             </tr>
                                             }
 
+                                            @foreach (var item in Model.UserBonds)
+                                            {
+                                            <tr>
+                                                <td>@item.Bond.CompanySec.Name</td>
+                                                <td>Bond</td>
+                                                <td>@item.Amount</td>
+                                                <td style="display: flex; justify-content: flex-end">
+                                                    <a class="btn btn-primary" style="margin:5px" asp-page="/Purchase/SellBond" asp-route-userBondId="@item.Id">Sell</a>  
+                                                </td>
+                                            </tr>
+                                            }
+
                                             </tbody>
                                     </table>
                                 </div>

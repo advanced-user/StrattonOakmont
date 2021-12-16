@@ -19,7 +19,7 @@
 let x_vals = []
 let y_vals = []
 
-epoch = 1000
+epoch = 10000
 let a, b, c, d
 
 const leatningRate = 0.2
@@ -36,6 +36,7 @@ async function set() {
         data: {
             labels: globalTemps.curveX,
             datasets: [
+                
                 {
                     label: 'Predicted price',
                     data: globalTemps.curveY,
@@ -77,18 +78,18 @@ async function setup() {
     d = tf.variable(tf.scalar(0.4))
 
     y_vals = JSON.parse(document.getElementById("prices").value);
-    divider = 1;
+    //divider = 1;
 
     for (var i = 0; i < y_vals.length; i++) {
         x_vals.push(i + 1)
-        divider += y_vals[i];
+        //divider += y_vals[i];
     }
-
+    /*
     divider /= y_vals.length;
 
     for (var i = 0; i < y_vals.length; i++) {
         y_vals[i] /= divider;
-    }
+    }*/
 
     for (var i = 0; i < epoch; i++) {
         fit()
@@ -104,11 +105,12 @@ async function setup() {
     let curveY = ys.dataSync()
     ys.dispose()
 
+    /*
     for (var i = 0; i < y_vals.length; i++) {
         x_vals.push(i + 1)
         y_vals[i] *= divider;
         curveY[i] *= divider;
-    }
+    }*/
 
     return { curveX, curveY, y_vals }
 }

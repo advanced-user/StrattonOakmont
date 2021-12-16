@@ -5751,3 +5751,5 @@ C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\StrattonO
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\StrattonOakmont.pdb
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\StrattonOakmont.genruntimeconfig.cache
 C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Statistics\Statistics.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Purchase\PurchaseBond.cshtml.g.cs
+C:\Users\Admin\Desktop\StrattonOakmont\StrattonOakmont\StrattonOakmont\StrattonOakmont\obj\Debug\netcoreapp3.1\Razor\Pages\Purchase\SellBond.cshtml.g.cs

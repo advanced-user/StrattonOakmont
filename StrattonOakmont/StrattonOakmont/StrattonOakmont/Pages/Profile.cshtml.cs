@@ -23,6 +23,7 @@ namespace StrattonOakmont.Pages
             _securityRepository = securityRepository;
         }
         public List<StrattonOakmontModels.Securities.Main.UserStock> UserStocks { get; set; }
+        public List<StrattonOakmontModels.Securities.Main.UserBond> UserBonds { get; set; }
         public IEnumerable<StrattonOakmontModels.Security> Securities { get; set; }
         public IEnumerable<StrattonOakmontModels.Company> Companies { get; set; }
         public List<User> Users { get; set; }
@@ -32,6 +33,7 @@ namespace StrattonOakmont.Pages
         {                   
             Users = _userManager.Users.ToList();           
             UserStocks = _dbSecurity.GetUserStock(User.Identity.Name).ToList();
+            UserBonds = _dbSecurity.GetUserBond(User.Identity.Name).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(string id)

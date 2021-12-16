@@ -567,11 +567,13 @@ namespace StrattonOakmontServices.Migrations
                         .WithMany()
                         .HasForeignKey("BondId");
 
-                    b.HasOne("StrattonOakmontModels.User", null)
+                    b.HasOne("StrattonOakmontModels.User", "User")
                         .WithMany("Bond")
                         .HasForeignKey("UserId");
 
                     b.Navigation("Bond");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securities.Main.UserStock", b =>

@@ -10,8 +10,8 @@ using StrattonOakmontServices;
 namespace StrattonOakmontServices.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20211209144607_InitDb")]
-    partial class InitDb
+    [Migration("20211216184752_initDb")]
+    partial class initDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -569,11 +569,13 @@ namespace StrattonOakmontServices.Migrations
                         .WithMany()
                         .HasForeignKey("BondId");
 
-                    b.HasOne("StrattonOakmontModels.User", null)
+                    b.HasOne("StrattonOakmontModels.User", "User")
                         .WithMany("Bond")
                         .HasForeignKey("UserId");
 
                     b.Navigation("Bond");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("StrattonOakmontModels.Securities.Main.UserStock", b =>

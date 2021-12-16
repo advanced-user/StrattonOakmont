@@ -11,6 +11,7 @@ namespace StrattonOakmontServices
         public IEnumerable<Stoсk> GetAllStocks(int securityId);
         public IEnumerable<Bond> GetAllBonds(int securityId);
         public IEnumerable<UserStock> GetUserStock(string userid);
+        public IEnumerable<UserBond> GetUserBond(string userid);
         public Task<Security> GetSecurityAsync(int id);
         public Task<Security> AddAsync(Security newSecurity);
         public Task<Security> DeleteAsync(int id);

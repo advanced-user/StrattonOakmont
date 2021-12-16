@@ -95,5 +95,10 @@ namespace StrattonOakmontServices.Sql
         {
             throw new System.NotImplementedException();
         }
+
+        public IEnumerable<UserBond> GetUserBond(string Name)
+        {
+            return _context.UserBonds.Include(x => x.User).Include(x => x.Bond).ThenInclude(x => x.CompanySec).Where(x => x.User.UserName == Name);
+        }
     }
 }
