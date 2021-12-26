@@ -28,9 +28,8 @@ const optimizer = tf.train.adam(leatningRate)
 set()
 
 async function set() {
-    const ctx = document.getElementById('myChart').getContext('2d');
+    let ctx = document.getElementById('myChart').getContext('2d');
     const globalTemps = await setup();
-
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -57,7 +56,6 @@ async function set() {
         },
         options: {}
     });
-
 
     let verdict = forecast(globalTemps.curveX.length);
     let elVerd = document.getElementById("verdict");

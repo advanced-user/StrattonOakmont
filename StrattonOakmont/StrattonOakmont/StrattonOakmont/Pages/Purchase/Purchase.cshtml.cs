@@ -23,15 +23,18 @@ namespace StrattonOakmont.Pages.Purchase
         private readonly IPriceChangeRepository _priceChangeRepository;
         private readonly UserManager<User> _userManager;
         private readonly AppDBContext _appDBContext;
+        private readonly ISecurityRepository _securityRepository;
 
         public PurchaseModel(ICompanyRepository companyRepository,
                              UserManager<User> userManager, AppDBContext appDBContext,
-                             IPriceChangeRepository priceChangeRepository)
+                             IPriceChangeRepository priceChangeRepository,
+                             ISecurityRepository securityRepository)
         {
             _companyRepository = companyRepository;
             _userManager = userManager;
             _appDBContext = appDBContext;
             _priceChangeRepository = priceChangeRepository;
+            _securityRepository = securityRepository;
         }
 
 
@@ -87,7 +90,8 @@ namespace StrattonOakmont.Pages.Purchase
                 }
                 else
                 {
-                    var userStock = user.Stocks.FirstOrDefault(x => x.Stoñk.Security.Stocks.CompanySec.Id == Company.Id);
+                    var UserStocks = _securityRepository.GetUserStock(User.Identity.Name).ToList();
+                    var userStock = UserStocks.FirstOrDefault(x => x.Stoñk.Security.Stocks.CompanySec.Id == Company.Id);
                     if (userStock != null)
                     {
                         userStock.Amount += Amount;

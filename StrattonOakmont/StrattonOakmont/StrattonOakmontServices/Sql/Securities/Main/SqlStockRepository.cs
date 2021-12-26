@@ -108,11 +108,13 @@ namespace StrattonOakmontServices.Sql.Securities.Main
         public List<StockCount> BestSellingStocks()
         {
             List<StockCount> StockCount = new List<StockCount>();
+            var priceChanges = _context.PriceСhanges.ToList();
 
             foreach (var company in _context.Companies.Include(x => x.Receipts)
                                                       .ThenInclude(x => x.Stock)
                                                       .Include(x => x.Security)
                                                       .ThenInclude(x => x.Stocks))
+                                                    
             {
                 if (company != null && company.Security != null && company.Security.Stocks != null)
                 {
@@ -123,9 +125,12 @@ namespace StrattonOakmontServices.Sql.Securities.Main
                     stockCount.Stoсk = company.Security.Stocks;
                     stockCount.Count = stocks_count;
 
+                    var latestId = priceChanges.Where(x => x.Stoсk != null && x.Stoсk.Id == company.Security.Stocks.Id).Max(p => p.Id);
+
+                    stockCount.Price = priceChanges.FirstOrDefault(x => x.Id == latestId).Price;
+
                     StockCount.Add(stockCount);
                 }
-
             }
 
             return StockCount.OrderByDescending(x => x.Count).Take(5).ToList();
